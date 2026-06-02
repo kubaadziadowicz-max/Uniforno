@@ -127,12 +127,32 @@
     display: flex; flex-direction: column;
     background: var(--warm);
   }
-  .hero-visual {
-    flex: 1; display: flex; align-items: center; justify-content: center;
-    padding: 60px;
-    position: relative; overflow: hidden;
+  .hero-text-panel {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 48px;
   }
-  .tshirt-svg { width: 100%; max-width: 320px; opacity: 0.9; }
+  .htp-item {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .htp-item:first-child { border-top: 0.5px solid var(--border); }
+  .htp-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0; margin-top: 6px;
+  }
+  .htp-title {
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    margin-bottom: 4px; letter-spacing: 0.01em;
+  }
+  .htp-desc {
+    font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.6;
+  }
+  .htp-stat {
+    margin-top: 32px;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    color: var(--accent); text-transform: uppercase;
+  }
   .hero-stats {
     display: grid; grid-template-columns: 1fr 1fr;
     border-top: 0.5px solid var(--border);
@@ -441,61 +461,43 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-visual" style="padding: 20px; position: relative; overflow: visible;">
-      <div style="position: relative; width: 100%; max-width: 520px; margin: 0 auto;">
-        <img src="mockup_flaoting.png" alt="Koszulka premium Uniforno" style="width:100%; display:block; filter: drop-shadow(0 20px 40px rgba(26,25,22,0.15));">
-        
-        <!-- Linie z podpisami jako SVG overlay -->
-        <svg viewBox="0 0 520 480" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;" xmlns="http://www.w3.org/2000/svg">
-          
-          <!-- Kołnierzyk: Krój pod klienta -->
-          <circle cx="270" cy="62" r="3" fill="#c8a96e"/>
-          <line x1="270" y1="62" x2="270" y2="20" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <line x1="200" y1="20" x2="340" y2="20" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="270" y="12" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Krój szyty pod klienta</text>
-
-          <!-- Ramię lewe: Polska bawełna -->
-          <circle cx="168" cy="130" r="3" fill="#c8a96e"/>
-          <line x1="168" y1="130" x2="80" y2="80" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <line x1="20" y1="80" x2="80" y2="80" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="18" y="73" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Najwyższa jakość</text>
-          <text x="18" y="86" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10" font-weight="300" fill="#7a7670">bawełny premium</text>
-
-          <!-- Ramię prawe: Polski materiał -->
-          <circle cx="380" cy="118" r="3" fill="#c8a96e"/>
-          <line x1="380" y1="118" x2="440" y2="75" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <line x1="440" y1="75" x2="510" y2="75" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="442" y="68" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Polski materiał</text>
-          <text x="442" y="81" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10" font-weight="300" fill="#7a7670">certyfikowane tkaniny</text>
-
-          <!-- Środek prawy: Dbałość o szew -->
-          <circle cx="400" cy="260" r="3" fill="#c8a96e"/>
-          <line x1="400" y1="260" x2="470" y2="260" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="474" y="255" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Dbałość o każdy szew</text>
-          <text x="474" y="268" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10" font-weight="300" fill="#7a7670">precyzja wykończenia</text>
-
-          <!-- Dół prawy: Szyte w Polsce -->
-          <circle cx="360" cy="390" r="3" fill="#c8a96e"/>
-          <line x1="360" y1="390" x2="440" y2="430" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <line x1="440" y1="430" x2="510" y2="430" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="442" y="424" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Szyte w Polsce</text>
-          <text x="442" y="437" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10" font-weight="300" fill="#7a7670">lokalna produkcja</text>
-
-          <!-- Dół lewy: Trwałość -->
-          <circle cx="200" cy="400" r="3" fill="#c8a96e"/>
-          <line x1="200" y1="400" x2="100" y2="440" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <line x1="20" y1="440" x2="100" y2="440" stroke="#c8a96e" stroke-width="0.8" opacity="0.8"/>
-          <text x="18" y="434" text-anchor="start" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#1a1916">Trwałość na lata</text>
-          <text x="18" y="447" text-anchor="start" font-family="DM Sans, sans-serif" font-size="10" font-weight="300" fill="#7a7670">setki prań bez zmian</text>
-
-        </svg>
+    <div class="hero-text-panel">
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <div>
+          <div class="htp-title">Krój szyty pod klienta</div>
+          <div class="htp-desc">Nie wybierasz z katalogu. Projektujemy każdą koszulkę od zera — fason, gramatura, wykończenie.</div>
+        </div>
       </div>
-    </div>
-    </div>
-      <div class="stat">
-        <div class="stat-val">od 30</div>
-        <div class="stat-label">Sztuk w zamówieniu</div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <div>
+          <div class="htp-title">Polskie tkaniny premium</div>
+          <div class="htp-desc">Współpracujemy wyłącznie z polskimi dostawcami. Każda partia materiału jest przez nas weryfikowana.</div>
+        </div>
       </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <div>
+          <div class="htp-title">Precyzja wykończenia</div>
+          <div class="htp-desc">Dbamy o każdy szew. Nasze koszulki wyglądają i czują się profesjonalnie — przy pierwszym i setnym praniu.</div>
+        </div>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <div>
+          <div class="htp-title">Szyte w Polsce</div>
+          <div class="htp-desc">Produkcja lokalna — krótsze terminy, kontrola jakości na każdym etapie, wsparcie polskich szwalni.</div>
+        </div>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <div>
+          <div class="htp-title">Trwałość na lata</div>
+          <div class="htp-desc">Setki prań bez utraty kształtu i koloru. Koszulka, którą pracownicy będą chcieli nosić po pracy.</div>
+        </div>
+      </div>
+      <div class="htp-stat">od 30 sztuk · zamówienia B2B · wycena w 24h</div>
     </div>
   </div>
 </section>
