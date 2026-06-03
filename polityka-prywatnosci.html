@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polityka prywatności — Uniforno</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916;
+    --paper: #f5f2eb;
+    --warm: #e8e2d5;
+    --accent: #c8a96e;
+    --muted: #7a7670;
+    --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--paper);
+    border-bottom: 0.5px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+
+  /* CONTENT */
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 140px 48px 100px;
+  }
+
+  .page-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 0.5px; background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500; line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .last-updated {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 500;
+    color: var(--ink);
+    margin-top: 48px; margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul li {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--ink);
+    padding: 4px 0 4px 20px;
+    position: relative;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 13px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .admin-box {
+    background: var(--warm);
+    border-left: 2px solid var(--accent);
+    padding: 24px 28px;
+    margin: 20px 0 14px;
+  }
+  .admin-box p { margin: 0; font-size: 14px; line-height: 1.8; }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 48px;
+    border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy {
+    font-size: 12px; font-weight: 300; color: var(--muted);
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px; font-weight: 300; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 24px; }
+    .page-wrap { padding: 120px 24px 80px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-eyebrow">Dokument prawny</div>
+  <h1>Polityka prywatności</h1>
+  <p class="last-updated">Ostatnia aktualizacja: 3 czerwca 2026 r.</p>
+
+  <h2>1. Administrator danych osobowych</h2>
+  <p>Administratorem Twoich danych osobowych jest:</p>
+  <div class="admin-box">
+    <p>
+      <strong>Bellissima s.c.</strong><br>
+      ul. Sokolnicza 7/17, 53-676 Wrocław<br>
+      NIP: 8971677123<br>
+      E-mail: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+    </p>
+  </div>
+  <p>Spółka prowadzi działalność pod marką <strong>Uniforno</strong> i jest dostępna pod adresem <a href="https://uniforno.pl">uniforno.pl</a>.</p>
+
+  <h2>2. Jakie dane zbieramy i w jakim celu</h2>
+  <p>Za pośrednictwem formularza kontaktowego dostępnego na stronie zbieramy następujące dane osobowe:</p>
+  <ul>
+    <li>imię i nazwisko</li>
+    <li>nazwa firmy</li>
+    <li>adres e-mail</li>
+    <li>numer telefonu</li>
+  </ul>
+  <p>Dane te są zbierane wyłącznie w celu udzielenia odpowiedzi na przesłane zapytanie ofertowe lub handlowe (B2B) oraz w celu nawiązania kontaktu w związku z tym zapytaniem.</p>
+
+  <h2>3. Podstawa prawna przetwarzania</h2>
+  <p>Podstawą prawną przetwarzania Twoich danych osobowych jest:</p>
+  <ul>
+    <li><strong>art. 6 ust. 1 lit. b RODO</strong> — przetwarzanie jest niezbędne do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy,</li>
+    <li><strong>art. 6 ust. 1 lit. f RODO</strong> — prawnie uzasadniony interes administratora polegający na możliwości odpowiedzi na kierowane do nas zapytania biznesowe.</li>
+  </ul>
+
+  <h2>4. Okres przechowywania danych</h2>
+  <p>Twoje dane osobowe będą przechowywane przez okres niezbędny do obsługi zapytania, a następnie przez czas wynikający z przepisów prawa podatkowego i rachunkowego — nie dłużej jednak niż 5 lat od zakończenia współpracy lub ostatniego kontaktu.</p>
+  <p>Jeśli zapytanie nie zakończy się zawarciem umowy, dane są usuwane niezwłocznie po zakończeniu korespondencji, nie później niż po 6 miesiącach.</p>
+
+  <h2>5. Odbiorcy danych</h2>
+  <p>Twoje dane mogą być przekazywane podmiotom świadczącym na naszą rzecz usługi niezbędne do prowadzenia działalności, w szczególności:</p>
+  <ul>
+    <li>dostawcom usług poczty elektronicznej i hostingu,</li>
+    <li>dostawcom narzędzi do obsługi formularzy kontaktowych (Formspree, Inc.),</li>
+    <li>podmiotom świadczącym usługi księgowe i prawne — wyłącznie w zakresie niezbędnym.</li>
+  </ul>
+  <p>Nie sprzedajemy ani nie udostępniamy Twoich danych osobom trzecim w celach marketingowych.</p>
+
+  <h2>6. Przekazywanie danych poza EOG</h2>
+  <p>W związku z korzystaniem z usługi Formspree (dostawca z siedzibą w USA) Twoje dane mogą być przekazywane do państwa trzeciego. Formspree, Inc. stosuje standardowe klauzule umowne zatwierdzone przez Komisję Europejską, co zapewnia odpowiedni poziom ochrony danych.</p>
+
+  <h2>7. Twoje prawa</h2>
+  <p>W związku z przetwarzaniem Twoich danych osobowych przysługują Ci następujące prawa:</p>
+  <ul>
+    <li><strong>prawo dostępu</strong> do swoich danych oraz otrzymania ich kopii,</li>
+    <li><strong>prawo do sprostowania</strong> (poprawiania) swoich danych,</li>
+    <li><strong>prawo do usunięcia</strong> danych (prawo do bycia zapomnianym),</li>
+    <li><strong>prawo do ograniczenia przetwarzania</strong> danych,</li>
+    <li><strong>prawo do przenoszenia</strong> danych,</li>
+    <li><strong>prawo do wniesienia sprzeciwu</strong> wobec przetwarzania danych,</li>
+    <li><strong>prawo do wniesienia skargi</strong> do organu nadzorczego — Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl">uodo.gov.pl</a>).</li>
+  </ul>
+  <p>Aby skorzystać z przysługujących Ci praw, skontaktuj się z nami pod adresem: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>.</p>
+
+  <h2>8. Dobrowolność podania danych</h2>
+  <p>Podanie danych osobowych w formularzu kontaktowym jest dobrowolne, jednak niezbędne do udzielenia odpowiedzi na Twoje zapytanie. Brak podania danych uniemożliwia nawiązanie kontaktu.</p>
+
+  <h2>9. Pliki cookies i dane analityczne</h2>
+  <p>Strona uniforno.pl nie korzysta aktualnie z plików cookies służących do śledzenia użytkowników ani narzędzi analitycznych zbierających dane osobowe. W przypadku wprowadzenia takich rozwiązań niniejsza polityka zostanie zaktualizowana.</p>
+
+  <h2>10. Zmiany polityki prywatności</h2>
+  <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności. Aktualną wersję dokumentu zawsze znajdziesz pod adresem <a href="https://uniforno.pl/polityka-prywatnosci">uniforno.pl/polityka-prywatnosci</a>. Data ostatniej aktualizacji jest widoczna na górze strony.</p>
+
+  <h2>11. Kontakt</h2>
+  <p>We wszystkich sprawach związanych z ochroną danych osobowych możesz skontaktować się z nami:</p>
+  <ul>
+    <li>e-mail: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a></li>
+    <li>adres: Bellissima s.c., ul. Sokolnicza 7/17, 53-676 Wrocław</li>
+  </ul>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">© 2025 Uniforno. Polska produkcja, polska jakość.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
