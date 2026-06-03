@@ -379,6 +379,51 @@
   }
   .form-submit:hover { background: var(--accent); color: var(--ink); }
 
+  /* ── DLA KOGO ── */
+  .dla-kogo {
+    border-top: 0.5px solid var(--border);
+    padding: 80px 48px;
+  }
+  .dla-kogo-header {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
+    align-items: start; margin-bottom: 56px;
+  }
+  .dla-kogo-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    color: var(--accent); text-transform: uppercase; padding-top: 8px;
+  }
+  .dla-kogo-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500; line-height: 1.2; color: var(--ink);
+  }
+  .dla-kogo-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    border-top: 0.5px solid var(--border);
+    border-left: 0.5px solid var(--border);
+  }
+  .dla-kogo-card {
+    padding: 32px 28px;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none; color: var(--ink);
+    display: flex; flex-direction: column; gap: 12px;
+    transition: background 0.25s;
+  }
+  .dla-kogo-card:hover { background: var(--warm); }
+  .dla-kogo-card-num {
+    font-family: var(--font-display);
+    font-size: 32px; font-weight: 400; color: var(--border);
+    line-height: 1; transition: color 0.25s;
+  }
+  .dla-kogo-card:hover .dla-kogo-card-num { color: var(--accent); }
+  .dla-kogo-card-title {
+    font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.3;
+  }
+  .dla-kogo-card-arrow {
+    font-size: 13px; color: var(--accent); margin-top: auto;
+  }
+
   /* ── FOOTER ── */
   footer {
     padding: 32px 48px;
@@ -433,6 +478,9 @@
     .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+    .dla-kogo { padding: 60px 24px; }
+    .dla-kogo-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+    .dla-kogo-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -532,6 +580,41 @@
     <div class="pillar-num">04</div>
     <div class="pillar-title">Tylko premium</div>
     <div class="pillar-desc">Nie obsługujemy masowych zamówień na najtańszy produkt. Jeśli zależy Ci na jakości — jesteśmy dla Ciebie.</div>
+  </div>
+</section>
+
+<!-- DLA KOGO -->
+<section class="dla-kogo">
+  <div class="dla-kogo-header">
+    <div class="dla-kogo-label">Dla kogo szyjemy</div>
+    <h2 class="dla-kogo-title">Koszulki premium dla firm, eventów i organizacji — zawsze szyte indywidualnie.</h2>
+  </div>
+  <div class="dla-kogo-grid">
+    <a class="dla-kogo-card" href="/koszulki-dla-pracownikow">
+      <div class="dla-kogo-card-num">01</div>
+      <div class="dla-kogo-card-title">Koszulki dla pracowników</div>
+      <div class="dla-kogo-card-arrow">→</div>
+    </a>
+    <a class="dla-kogo-card" href="/koszulki-dla-restauracji">
+      <div class="dla-kogo-card-num">02</div>
+      <div class="dla-kogo-card-title">Restauracje i gastronomia</div>
+      <div class="dla-kogo-card-arrow">→</div>
+    </a>
+    <a class="dla-kogo-card" href="/koszulki-eventowe">
+      <div class="dla-kogo-card-num">03</div>
+      <div class="dla-kogo-card-title">Eventy i konferencje</div>
+      <div class="dla-kogo-card-arrow">→</div>
+    </a>
+    <a class="dla-kogo-card" href="/koszulki-dla-klubu-sportowego">
+      <div class="dla-kogo-card-num">04</div>
+      <div class="dla-kogo-card-title">Kluby sportowe</div>
+      <div class="dla-kogo-card-arrow">→</div>
+    </a>
+    <a class="dla-kogo-card" href="/odzież-firmowa-wroclaw">
+      <div class="dla-kogo-card-num">05</div>
+      <div class="dla-kogo-card-title">Firmy z Wrocławia</div>
+      <div class="dla-kogo-card-arrow">→</div>
+    </a>
   </div>
 </section>
 

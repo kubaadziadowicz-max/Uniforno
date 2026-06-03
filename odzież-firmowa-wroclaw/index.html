@@ -66,6 +66,10 @@
     .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
     footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
   }
+  .see-also-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .see-also-list li a { font-size: 15px; font-weight: 400; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--border); padding-bottom: 10px; width: 100%; transition: color 0.2s; }
+  .see-also-list li a::before { content: '→'; color: var(--accent); font-size: 14px; flex-shrink: 0; }
+  .see-also-list li a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -104,6 +108,16 @@
     <p>Dla firm z Wrocławia oznacza to przede wszystkim krótszy czas realizacji i łatwiejszy kontakt — jesteśmy w tej samej Polsce, rozumiemy lokalny rynek i możemy reagować szybciej niż firmy działające przez pośredników.</p>
     <p>Oferujemy bezpłatne konsultacje projektowe dla firm planujących pierwsze zamówienie — napisz na kontakt@uniforno.pl, a odpowiemy w ciągu 24 godzin roboczych.</p>
     <p>Realizujemy zamówienia od 30 sztuk. Dla wrocławskich firm z potrzebą regularnych zamówień przygotowujemy indywidualne warunki współpracy.</p>
+  </div>
+
+  <div class="content-block see-also">
+    <h2>Sprawdź też</h2>
+    <p>Uniforno szyje koszulki premium dla różnych branż i potrzeb. Zobacz inne nasze specjalizacje:</p>
+    <ul class="see-also-list">
+      <li><a href="/koszulki-dla-pracownikow">Koszulki dla pracowników premium</a></li>
+      <li><a href="/koszulki-dla-restauracji">Koszulki dla restauracji z logo</a></li>
+      <li><a href="/koszulki-dla-klubu-sportowego">Koszulki dla klubów sportowych</a></li>
+    </ul>
   </div>
 </main>
 
