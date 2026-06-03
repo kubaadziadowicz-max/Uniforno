@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koszulki Eventowe z Nadrukiem | Uniforno — Premium, Made in Poland</title>
+<meta name="description" content="Koszulki eventowe z nadrukiem szyte w Polsce na zamowienie. Premium jakosc dla konferencji, festiwali, zawodow i eventow firmowych. Realizacja od 30 szt. Wycena w 24h.">
+<link rel="canonical" href="https://uniforno.pl/koszulki-eventowe">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
+    --accent: #c8a96e; --muted: #7a7670; --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .hero { padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; border-bottom: 0.5px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  h1 { font-family: var(--font-display); font-size: clamp(44px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .hero-desc strong { color: var(--ink); font-weight: 400; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid var(--accent); padding: 6px 14px; }
+  .content { max-width: 860px; margin: 0 auto; padding: 80px 48px; }
+  .content-block { margin-bottom: 56px; border-bottom: 0.5px solid var(--border); padding-bottom: 56px; }
+  .content-block:last-child { border-bottom: none; }
+  h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+  p { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  .cta-section { padding: 100px 48px; background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cta-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+  .cta-right { display: flex; flex-direction: column; gap: 20px; }
+  .cta-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,242,235,0.7); }
+  .btn-primary { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--accent); color: var(--ink); padding: 14px 32px; text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
+  .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .btn-ghost { font-size: 13px; font-weight: 400; color: rgba(245,242,235,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--paper); }
+  .btn-ghost::after { content: '\2192'; }
+  .cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  footer { padding: 32px 48px; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--paper); }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: 0.06em; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 12px; font-weight: 300; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 12px; font-weight: 300; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--ink); }
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; gap: 28px; padding: 120px 24px 60px; }
+    .content { padding: 60px 24px; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Eventy · Konferencje · Festiwale · Made in Poland</div>
+    <h1>Koszulki eventowe<br><em>z nadrukiem</em></h1>
+  </div>
+  <div>
+    <div class="hero-desc"><strong>Koszulka eventowa zyje dlugo po zakonczeniu eventu.</strong> Uczestnik zaklada ja miesiac pozniej do biegania, rok pozniej do ogrodu — i za kazdym razem przypomina sobie Twoje wydarzenie. To najdluzej dzialajace narzedzie eventowego marketingu, jakie istnieje. Pod warunkiem, ze koszulka jest na tyle dobra, zeby ja chcial nosic.</div>
+    <div class="tags"><span class="tag">Konferencje</span><span class="tag">Festiwale</span><span class="tag">Zawody sportowe</span><span class="tag">Eventy firmowe</span><span class="tag">Agencje eventowe</span></div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="content-block">
+    <h2>Premium koszulki, ktore uczestnicy chca nosic</h2>
+    <p>Podstawowy blad przy zamowieniu odziezy eventowej to wybor najtanszego materialu. Koszulka z cienkiej, sztywnej dzianiny laduje na dnie szafy po pierwszym praniu. Koszulka z premium bawelny czesanej, dobrze skrojona, z pieknym nadrukiem — jezdzi ze swoim wlascicielem na wakacje.</p>
+    <p>Uniforno szyje koszulki eventowe z polskich dzianin premium: miekka bawelna czesana 180–220g/m², kroje dostosowane do sylwetki, trwale nadruki ktore nie pekaja po pierwszym praniu. To roznica, ktora uczestnicy czuja od razu.</p>
+    <p>Projektujemy koszulki eventowe dla konferencji, festiwali muzycznych, zawodow sportowych, targow, wydarzen firmowych i charytatywnych. Kazdy projekt jest unikalny — nie mamy katalogu, mamy warsztat.</p>
+  </div>
+  <div class="content-block">
+    <h2>Organizatorzy eventow — dlaczego warto wspolpracowac z Uniforno</h2>
+    <p>Obslugujemy agencje eventowe, organizatorow konferencji branzowych i festiwali, dzialy marketingu firm organizujacych wlasne eventy oraz fundacje i organizacje non-profit.</p>
+    <p>Dla agencji eventowych oferujemy model wspolpracy B2B z dedykowanym opiekunem projektu, mozliwoscia realizacji wielu zamowien rownolegla i atrakcyjnymi warunkami dla stalych partnerow.</p>
+    <p>Dostepne metody znakowania: sitodruk (idealne do duzych serii o prostych projektach), druk DTF (pelna gama kolorow, szczegolowe grafiki), haft komputerowy (elegancja i trwalosc). Doradzimy, ktora metoda sprawdzi sie najlepiej dla Twojego projektu.</p>
+  </div>
+  <div class="content-block">
+    <h2>Ile czasu zajmuje realizacja</h2>
+    <p>Standardowy czas realizacji to 10–14 dni roboczych od zatwierdzenia projektu. Dla pilnych zamowien eventowych oferujemy ekspresowa realizacje w 5–7 dni roboczych — zapytaj o dostepnosc w formularzu.</p>
+    <p>Realizujemy zamowienia od 30 sztuk. Dla duzych eventow z setkami uczestnikow jestesmy w stanie obsluzyc zamowienia powyzej 1000 sztuk — skontaktuj sie z nami z wyprzedzeniem.</p>
+    <p>Dowozimy na terenie calej Polski. Mozliwa dostawa bezposrednio na miejsce eventu.</p>
+  </div>
+</main>
+
+<section class="cta-section">
+  <div>
+    <div class="cta-eyebrow">Zróbmy cos razem</div>
+    <h2 class="cta-headline">Twój event będzie<br><em>zapamiętany</em></h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-desc">Koszulki eventowe premium szyte w Polsce. Uczestnicy beda je nosic dlugo po Twoim wydarzeniu. Realizacja od 30 sztuk, ekspresowe terminy.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/#kontakt">Zamow koszulki eventowe</a>
+      <a class="btn-ghost" href="/realizacje">Zobacz realizacje</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">&copy; 2025 Uniforno. Polska produkcja, polska jakos.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatnosci</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
