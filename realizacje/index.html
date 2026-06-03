@@ -48,21 +48,17 @@
     color: var(--ink); text-decoration: none;
   }
   .logo span { color: var(--accent); }
-  .nav-links {
-    display: flex; gap: 32px; list-style: none;
-  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a {
     font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
     color: var(--muted); text-decoration: none;
     transition: color 0.2s;
   }
-  .nav-links a:hover,
-  .nav-links a.active { color: var(--ink); }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
   .nav-cta {
     font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
     background: var(--ink); color: var(--paper);
-    padding: 10px 24px; border: none; cursor: pointer;
-    text-decoration: none;
+    padding: 10px 24px; text-decoration: none;
     transition: background 0.2s, color 0.2s;
   }
   .nav-cta:hover { background: var(--accent); color: var(--ink); }
@@ -93,46 +89,80 @@
     letter-spacing: -0.01em;
     color: var(--ink);
   }
-  .page-header h1 em {
-    font-style: italic; color: var(--accent);
-  }
+  .page-header h1 em { font-style: italic; color: var(--accent); }
   .page-intro {
     font-size: 15px; font-weight: 300; line-height: 1.75;
     color: var(--muted);
   }
-  .page-intro strong {
-    color: var(--ink); font-weight: 400;
-  }
+  .page-intro strong { color: var(--ink); font-weight: 400; }
 
-  /* ── REALIZACJE GRID ── */
-  .realizacje {
-    padding: 0 48px 100px;
-  }
+  /* ── REALIZACJE ── */
+  .realizacje { padding: 0 48px 100px; }
 
   .realizacja {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 540px;
+    min-height: 560px;
     border-bottom: 0.5px solid var(--border);
   }
-  .realizacja:nth-child(even) .realizacja-img { order: 2; }
+  .realizacja:nth-child(even) .realizacja-img  { order: 2; }
   .realizacja:nth-child(even) .realizacja-content { order: 1; border-right: 0.5px solid var(--border); border-left: none; }
 
+  /* ── FLIP CARD ── */
   .realizacja-img {
-    background: var(--warm);
-    display: flex; align-items: center; justify-content: center;
-    padding: 60px;
+    position: relative;
     overflow: hidden;
-  }
-  .realizacja-img img {
-    width: 100%;
-    max-width: 420px;
-    height: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    display: block;
+    cursor: pointer;
+    background: var(--warm);
   }
 
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .realizacja-img:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front,
+  .flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-front img,
+  .flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+
+  /* etykieta "hover → tył" */
+  .flip-hint {
+    position: absolute;
+    bottom: 16px; right: 16px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: rgba(26,25,22,0.55);
+    padding: 5px 10px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 2;
+  }
+  .realizacja-img:hover .flip-hint { opacity: 0; }
+
+  /* ── CONTENT ── */
   .realizacja-content {
     padding: 64px 56px;
     display: flex; flex-direction: column; justify-content: center;
@@ -165,8 +195,7 @@
     color: var(--accent);
     border: 0.5px solid var(--accent);
     padding: 6px 14px;
-    margin-right: 8px;
-    margin-bottom: 8px;
+    margin-right: 8px; margin-bottom: 8px;
   }
 
   /* ── CTA ── */
@@ -196,9 +225,7 @@
     font-weight: 500; line-height: 1.1;
   }
   .cta-headline em { font-style: italic; color: var(--accent); }
-  .cta-right {
-    display: flex; flex-direction: column; justify-content: center; gap: 20px;
-  }
+  .cta-right { display: flex; flex-direction: column; justify-content: center; gap: 20px; }
   .cta-desc {
     font-size: 15px; font-weight: 300; line-height: 1.7;
     color: rgba(245,242,235,0.7);
@@ -208,8 +235,7 @@
     font-family: var(--font-body);
     font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
     background: var(--accent); color: var(--ink);
-    padding: 14px 32px; border: none; cursor: pointer;
-    text-decoration: none; display: inline-block;
+    padding: 14px 32px; text-decoration: none; display: inline-block;
     transition: background 0.2s, color 0.2s;
   }
   .btn-primary:hover { background: var(--paper); color: var(--ink); }
@@ -248,18 +274,18 @@
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .page-header { grid-template-columns: 1fr; gap: 24px; padding: 120px 24px 60px; }
-    .realizacje { padding: 0 24px 80px; }
+    .realizacje { padding: 0 0 80px; }
     .realizacja { grid-template-columns: 1fr; min-height: auto; }
-    .realizacja:nth-child(even) .realizacja-img { order: 0; }
+    .realizacja:nth-child(even) .realizacja-img  { order: 0; }
     .realizacja:nth-child(even) .realizacja-content { order: 0; border-right: none; border-left: none; }
+    .realizacja-img { min-height: 280px; }
+    .flip-inner { min-height: 280px; }
     .realizacja-content { border-left: none !important; padding: 40px 24px; }
-    .realizacja-img { padding: 40px 24px; }
     .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
     footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
   }
 </style>
 
-<!-- Schema.org structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -268,25 +294,12 @@
   "description": "Przykładowe realizacje koszulek premium na zamówienie dla firm, eventów i szkół tańca. Produkcja w Polsce z polskich materiałów.",
   "url": "https://uniforno.pl/realizacje",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Koszulki na ogólnopolskie zawody taneczne Focus on Battle"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Koszulka dla profesjonalnego videomakera"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Koszulki dla Latina Dance Studio"
-    }
+    { "@type": "ListItem", "position": 1, "name": "Koszulki na ogólnopolskie zawody taneczne Focus on Battle" },
+    { "@type": "ListItem", "position": 2, "name": "Koszulka dla profesjonalnego videomakera" },
+    { "@type": "ListItem", "position": 3, "name": "Koszulki dla Latina Dance Studio" }
   ]
 }
 </script>
-
 </head>
 <body>
 
@@ -328,20 +341,20 @@
   <!-- Realizacja 1 -->
   <article class="realizacja">
     <div class="realizacja-img">
-      <img
-        src="/images/mockup1.png"
-        alt="Koszulki firmowe premium na zawody taneczne Focus on Battle — projekt Uniforno"
-        width="420" height="400"
-        loading="eager"
-      >
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="/images/mockup1-front.png" alt="Koszulki na zawody taneczne Focus on Battle — przód" width="800" height="600" loading="eager">
+        </div>
+        <div class="flip-back">
+          <img src="/images/mockup1-back.png" alt="Koszulki na zawody taneczne Focus on Battle — tył" width="800" height="600" loading="eager">
+        </div>
+      </div>
+      <div class="flip-hint">najedź → tył</div>
     </div>
     <div class="realizacja-content">
       <div class="realizacja-num">01</div>
       <h2>Koszulki na ogólnopolskie zawody taneczne „Focus&nbsp;on&nbsp;Battle"</h2>
-      <p>
-        Projekt stworzony przez nasz zespół na potrzeby dużego eventu tanecznego —
-        koszulki premium, które uczestnicy zapamiętają długo po zawodach.
-      </p>
+      <p>Projekt stworzony przez nasz zespół na potrzeby dużego eventu tanecznego — koszulki premium, które uczestnicy zapamiętają długo po zawodach.</p>
       <div>
         <span class="realizacja-tag">Event</span>
         <span class="realizacja-tag">Koszulki z nadrukiem</span>
@@ -353,20 +366,20 @@
   <!-- Realizacja 2 -->
   <article class="realizacja">
     <div class="realizacja-img">
-      <img
-        src="/images/mockup2.png"
-        alt="Indywidualna koszulka premium dla profesjonalnego videomakera — projekt Uniforno"
-        width="420" height="400"
-        loading="lazy"
-      >
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="/images/mockup2-front.png" alt="Koszulka dla videomakera — przód" width="800" height="600" loading="lazy">
+        </div>
+        <div class="flip-back">
+          <img src="/images/mockup2-back.png" alt="Koszulka dla videomakera — tył" width="800" height="600" loading="lazy">
+        </div>
+      </div>
+      <div class="flip-hint">najedź → tył</div>
     </div>
     <div class="realizacja-content">
       <div class="realizacja-num">02</div>
       <h2>Koszulka dla profesjonalnego videomakera</h2>
-      <p>
-        Indywidualny projekt dla twórcy wideo — minimalistyczny krój, wysokiej jakości materiał,
-        który wygląda świetnie zarówno na planie jak i przed kamerą.
-      </p>
+      <p>Indywidualny projekt dla twórcy wideo — minimalistyczny krój, wysokiej jakości materiał, który wygląda świetnie zarówno na planie jak i przed kamerą.</p>
       <div>
         <span class="realizacja-tag">Indywidualny projekt</span>
         <span class="realizacja-tag">Odzież na zamówienie</span>
@@ -378,20 +391,20 @@
   <!-- Realizacja 3 -->
   <article class="realizacja">
     <div class="realizacja-img">
-      <img
-        src="/images/mockup3.png"
-        alt="Koszulki firmowe dla Latina Dance Studio — spójna identyfikacja wizualna, projekt Uniforno"
-        width="420" height="400"
-        loading="lazy"
-      >
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="/images/mockup3-front.png" alt="Koszulki dla Latina Dance Studio — przód" width="800" height="600" loading="lazy">
+        </div>
+        <div class="flip-back">
+          <img src="/images/mockup3-back.png" alt="Koszulki dla Latina Dance Studio — tył" width="800" height="600" loading="lazy">
+        </div>
+      </div>
+      <div class="flip-hint">najedź → tył</div>
     </div>
     <div class="realizacja-content">
       <div class="realizacja-num">03</div>
       <h2>Koszulki dla Latina Dance&nbsp;Studio</h2>
-      <p>
-        Spójna identyfikacja wizualna dla szkoły tańca — koszulki, które instruktorzy
-        i uczniowie noszą z dumą na każdych zajęciach.
-      </p>
+      <p>Spójna identyfikacja wizualna dla szkoły tańca — koszulki, które instruktorzy i uczniowie noszą z dumą na każdych zajęciach.</p>
       <div>
         <span class="realizacja-tag">Koszulki firmowe</span>
         <span class="realizacja-tag">Identyfikacja wizualna</span>
