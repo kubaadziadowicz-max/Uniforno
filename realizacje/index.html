@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realizacje — Koszulki Firmowe Premium | Uniforno</title>
+<meta name="description" content="Zobacz realizacje Uniforno — koszulki firmowe premium, koszulki z nadrukiem Polska, odzież na zamówienie dla firm i eventów. Każdy projekt szyty indywidualnie z polskich materiałów.">
+<link rel="canonical" href="https://uniforno.pl/realizacje">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916;
+    --paper: #f5f2eb;
+    --warm: #e8e2d5;
+    --accent: #c8a96e;
+    --muted: #7a7670;
+    --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--paper);
+    border-bottom: 0.5px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--ink); }
+  .nav-cta {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+    background: var(--ink); color: var(--paper);
+    padding: 10px 24px; border: none; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 140px 48px 80px;
+    border-bottom: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+  .page-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 0.5px; background: var(--accent);
+  }
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 500; line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .page-header h1 em {
+    font-style: italic; color: var(--accent);
+  }
+  .page-intro {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--muted);
+  }
+  .page-intro strong {
+    color: var(--ink); font-weight: 400;
+  }
+
+  /* ── REALIZACJE GRID ── */
+  .realizacje {
+    padding: 0 48px 100px;
+  }
+
+  .realizacja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 540px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .realizacja:nth-child(even) .realizacja-img { order: 2; }
+  .realizacja:nth-child(even) .realizacja-content { order: 1; border-right: 0.5px solid var(--border); border-left: none; }
+
+  .realizacja-img {
+    background: var(--warm);
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px;
+    overflow: hidden;
+  }
+  .realizacja-img img {
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .realizacja-content {
+    padding: 64px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+    border-left: 0.5px solid var(--border);
+  }
+  .realizacja-num {
+    font-family: var(--font-display);
+    font-size: 72px; font-weight: 400;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 28px;
+  }
+  .realizacja-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 500; line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .realizacja-content p {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 32px;
+  }
+  .realizacja-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 0.5px solid var(--accent);
+    padding: 6px 14px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 100px 48px;
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    border-top: 0.5px solid var(--border);
+  }
+  .cta-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .cta-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 0.5px; background: var(--accent);
+  }
+  .cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 500; line-height: 1.1;
+  }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+  .cta-right {
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  }
+  .cta-desc {
+    font-size: 15px; font-weight: 300; line-height: 1.7;
+    color: rgba(245,242,235,0.7);
+  }
+  .cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+    background: var(--accent); color: var(--ink);
+    padding: 14px 32px; border: none; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .btn-ghost-light {
+    font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
+    color: rgba(245,242,235,0.6); text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .btn-ghost-light:hover { color: var(--paper); }
+  .btn-ghost-light::after { content: '→'; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 48px;
+    border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--paper);
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 12px; font-weight: 300; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px; font-weight: 300; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--ink); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .page-header { grid-template-columns: 1fr; gap: 24px; padding: 120px 24px 60px; }
+    .realizacje { padding: 0 24px 80px; }
+    .realizacja { grid-template-columns: 1fr; min-height: auto; }
+    .realizacja:nth-child(even) .realizacja-img { order: 0; }
+    .realizacja:nth-child(even) .realizacja-content { order: 0; border-right: none; border-left: none; }
+    .realizacja-content { border-left: none !important; padding: 40px 24px; }
+    .realizacja-img { padding: 40px 24px; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Realizacje Uniforno — koszulki firmowe premium",
+  "description": "Przykładowe realizacje koszulek premium na zamówienie dla firm, eventów i szkół tańca. Produkcja w Polsce z polskich materiałów.",
+  "url": "https://uniforno.pl/realizacje",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Koszulki na ogólnopolskie zawody taneczne Focus on Battle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Koszulka dla profesjonalnego videomakera"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Koszulki dla Latina Dance Studio"
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+  <ul class="nav-links">
+    <li><a href="/#o-nas">O nas</a></li>
+    <li><a href="/realizacje" class="active">Realizacje</a></li>
+    <li><a href="/#proces">Proces</a></li>
+    <li><a href="/#kontakt">Kontakt</a></li>
+  </ul>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div>
+    <div class="page-eyebrow">Koszulki Premium · Made in Poland</div>
+    <h1>Nasze<br><em>realizacje</em></h1>
+  </div>
+  <div class="page-intro">
+    <p>
+      <strong>Uniforno tworzy koszulki premium na zamówienie</strong> dla firm, eventów i instytucji z całej Polski.
+      Każdy projekt powstaje indywidualnie — od koncepcji kroju po gotową koszulkę uszytą z polskich dzianin.
+      Nie kopiujemy, nie używamy katalogowych szablonów. Rozmawiamy, projektujemy, szyjemy.
+    </p>
+    <br>
+    <p>
+      Poniżej znajdziesz wybrane realizacje koszulek firmowych premium — odzież na zamówienie dla firm,
+      wydarzeń sportowych i środowisk twórczych. Wszystko produkowane w Polsce, z polskich materiałów.
+    </p>
+  </div>
+</header>
+
+<!-- REALIZACJE -->
+<main class="realizacje">
+
+  <!-- Realizacja 1 -->
+  <article class="realizacja">
+    <div class="realizacja-img">
+      <img
+        src="/images/mockup1.png"
+        alt="Koszulki firmowe premium na zawody taneczne Focus on Battle — projekt Uniforno"
+        width="420" height="400"
+        loading="eager"
+      >
+    </div>
+    <div class="realizacja-content">
+      <div class="realizacja-num">01</div>
+      <h2>Koszulki na ogólnopolskie zawody taneczne „Focus&nbsp;on&nbsp;Battle"</h2>
+      <p>
+        Projekt stworzony przez nasz zespół na potrzeby dużego eventu tanecznego —
+        koszulki premium, które uczestnicy zapamiętają długo po zawodach.
+      </p>
+      <div>
+        <span class="realizacja-tag">Event</span>
+        <span class="realizacja-tag">Koszulki z nadrukiem</span>
+        <span class="realizacja-tag">Polska produkcja</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Realizacja 2 -->
+  <article class="realizacja">
+    <div class="realizacja-img">
+      <img
+        src="/images/mockup2.png"
+        alt="Indywidualna koszulka premium dla profesjonalnego videomakera — projekt Uniforno"
+        width="420" height="400"
+        loading="lazy"
+      >
+    </div>
+    <div class="realizacja-content">
+      <div class="realizacja-num">02</div>
+      <h2>Koszulka dla profesjonalnego videomakera</h2>
+      <p>
+        Indywidualny projekt dla twórcy wideo — minimalistyczny krój, wysokiej jakości materiał,
+        który wygląda świetnie zarówno na planie jak i przed kamerą.
+      </p>
+      <div>
+        <span class="realizacja-tag">Indywidualny projekt</span>
+        <span class="realizacja-tag">Odzież na zamówienie</span>
+        <span class="realizacja-tag">Premium</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Realizacja 3 -->
+  <article class="realizacja">
+    <div class="realizacja-img">
+      <img
+        src="/images/mockup3.png"
+        alt="Koszulki firmowe dla Latina Dance Studio — spójna identyfikacja wizualna, projekt Uniforno"
+        width="420" height="400"
+        loading="lazy"
+      >
+    </div>
+    <div class="realizacja-content">
+      <div class="realizacja-num">03</div>
+      <h2>Koszulki dla Latina Dance&nbsp;Studio</h2>
+      <p>
+        Spójna identyfikacja wizualna dla szkoły tańca — koszulki, które instruktorzy
+        i uczniowie noszą z dumą na każdych zajęciach.
+      </p>
+      <div>
+        <span class="realizacja-tag">Koszulki firmowe</span>
+        <span class="realizacja-tag">Identyfikacja wizualna</span>
+        <span class="realizacja-tag">Seria</span>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div>
+    <div class="cta-eyebrow">Zróbmy coś razem</div>
+    <h2 class="cta-headline">Twój projekt<br>może być <em>następny</em></h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-desc">
+      Realizujemy zamówienia dla firm, agencji eventowych, szkół, klubów sportowych i twórców.
+      Każda koszulka — od 30 sztuk — powstaje w Polsce, z polskich dzianin, dokładnie tak jak chcesz.
+    </p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/#kontakt">Zapytaj o wycenę</a>
+      <a class="btn-ghost-light" href="/#o-nas">Dowiedz się więcej</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">© 2025 Uniforno. Polska produkcja, polska jakość.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
