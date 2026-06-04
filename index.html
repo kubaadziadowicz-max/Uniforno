@@ -766,8 +766,22 @@
   const btn  = document.getElementById('form-submit-btn');
   const success = document.getElementById('form-success');
 
+  const rodo = document.getElementById('rodo');
+  const rodoError = document.createElement('p');
+  rodoError.textContent = 'Zaznacz zgodę na przetwarzanie danych, aby wysłać formularz.';
+  rodoError.style.cssText = 'color:#c0392b; font-size:13px; margin-top:6px; display:none;';
+  rodo.closest('.checkbox-row').insertAdjacentElement('afterend', rodoError);
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
+
+    if (!rodo.checked) {
+      rodoError.style.display = 'block';
+      rodo.closest('.checkbox-row').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+    rodoError.style.display = 'none';
+
     btn.disabled = true;
     btn.textContent = 'Wysyłanie…';
 
