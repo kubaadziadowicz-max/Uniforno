@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/odzież-firmowa-wroclaw",
+      "destination": "/odziez-firmowa-wroclaw",
+      "permanent": true
+    },
+    {
+      "source": "/odziej-firmowa-wroclaw",
+      "destination": "/odziez-firmowa-wroclaw",
+      "permanent": true
+    }
+  ]
+}
