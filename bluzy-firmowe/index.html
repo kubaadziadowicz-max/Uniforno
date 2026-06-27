@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluzy firmowe z logo — polska produkcja, zamówienia B2B | Uniforno</title>
+<meta name="description" content="Bluzy firmowe z logo i nadrukiem szyte w Polsce z polskich dzianin. Zamówienia B2B od 30 sztuk, wycena w 24h. Sprawdź ofertę Uniforno.">
+<link rel="canonical" href="https://uniforno.pl/bluzy-firmowe">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
+    --accent: #c8a96e; --muted: #7a7670; --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .hero { padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; border-bottom: 0.5px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  h1 { font-family: var(--font-display); font-size: clamp(44px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .hero-desc strong { color: var(--ink); font-weight: 400; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid var(--accent); padding: 6px 14px; }
+  .content { max-width: 860px; margin: 0 auto; padding: 80px 48px; }
+  .content-block { margin-bottom: 56px; border-bottom: 0.5px solid var(--border); padding-bottom: 56px; }
+  .content-block:last-child { border-bottom: none; }
+  h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+  p { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  .cta-section { padding: 100px 48px; background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cta-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+  .cta-right { display: flex; flex-direction: column; gap: 20px; }
+  .cta-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,242,235,0.7); }
+  .btn-primary { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--accent); color: var(--ink); padding: 14px 32px; text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
+  .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .btn-ghost { font-size: 13px; font-weight: 400; color: rgba(245,242,235,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--paper); }
+  .btn-ghost::after { content: '\2192'; }
+  .cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  footer { padding: 32px 48px; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--paper); }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: 0.06em; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 12px; font-weight: 300; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 12px; font-weight: 300; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--ink); }
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; gap: 28px; padding: 120px 24px 60px; }
+    .content { padding: 60px 24px; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+  .see-also-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .see-also-list li a { font-size: 15px; font-weight: 400; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--border); padding-bottom: 10px; width: 100%; transition: color 0.2s; }
+  .see-also-list li a::before { content: '→'; color: var(--accent); font-size: 14px; flex-shrink: 0; }
+  .see-also-list li a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Bluzy firmowe · B2B · Polska produkcja · Premium</div>
+    <h1>Bluzy firmowe z logo —<br><em>polska produkcja, zamówienia B2B</em></h1>
+  </div>
+  <div>
+    <div class="hero-desc"><strong>Odzież całoroczna to wizytówka Twojego biznesu przez dwanaście miesięcy.</strong> Wizerunek nie znosi kompromisów, niezależnie od pory roku. Uniforno projektuje i szyje odzież premium wyłącznie dla wymagających klientów biznesowych. Nasze bluzy firmowe to produkt przemyślany i dopracowany w każdym detalu. Odrzucamy gotowe, masowe rozwiązania sprowadzane kontenerami z Azji. Cały proces produkcji realizujemy w naszej polskiej szwalni, co daje nam pełną kontrolę nad finalnym wyrobem. Korzystamy wyłącznie z grubych, certyfikowanych polskich dzianin. Odpowiednia struktura materiału gwarantuje optymalne ciepło, przepuszczalność powietrza i zachowanie idealnego fasonu przez lata intensywnego użytkowania. Każda bluza z własnym logo powstaje od podstaw pod konkretne, rygorystyczne wytyczne Twojej firmy. Ustalamy precyzyjnie odpowiedni krój, kolorystykę oraz detale wykończenia, takie jak rodzaj ściągaczy czy grubość kaptura. Zapewniamy pełną powtarzalność w przyszłości. Realizujemy zlecenia od 30 sztuk, co pozwala nam na optymalizację procesu i bezkompromisowe podejście do jakości każdego egzemplarza. Wycena projektu jest zawsze bezpłatna, a kompleksową odpowiedź ofertową otrzymasz w 24 godziny od złożenia zapytania.</div>
+    <div class="tags"><span class="tag">Bluzy z logo</span><span class="tag">Haft i nadruk</span><span class="tag">Od 30 szt.</span><span class="tag">Polskie dzianiny</span><span class="tag">B2B</span></div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="content-block">
+    <h2>Dlaczego bluza firmowa, a nie koszulka?</h2>
+    <p>Koszulka to absolutna podstawa odzieży biznesowej, ale sezon jesienno-zimowy wymaga zupełnie innych rozwiązań. Spadek temperatury nie zwalnia Twojego zespołu z obowiązku godnego reprezentowania marki przed kontrahentami.</p>
+    <p>W chłodniejsze dni pracownicy naturalnie sięgają po cieplejsze okrycia wierzchnie. Jeśli nie dostarczysz im profesjonalnej, dedykowanej odzieży, z pewnością założą prywatne, niedopasowane swetry lub przypadkowe polary. To natychmiast niszczy z trudem wypracowaną spójność wizualną przedsiębiorstwa.</p>
+    <p>Solidne bluzy firmowe trwale rozwiązują ten problem. Zapewniają personelowi komfort termiczny, a jednocześnie budują silny, profesjonalny autorytet. Gruba, mięsista dzianina podnosi postrzeganą wartość wizerunku w oczach klientów. Odzież tego typu doskonale sprawdza się podczas działań w terenie, w chłodniejszych, klimatyzowanych biurach, na halach produkcyjnych oraz podczas branżowych wyjazdów integracyjnych.</p>
+    <p>To także niezwykle skuteczny nośnik reklamowy. Duża powierzchnia materiału na plecach i klatce piersiowej pozwala na bardzo efektowne, czytelne wyeksponowanie logotypu. Inwestując w ciepłą odzież codzienną i reprezentacyjną, pokazujesz pracownikom, że realnie dbasz o ich komfort pracy, a klientom udowadniasz, że zwracasz uwagę na każdy, nawet najmniejszy biznesowy detal.</p>
+  </div>
+  <div class="content-block">
+    <h2>Nadruk czy haft na bluzie firmowej?</h2>
+    <p>Wybór metody znakowania zależy bezpośrednio od specyfiki Twojej branży, zastosowania odzieży oraz stopnia skomplikowania samej grafiki. Gruba, stabilna dzianina to doskonała baza pod obie popularne techniki.</p>
+    <p>Bluzy firmowe z logo wyszywanym grubą nicią to bezapelacyjny symbol prestiżu i elegancji. Haft komputerowy jest niezwykle trwały, wysoce odporny na wielokrotne pranie w wysokich temperaturach i niewrażliwy na mechaniczne uszkodzenia. Ta metoda wyśmienicie sprawdza się w przypadku minimalistycznych, eleganckich logotypów umieszczanych na lewej piersi, ramieniu czy karku.</p>
+    <p>Z kolei bluzy firmowe z nadrukiem to idealne rozwiązanie, gdy Twoja korporacyjna identyfikacja wizualna wymaga płynnych przejść tonalnych, pełnego gradientu lub skomplikowanych, wielokolorowych grafik zajmujących dużą powierzchnię pleców. W Uniforno stosujemy wyłącznie nowoczesne i przetestowane metody nadruku. Nasze aplikacje nie pękają na mrozie, nie kruszą się po praniu i nie blakną z biegiem czasu.</p>
+    <p>Nawet jeśli interesują Cię wytrzymałe bluzy robocze z logo firmy dla specjalistycznych ekip technicznych pracujących w trudnych warunkach zewnętrznych, dobierzemy technikę, która bez problemu przetrwa najcięższą eksploatację. Nasi technolodzy zawsze wnikliwie analizują plik graficzny przed rozpoczęciem produkcji i rekomendują optymalne rozwiązanie technologiczne.</p>
+  </div>
+  <div class="content-block">
+    <h2>Jak wygląda zamówienie?</h2>
+    <p>Proces zamawiania w Uniforno został skrupulatnie zoptymalizowany pod kątem oszczędności cennego czasu menedżerów i przedsiębiorców. Obsługujemy wyłącznie klientów biznesowych w modelu B2B. Nasza minimalna wielkość zamówienia wynosi dokładnie 30 sztuk. Taki rygorystyczny próg logistyczny gwarantuje pełną, indywidualną personalizację projektu i opłacalność zaawansowanego procesu szycia od samych podstaw.</p>
+    <p>Procedura inwestycji w odzież jest maksymalnie uproszczona. Kontaktujesz się z nami, przesyłasz grafikę wektorową oraz określasz specyficzne potrzeby i charakter pracy swojego zespołu. Nasi specjaliści przejmują wszystkie kolejne obowiązki. Dobieramy odpowiednią gramaturę certyfikowanej polskiej bawełny, proponujemy optymalny krój oraz wskazujemy najtrwalszą metodę znakowania.</p>
+    <p>Zrozumiała i precyzyjna wycena trafia na Twoją skrzynkę e-mail w równe 24 godziny. Po ostatecznej akceptacji warunków przez decydentów, niezwłocznie uruchamiamy szwalnię. Każda wyprodukowana partia materiału jest rygorystycznie sprawdzana. Nadzorujemy proces cięcia, szycia i brandowania pod jednym dachem. W ten sposób całkowicie eliminujemy ryzyko błędów charakterystyczne dla zewnętrznych pośredników.</p>
+    <p>Gotowe bluzy firmowe starannie pakujemy i dostarczamy kurierem bezpośrednio pod wskazany adres Twojej firmy.</p>
+  </div>
+  <div class="content-block">
+    <h2>Dla kogo szyje Uniforno?</h2>
+    <p>Obsługujemy firmy z całej Polski — od Wrocławia po Warszawę i Trójmiasto. Nasza odzież trafia prosto do przedsiębiorstw, które na co dzień budują silną pozycję rynkową i stawiają na absolutnie bezkompromisową jakość.</p>
+    <p>Z dumą szyjemy dla nowoczesnych software house'ów i szeroko pojętej branży IT. Zespoły technologiczne i programistyczne wręcz uwielbiają wygodne, świetnie skrojone tekstylia, które płynnie stają się stałą częścią ich codziennego stylu.</p>
+    <p>Regularnie zaopatrujemy działy marketingu, działy HR oraz duże agencje eventowe. Organizatorzy wydarzeń premium potrzebują niezawodnej, nienagannej odzieży dla obsługi technicznej, hostess i koordynatorów.</p>
+    <p>Naszą odzież doceniają również niezależne salony samochodowe i elitarne studia auto detailingu. W tych prestiżowych miejscach bezwzględnie liczy się estetyka i spójny, wysoce profesjonalny wygląd doradców klienta.</p>
+    <p>Współpracujemy z nowoczesną logistyką, firmami inżynieryjnymi oraz branżą budowlaną, szukającą trwałej odzieży dla swoich pracowników operacyjnych i terenowych. Uniforno to odpowiedzialny partner dla nowoczesnego biznesu, który doskonale rozumie, że solidna odzież pracowników to bezpośrednia inwestycja w ostateczne zaufanie kontrahentów.</p>
+  </div>
+
+  <div class="content-block see-also">
+    <h2>Sprawdź też</h2>
+    <p>Uniforno szyje odzież premium dla różnych branż i potrzeb. Zobacz inne nasze specjalizacje:</p>
+    <ul class="see-also-list">
+      <li><a href="/koszulki-z-haftem-logo">Koszulki z haftem logo</a></li>
+      <li><a href="/koszulki-dla-pracownikow">Koszulki dla pracowników premium</a></li>
+      <li><a href="/koszulki-eventowe">Koszulki eventowe z nadrukiem</a></li>
+    </ul>
+  </div>
+</main>
+
+<section class="cta-section">
+  <div>
+    <div class="cta-eyebrow">Zróbmy coś razem</div>
+    <h2 class="cta-headline">Bluzy, które<br><em>godnie reprezentują markę</em></h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-desc">Bluzy firmowe z logo szyte w Polsce, z polskich dzianin premium. Od 30 sztuk, wycena bezpłatna w 24h, dostawa na terenie całego kraju.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/#kontakt">Zapytaj o wycenę</a>
+      <a class="btn-ghost" href="/realizacje">Zobacz realizacje</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">&copy; 2025 Uniforno. Polska produkcja, polska jakość.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
