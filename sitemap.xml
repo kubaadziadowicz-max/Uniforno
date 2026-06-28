@@ -62,6 +62,12 @@
   </url>
 
   <url>
+    <loc>https://uniforno.pl/blog/haft-vs-nadruk-co-wybrac</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://uniforno.pl/polityka-prywatnosci</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
