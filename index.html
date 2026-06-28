@@ -490,8 +490,9 @@
   .hero-desc     { animation-delay: 0.4s; }
   .hero-actions  { animation-delay: 0.55s; }
 
-  /* ── CAROUSEL DOTS (mobile only) ── */
+  /* ── CAROUSEL (mobile only) ── */
   .htp-dots { display: none; }
+  .htp-arrow { display: none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -521,9 +522,16 @@
       display: block !important;
       background: var(--warm);
       padding: 24px 0 20px;
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
     }
     .hero-text-panel {
       padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
       display: flex;
       flex-direction: row;
       overflow-x: auto;
@@ -536,12 +544,49 @@
     .htp-item {
       flex: 0 0 100%;
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       scroll-snap-align: center;
       border-top: none !important;
       border-bottom: none;
-      padding: 8px 32px 24px;
+      padding: 8px 56px 24px;
+      box-sizing: border-box;
+    }
+    .htp-item > div:last-child {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .htp-item .htp-title,
+    .htp-item .htp-desc {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+      hyphens: auto;
+      max-width: 100%;
     }
     .htp-stat { display: none; }
+    .htp-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: rgba(245,242,235,0.9);
+      border: 0.5px solid var(--border);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 0;
+      z-index: 2;
+      transition: background 0.2s, color 0.2s;
+    }
+    .htp-arrow:hover { background: var(--ink); color: var(--paper); }
+    .htp-arrow:disabled { opacity: 0.35; cursor: default; }
+    .htp-arrow:disabled:hover { background: rgba(245,242,235,0.9); color: var(--ink); }
+    .htp-arrow-prev { left: 8px; }
+    .htp-arrow-next { right: 8px; }
     .htp-dots {
       display: flex;
       justify-content: center;
@@ -628,6 +673,12 @@
       </div>
       <div class="htp-stat">od 30 sztuk · zamówienia B2B · wycena w 24h</div>
     </div>
+    <button class="htp-arrow htp-arrow-prev" id="htp-prev" aria-label="Poprzedni slajd" type="button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="htp-arrow htp-arrow-next" id="htp-next" aria-label="Następny slajd" type="button">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <div class="htp-dots" id="htp-dots" aria-hidden="true"></div>
   </div>
 </section>
@@ -877,21 +928,39 @@
   (function() {
     const panel = document.querySelector('.hero-text-panel');
     const dotsContainer = document.getElementById('htp-dots');
+    const prevBtn = document.getElementById('htp-prev');
+    const nextBtn = document.getElementById('htp-next');
     if (!panel || !dotsContainer) return;
     const items = panel.querySelectorAll('.htp-item');
     if (!items.length) return;
+
+    let currentIdx = 0;
 
     items.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'htp-dot-nav' + (i === 0 ? ' active' : '');
       dot.setAttribute('aria-label', 'Slajd ' + (i + 1));
-      dot.addEventListener('click', () => {
-        items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-      });
+      dot.addEventListener('click', () => goTo(i));
       dotsContainer.appendChild(dot);
     });
 
     const dots = dotsContainer.querySelectorAll('.htp-dot-nav');
+
+    function goTo(idx) {
+      idx = Math.max(0, Math.min(items.length - 1, idx));
+      items[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    function updateState(idx) {
+      currentIdx = idx;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      if (prevBtn) prevBtn.disabled = idx === 0;
+      if (nextBtn) nextBtn.disabled = idx === items.length - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIdx - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIdx + 1));
+
     let scrollTimer;
     panel.addEventListener('scroll', () => {
       clearTimeout(scrollTimer);
@@ -904,9 +973,11 @@
           const dist = Math.abs(itemCenter - center);
           if (dist < minDist) { minDist = dist; activeIdx = i; }
         });
-        dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+        updateState(activeIdx);
       }, 60);
     });
+
+    updateState(0);
   })();
 </script>
 
