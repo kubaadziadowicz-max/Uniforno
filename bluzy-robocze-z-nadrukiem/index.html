@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluzy robocze z nadrukiem — trwała odzież firmowa, polska produkcja | Uniforno</title>
+<meta name="description" content="Bluzy robocze z nadrukiem szyte w Polsce z grubych polskich dzianin. Trwałe, odporne na setki prań. Zamówienia B2B od 30 sztuk, wycena w 24h.">
+<link rel="canonical" href="https://uniforno.pl/bluzy-robocze-z-nadrukiem">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
+    --accent: #c8a96e; --muted: #7a7670; --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .hero { padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; border-bottom: 0.5px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  h1 { font-family: var(--font-display); font-size: clamp(44px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .hero-desc strong { color: var(--ink); font-weight: 400; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid var(--accent); padding: 6px 14px; }
+  .content { max-width: 860px; margin: 0 auto; padding: 80px 48px; }
+  .content-block { margin-bottom: 56px; border-bottom: 0.5px solid var(--border); padding-bottom: 56px; }
+  .content-block:last-child { border-bottom: none; }
+  h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+  p { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  .cta-section { padding: 100px 48px; background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cta-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+  .cta-right { display: flex; flex-direction: column; gap: 20px; }
+  .cta-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,242,235,0.7); }
+  .btn-primary { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--accent); color: var(--ink); padding: 14px 32px; text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
+  .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .btn-ghost { font-size: 13px; font-weight: 400; color: rgba(245,242,235,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--paper); }
+  .btn-ghost::after { content: '\2192'; }
+  .cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  footer { padding: 32px 48px; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--paper); }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: 0.06em; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 12px; font-weight: 300; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 12px; font-weight: 300; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--ink); }
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; gap: 28px; padding: 120px 24px 60px; }
+    .content { padding: 60px 24px; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+  .see-also-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .see-also-list li a { font-size: 15px; font-weight: 400; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--border); padding-bottom: 10px; width: 100%; transition: color 0.2s; }
+  .see-also-list li a::before { content: '→'; color: var(--accent); font-size: 14px; flex-shrink: 0; }
+  .see-also-list li a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Bluzy robocze · Nadruk · Trwałość · B2B · Made in Poland</div>
+    <h1>Bluzy robocze z nadrukiem —<br><em>trwała odzież firmowa, polska produkcja</em></h1>
+  </div>
+  <div>
+    <div class="hero-desc"><strong>Inwestycja w odzież dla pracowników fizycznych, techników czy instalatorów wymaga chłodnej kalkulacji biznesowej.</strong> Ubiór w terenie lub na hali to nie tylko narzędzie codziennej pracy, ale przede wszystkim wizytówka Twojej firmy. Musi wytrzymać ekstremalne warunki eksploatacji, a jednocześnie godnie reprezentować Twoją markę przed kontrahentami. Uniforno dostarcza sprawdzone, bezkompromisowe rozwiązania tekstylne dla wymagającego sektora B2B. Nasze bluzy robocze z nadrukiem to produkt zaprojektowany z myślą o maksymalnej wytrzymałości i długoterminowej opłacalności przedsiębiorstwa. Całkowicie odrzucamy gotowe, masowe rozwiązania sprowadzane z Azji, które po kilku tygodniach pracy w trudnych warunkach tracą swój fason i podstawowe właściwości. Cały proces produkcji realizujemy od absolutnych podstaw w naszej polskiej szwalni. Daje nam to pełną, rygorystyczną kontrolę nad każdym szwem, parametrem użytej dzianiny oraz procesem znakowania. Solidna odzież robocza z nadrukiem to fundament profesjonalnego wizerunku. Buduje ona zaufanie w oczach Twoich klientów od pierwszej sekundy kontaktu i udowadnia, że firma dba o rynkowe standardy na każdej płaszczyźnie.</div>
+    <div class="tags"><span class="tag">Bluzy robocze</span><span class="tag">Nadruk</span><span class="tag">Trwałość</span><span class="tag">Od 30 szt.</span><span class="tag">B2B</span></div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="content-block">
+    <h2>Dlaczego tania bluza robocza to drogi błąd?</h2>
+    <p>Zakup odzieży pracowniczej w oparciu wyłącznie o najniższą cenę jednostkową to klasyczna pułapka finansowa. Tego typu ubrania zużywają się błyskawicznie w środowisku operacyjnym. Cienki materiał szybko się przeciera, traci pierwotną strukturę po zaledwie kilku praniach, a słabej jakości farba pęka i nieestetycznie łuszczy się na mrozie.</p>
+    <p>W efekcie tania odzież wytrzymuje zaledwie jeden sezon. Zmusza to firmę do ciągłego ponawiania zamówień co kilka miesięcy, co generuje ukryte koszty administracyjne i logistyczne.</p>
+    <p>Kalkulując całkowity koszt posiadania (TCO), perspektywa drastycznie się odwraca. Profesjonalna bluza robocza z nadrukiem wyprodukowana przez Uniforno bez problemu wytrzymuje lata intensywnego użytkowania oraz setki restrykcyjnych cykli prania przemysłowego. Zamiast kupować trzy słabej jakości ubrania w ciągu trzech lat, inwestujesz kapitał raz w bardzo solidny produkt. W ujęciu długoterminowym to rozwiązanie jest znacznie bardziej opłacalne dla firmowego budżetu.</p>
+    <p>Zniszczone, kruszące się logo na plecach instalatora podświadomie sugeruje klientowi niedbałość w wykonywaniu samych usług. Trwałe aplikacje na naszych dzianinach zapobiegają wizerunkowym stratom i gwarantują pełną spójność wizualną całego zespołu przez wieloletni okres użytkowania.</p>
+  </div>
+  <div class="content-block">
+    <h2>Co wyróżnia bluzy robocze Uniforno?</h2>
+    <p>Przede wszystkim nasza pełna niezależność produkcyjna i bezwzględna kontrola jakości. Nie bazujemy na gotowych półproduktach z importu. Szyjemy bluzy robocze firmowe, korzystając wyłącznie z wyselekcjonowanych, grubych polskich dzianin.</p>
+    <p>Mocny, bardzo zbity splot certyfikowanej bawełny gwarantuje optymalny komfort termiczny i najwyższą rynkową odporność na uszkodzenia mechaniczne. Zastosowany przez nas materiał nie kurczy się w wysokich temperaturach prania i doskonale trzyma fason. To kluczowy wymóg w wymagających środowiskach pracy.</p>
+    <p>Technologia aplikacji znaku graficznego jest zawsze dobierana indywidualnie do specyfiki konkretnego projektu. Nakładana nowoczesnymi metodami farba precyzyjnie wnika w strukturę materiału, zachowując naturalną elastyczność i ogromną odporność na agresywne ścieranie.</p>
+    <p>Nasze techniki sprawiają, że grafika nie blaknie pod wpływem promieniowania UV podczas prac na zewnątrz i nie pęka w trakcie dynamicznej pracy fizycznej. Wytrzymałe bluzy robocze z logo firmy utrzymują nienaganny, wyrazisty wygląd, niezależnie od tego, czy pracownik aktualnie przebywa na placu budowy, w warsztacie, czy w zanieczyszczonym magazynie.</p>
+  </div>
+  <div class="content-block">
+    <h2>Jak wygląda zamówienie?</h2>
+    <p>Proces zamawiania zaprojektowaliśmy w taki sposób, aby maksymalnie oszczędzać czas menedżerów i właścicieli firm. Obsługujemy wyłącznie zlecenia biznesowe w modelu B2B. Realizujemy zlecenia od ściśle określonego, minimalnego progu wynoszącego 30 sztuk. Taka wielkość nakładu pozwala nam zachować pełną personalizację projektu, całkowicie ominąć zewnętrznych podwykonawców i rygorystycznie pilnować standardów na każdym etapie.</p>
+    <p>Wysyłasz nam plik wektorowy oraz określasz dokładną specyfikę środowiska pracy swojego personelu. My przejmujemy całą odpowiedzialność logistyczną i technologiczną za realizację. Dobieramy odpowiednią gramaturę polskiej bawełny, doradzamy optymalny krój ułatwiający pracę fizyczną i ustalamy docelową technikę nanoszenia farby.</p>
+    <p>Precyzyjna, bezpłatna wycena trafia na Twoją skrzynkę e-mail w dokładnie 24 godziny od złożenia zapytania. Gwarantujemy całkowity brak ukrytych kosztów. Po zatwierdzeniu warunków od razu uruchamiamy produkcję w Polsce. Gotowe bluzy robocze z nadrukiem starannie pakujemy i dostarczamy bezpośrednio do głównej siedziby Twojej firmy.</p>
+    <p>Fundamentalną zaletą naszej krajowej produkcji jest również żelazna gwarancja powtarzalności. Gdy za rok powiększysz zespół o kolejnych fachowców, dorobimy identyczne bluzy robocze z nadrukiem, bezbłędnie zachowując ten sam odcień materiału oraz dokładne proporcje znaku.</p>
+  </div>
+  <div class="content-block">
+    <h2>Dla kogo szyje Uniforno?</h2>
+    <p>Dostarczamy odzież dla przedsiębiorstw, które na co dzień budują swoją silną pozycję rynkową w oparciu o niezawodność i twarde standardy. Nasze produkty sprawdzają się w branżach wymagających ekstremalnej trwałości tekstyliów.</p>
+    <p>Szyjemy dla nowoczesnych firm budowlanych i inżynieryjnych. W tych sektorach ubiór to wizytówka marki na placu budowy. Zaopatrujemy zaawansowane serwisy instalacyjne, profesjonalne ekipy montażowe oraz szybko rozwijającą się branżę logistyczną. W takich warunkach pracownicy codziennie wykonują tysiące powtarzalnych ruchów, a odzież musi zapewniać pełną swobodę i doskonałą widoczność logotypu.</p>
+    <p>Nasze niezawodne bluzy robocze z logo firmy trafiają również do specjalistycznych warsztatów samochodowych, firm utrzymania ruchu oraz wielkopowierzchniowych zakładów produkcyjnych.</p>
+    <p>Współpracujemy bezpośrednio z menedżerami, którzy traktują odzież pracowniczą jako długofalową inwestycję w autorytet marki. Wybierając Uniforno, zabezpieczasz wizerunek swojego personelu technicznego na długie lata, optymalizując jednocześnie firmowy budżet.</p>
+  </div>
+
+  <div class="content-block see-also">
+    <h2>Sprawdź też</h2>
+    <p>Uniforno szyje odzież premium dla różnych branż i potrzeb. Zobacz inne nasze specjalizacje:</p>
+    <ul class="see-also-list">
+      <li><a href="/bluzy-firmowe">Bluzy firmowe</a></li>
+      <li><a href="/odziez-firmowa-z-nadrukiem">Odzież firmowa z nadrukiem</a></li>
+      <li><a href="/koszulki-z-haftem-logo">Koszulki z haftem logo</a></li>
+    </ul>
+  </div>
+</main>
+
+<section class="cta-section">
+  <div>
+    <div class="cta-eyebrow">Zróbmy coś razem</div>
+    <h2 class="cta-headline">Bluzy, które<br><em>wytrzymują lata pracy</em></h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-desc">Bluzy robocze z nadrukiem szyte w Polsce, z grubych polskich dzianin premium. Od 30 sztuk, wycena bezpłatna w 24h, dostawa na terenie całego kraju.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/#kontakt">Zapytaj o wycenę</a>
+      <a class="btn-ghost" href="/realizacje">Zobacz realizacje</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">&copy; 2025 Uniforno. Polska produkcja, polska jakość.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
