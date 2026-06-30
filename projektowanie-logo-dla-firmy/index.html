@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projektowanie logo dla firmy — samodzielnie lub w cenie odzieży | Uniforno</title>
+<meta name="description" content="Projektowanie logo dla firmy i wektoryzacja logo. Zamów osobno lub w cenie zamówienia odzieży firmowej od 30 sztuk. Wycena w 24h.">
+<link rel="canonical" href="https://uniforno.pl/projektowanie-logo-dla-firmy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
+    --accent: #c8a96e; --muted: #7a7670; --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .hero { padding: 140px 48px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; border-bottom: 0.5px solid var(--border); }
+  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  h1 { font-family: var(--font-display); font-size: clamp(44px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+  .hero-desc strong { color: var(--ink); font-weight: 400; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid var(--accent); padding: 6px 14px; }
+  .content { max-width: 860px; margin: 0 auto; padding: 80px 48px; }
+  .content-block { margin-bottom: 56px; border-bottom: 0.5px solid var(--border); padding-bottom: 56px; }
+  .content-block:last-child { border-bottom: none; }
+  h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 16px; }
+  p { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+  .cta-section { padding: 100px 48px; background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .cta-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
+  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+  .cta-right { display: flex; flex-direction: column; gap: 20px; }
+  .cta-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,242,235,0.7); }
+  .btn-primary { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--accent); color: var(--ink); padding: 14px 32px; text-decoration: none; display: inline-block; transition: background 0.2s, color 0.2s; }
+  .btn-primary:hover { background: var(--paper); color: var(--ink); }
+  .btn-ghost { font-size: 13px; font-weight: 400; color: rgba(245,242,235,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--paper); }
+  .btn-ghost::after { content: '\2192'; }
+  .cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  footer { padding: 32px 48px; border-top: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--paper); }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: 0.06em; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { font-size: 12px; font-weight: 300; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 12px; font-weight: 300; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--ink); }
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .hero { grid-template-columns: 1fr; gap: 28px; padding: 120px 24px 60px; }
+    .content { padding: 60px 24px; }
+    .cta-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 32px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+  .see-also-list { list-style: none; padding: 0; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .see-also-list li a { font-size: 15px; font-weight: 400; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border-bottom: 0.5px solid var(--border); padding-bottom: 10px; width: 100%; transition: color 0.2s; }
+  .see-also-list li a::before { content: '→'; color: var(--accent); font-size: 14px; flex-shrink: 0; }
+  .see-also-list li a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Projekt logo · Wektoryzacja · B2B · Made in Poland</div>
+    <h1>Projektowanie logo dla firmy —<br><em>samodzielnie lub w cenie zamówienia odzieży</em></h1>
+  </div>
+  <div>
+    <div class="hero-desc"><strong>Wizerunek to fundament biznesu.</strong> Znak graficzny to pierwszy element, na który zwraca uwagę Twój kontrahent. Profesjonalny wizerunek zawsze zaczyna się od wektorów. W Uniforno projektujemy i szyjemy odzież premium, ale wiemy, że często brakuje Wam podstaw — technicznie poprawnego pliku ze znakiem marki. Wiele rozwijających się przedsiębiorstw nie posiada jeszcze spójnego logotypu. Inne dysponują jedynie plikami w bardzo niskiej rozdzielczości, które nie nadają się do jakiejkolwiek reprodukcji. Dlatego wprowadziliśmy wysoce elastyczny model współpracy. Profesjonalne projektowanie logo dla firmy możesz u nas zlecić jako całkowicie niezależną usługę. Otrzymujesz wtedy gotowy, praktyczny plik do wykorzystania w sieci i druku. Jeśli jednak zdecydujesz się na jednoczesne zamówienie naszej odzieży firmowej, cały proces graficzny wliczamy w cenę zlecenia. To pragmatyczna i chłodna kalkulacja. Zyskujesz solidny znak i świetnej jakości polską odzież z jego aplikacją, realnie oszczędzając firmowy kapitał.</div>
+    <div class="tags"><span class="tag">Projekt logo</span><span class="tag">Wektoryzacja</span><span class="tag">W cenie odzieży</span><span class="tag">Od 30 szt.</span><span class="tag">B2B</span></div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="content-block">
+    <h2>Nie masz jeszcze logo? Zaprojektujemy je od zera</h2>
+    <p>Brak znaku graficznego to nie problem. Bardzo często właściciele firm skupiają się wyłącznie na operacyjnym rozwijaniu biznesu, zostawiając kwestie wizualne na później. Kiedy przychodzi moment ujednolicenia wizerunku zespołu przed ważnym kontraktem, pojawia się blokada. Uniforno rozwiązuje ten problem od ręki.</p>
+    <p>Nie jesteśmy agencją brandingową. Nie tworzymy wielomiesięcznych strategii marki ani opasłych ksiąg znaku, których nigdy nie otworzysz. Stawiamy na rzemiosło. Interesuje nas szybkie, praktyczne i estetyczne projektowanie logo dla firmy. Tworzymy proste, nowoczesne i bardzo czytelne formy, które od razu nadają się do komercyjnego wykorzystania.</p>
+    <p>Nasz projekt logo firmy to biznesowy konkret. Otrzymujesz znak, który świetnie wygląda na wizytówce, na stronie internetowej, a przede wszystkim na odzieży pracowniczej. Usługę tę możesz bez problemu wykupić oddzielnie.</p>
+    <p>Jeśli jednak planujesz ubrać swój zespół i złożysz u nas zamówienie na minimum 30 sztuk ubrań, to logo firmowe projekt wchodzi w całkowity koszt realizacji. Otrzymujesz tekstylia premium, a grafika powstaje w ramach tego samego budżetu.</p>
+  </div>
+  <div class="content-block">
+    <h2>Masz logo, ale w złym formacie? Zwektoryzujemy je</h2>
+    <p>Powszechnym scenariuszem w sektorze B2B jest posiadanie logo w nieodpowiednim, amatorskim formacie. Pliki JPG, zrzuty ekranu, miniaturowe PNG z tłem lub stare skany całkowicie uniemożliwiają profesjonalne znakowanie materiału. Zarówno precyzyjny haft komputerowy, jak i zaawansowany druk cyfrowy wymagają czystych linii oraz krzywych.</p>
+    <p>Aby maszyna szwalnicza lub drukarska mogła poprawnie i ostro nanieść wzór na dzianinę, niezbędne jest profesjonalne przygotowanie logo do nadruku. Właśnie w tym miejscu wkracza wektoryzacja logo. To techniczny proces całkowitego przerysowania Twojego pikselowego pliku do skalowalnego formatu wektorowego. Zbudowany w ten sposób wektor można dowolnie powiększać bez najmniejszej utraty jakości.</p>
+    <p>Tak samo jak w przypadku tworzenia znaku od podstaw, wektoryzacja logo to usługa, którą możesz zlecić nam całkowicie niezależnie. Skutecznie naprawimy Twój plik, oddając Ci pełnoprawny wektor.</p>
+    <p>Wybierając jednak jednoczesną produkcję odzieży przy zachowaniu naszego minimum 30 sztuk, techniczne przygotowanie logo do nadruku lub haftu wliczamy w ramy całego zamówienia. Błędy wizerunkowe Twojej firmy zostają trwale naprawione bez dodatkowych opłat za pracę studia graficznego.</p>
+  </div>
+  <div class="content-block">
+    <h2>Jak wygląda proces?</h2>
+    <p>Szanujemy czas przedsiębiorców. Nasz proces sprowadziliśmy do rzetelnych, logistycznych konkretów. Niezależnie od tego, czy wybierasz samo projektowanie logo dla firmy, czy łączysz je z produkcją naszej autorskiej odzieży, zaczynamy od szybkiej wymiany informacji.</p>
+    <p>Opisujesz nam główny profil swojej działalności oraz ewentualne preferencje wizualne. Jeśli posiadasz plik o słabej jakości — po prostu nam go wysyłasz. Wycena Twojego zapytania jest całkowicie bezpłatna. Klarowną odpowiedź ofertową otrzymasz na skrzynkę e-mail w dokładnie 24 godziny.</p>
+    <p>Po akceptacji warunków od razu przystępujemy do pracy nad grafiką. Dostarczamy technicznie poprawny projekt logo firmy. Jeśli usługa jest powiązana z produkcją, po zatwierdzeniu grafiki uruchamiamy szwalnię. Dobieramy odpowiednią gramaturę polskich dzianin, ustalamy krój ubrań i nanosimy nowy znak na materiał.</p>
+    <p>Cały proces produkcji odbywa się w Polsce. Daje nam to rygorystyczną kontrolę nad ostateczną jakością wyrobu. Gotowe ubrania pakujemy i wysyłamy kurierem prosto do Twojego biura, przekazując Ci jednocześnie docelowe pliki wektorowe.</p>
+  </div>
+  <div class="content-block">
+    <h2>Dla kogo szyje Uniforno?</h2>
+    <p>Dostarczamy bezkompromisowe rozwiązania dla firm z całej Polski, które traktują swój ubiór jako narzędzie do budowania przewagi rynkowej.</p>
+    <p>Naszą odzież premium wybierają nowoczesne software house'y i spółki technologiczne z branży IT. Zaopatrujemy wymagający sektor inżynieryjny i budowlany, gdzie odzież robocza musi cechować się potężną wytrzymałością na uszkodzenia mechaniczne.</p>
+    <p>Współpracujemy z niezależnymi salonami samochodowymi, profesjonalnymi studiami auto detailingu oraz renomowanymi klinikami medycyny estetycznej. W każdym z tych miejsc doskonała prezencja personelu stanowi obietnicę najwyższej jakości samych usług.</p>
+    <p>Produkując odzież z polskich materiałów i dbając o rygorystyczne standardy szycia, stajemy się twardym partnerem dla menedżerów nastawionych na długofalowe inwestycje. Błyskawiczne projektowanie logo dla firmy połączone z dostawą najwyższej klasy tekstyliów to praktyczne rozwiązanie dla firm, które chcą ujednolicić wizerunek bez angażowania osobnej agencji graficznej.</p>
+  </div>
+
+  <div class="content-block see-also">
+    <h2>Sprawdź też</h2>
+    <p>Uniforno szyje odzież premium dla różnych branż i potrzeb. Zobacz inne nasze specjalizacje:</p>
+    <ul class="see-also-list">
+      <li><a href="/koszulki-z-haftem-logo">Koszulki z haftem logo</a></li>
+      <li><a href="/odziez-firmowa-z-nadrukiem">Odzież firmowa z nadrukiem</a></li>
+      <li><a href="/bluzy-firmowe">Bluzy firmowe</a></li>
+    </ul>
+  </div>
+</main>
+
+<section class="cta-section">
+  <div>
+    <div class="cta-eyebrow">Zróbmy coś razem</div>
+    <h2 class="cta-headline">Logo i odzież<br><em>w jednym zleceniu</em></h2>
+  </div>
+  <div class="cta-right">
+    <p class="cta-desc">Projektowanie logo dla firmy — osobno lub w cenie zamówienia odzieży od 30 sztuk. Wycena bezpłatna w 24h, produkcja w Polsce, dostawa na terenie całego kraju.</p>
+    <div class="cta-actions">
+      <a class="btn-primary" href="/#kontakt">Zapytaj o wycenę</a>
+      <a class="btn-ghost" href="/realizacje">Zobacz realizacje</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">&copy; 2025 Uniforno. Polska produkcja, polska jakość.</div>
+  <div class="footer-links">
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+</body>
+</html>
