@@ -14,6 +14,36 @@
   </url>
 
   <url>
+    <loc>https://uniforno.pl/o-nas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/oferta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/produkty</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/proces</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://uniforno.pl/koszulki-dla-pracownikow</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -51,7 +51,7 @@
   }
   .logo span { color: var(--accent); }
   .nav-links {
-    display: flex; gap: 32px; list-style: none;
+    display: flex; gap: 26px; list-style: none;
   }
   .nav-links a {
     font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
@@ -67,6 +67,49 @@
     transition: background 0.2s, color 0.2s;
   }
   .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  /* hamburger + mobile menu */
+  .nav-toggle {
+    display: none; background: none; border: none; cursor: pointer;
+    color: var(--ink); padding: 4px; line-height: 0;
+  }
+  .nav-toggle svg { width: 26px; height: 26px; }
+  .menu-overlay {
+    position: fixed; inset: 0; background: rgba(26,25,22,0.4);
+    z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .menu-overlay.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(82vw, 340px);
+    background: var(--paper); border-left: 0.5px solid var(--border);
+    z-index: 200; transform: translateX(100%);
+    transition: transform 0.32s ease;
+    padding: 88px 32px 32px;
+    display: flex; flex-direction: column;
+    box-shadow: -24px 0 60px rgba(26,25,22,0.10);
+  }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 500; color: var(--ink);
+    text-decoration: none; padding: 15px 0;
+    border-bottom: 0.5px solid var(--border);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu .mobile-cta {
+    margin-top: 24px; background: var(--ink); color: var(--paper);
+    font-family: var(--font-body);
+    text-align: center; border: none; border-bottom: none;
+    padding: 16px; font-size: 13px; letter-spacing: 0.06em; font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-menu .mobile-cta:hover { background: var(--accent); color: var(--ink); }
+  .nav-close {
+    position: absolute; top: 22px; right: 24px;
+    background: none; border: none; cursor: pointer; color: var(--ink); line-height: 0;
+  }
+  .nav-close svg { width: 24px; height: 24px; }
 
   /* ── HERO ── */
   .hero {
@@ -282,15 +325,7 @@
     color: rgba(245,242,235,0.55);
   }
 
-  /* ── PROCESS ── */
-  .process {
-    padding: 100px 48px;
-    border-top: 0.5px solid var(--border);
-  }
-  .section-header {
-    display: flex; align-items: flex-end; justify-content: space-between;
-    margin-bottom: 60px;
-  }
+  /* ── SECTION HEADINGS (shared) ── */
   .section-eyebrow {
     font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
     color: var(--accent); text-transform: uppercase;
@@ -302,29 +337,27 @@
     font-weight: 500; line-height: 1.1;
     color: var(--ink);
   }
-  .process-steps {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 0; border: 0.5px solid var(--border);
+
+  /* ── PROCESS TEASER ── */
+  .process-teaser {
+    padding: 120px 48px;
+    border-top: 0.5px solid var(--border);
+    text-align: center;
   }
-  .step {
-    padding: 36px 28px;
-    border-right: 0.5px solid var(--border);
-    position: relative;
+  .process-teaser .section-eyebrow { margin-bottom: 16px; }
+  .process-teaser .section-title { margin-bottom: 24px; }
+  .process-teaser-text {
+    font-size: 16px; font-weight: 300; line-height: 1.75; color: var(--muted);
+    max-width: 560px; margin: 0 auto 36px;
   }
-  .step:last-child { border-right: none; }
-  .step-num {
-    font-family: var(--font-display);
-    font-size: 13px; font-weight: 400; letter-spacing: 0.08em;
-    color: var(--accent); margin-bottom: 16px;
+  .process-cta {
+    display: inline-block;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none;
+    border: 0.5px solid var(--ink); padding: 14px 32px;
+    transition: background 0.2s, color 0.2s;
   }
-  .step-title {
-    font-size: 15px; font-weight: 500;
-    color: var(--ink); margin-bottom: 8px;
-  }
-  .step-desc {
-    font-size: 13px; font-weight: 300; line-height: 1.6;
-    color: var(--muted);
-  }
+  .process-cta:hover { background: var(--ink); color: var(--paper); }
 
   /* ── FORM ── */
   .contact {
@@ -456,7 +489,7 @@
   }
   .footer-cta:hover { background: var(--paper); }
   .footer-cols {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
     padding: 48px 0;
     border-bottom: 0.5px solid rgba(245,242,235,0.14);
   }
@@ -502,6 +535,8 @@
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 60px 24px 40px; border-right: none; border-bottom: 0.5px solid var(--border); }
     .hero-right { padding: 32px 24px; }
@@ -509,9 +544,7 @@
     .pillars { grid-template-columns: 1fr 1fr; }
     .pillar { border-bottom: 0.5px solid var(--border); }
     .made-in-poland { padding: 60px 24px; }
-    .process { padding: 60px 24px; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .step { border-bottom: 0.5px solid var(--border); }
+    .process-teaser { padding: 72px 24px; }
     .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
     .showcase { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
@@ -533,15 +566,35 @@
 
 <!-- NAV -->
 <nav>
-  <a class="logo" href="#">Uniforn<span>o</span></a>
+  <a class="logo" href="/">Uniforn<span>o</span></a>
   <ul class="nav-links">
-    <li><a href="#o-nas">O nas</a></li>
+    <li><a href="/o-nas">O nas</a></li>
+    <li><a href="/oferta">Oferta</a></li>
+    <li><a href="/produkty">Produkty</a></li>
     <li><a href="/realizacje">Realizacje</a></li>
-    <li><a href="#proces">Proces</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="/proces">Proces</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#kontakt">Kontakt</a></li>
   </ul>
-  <a class="nav-cta" href="#kontakt">Zapytaj o wycenę</a>
+  <a class="nav-cta" href="/#kontakt">Zapytaj o wycenę</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
+<div class="menu-overlay" id="menu-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="nav-close" id="nav-close" aria-label="Zamknij menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/o-nas">O nas</a>
+  <a href="/oferta">Oferta</a>
+  <a href="/produkty">Produkty</a>
+  <a href="/realizacje">Realizacje</a>
+  <a href="/proces">Proces</a>
+  <a href="/blog">Blog</a>
+  <a href="/#kontakt">Kontakt</a>
+  <a class="mobile-cta" href="/#kontakt">Zapytaj o wycenę</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -642,36 +695,12 @@
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="proces">
-  <div class="section-header">
-    <div>
-      <div class="section-eyebrow">Jak działamy</div>
-      <h2 class="section-title">Prosty proces,<br>premium wynik.</h2>
-    </div>
-  </div>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">Krok 01</div>
-      <div class="step-title">Brief i rozmowa</div>
-      <div class="step-desc">Wypełniasz formularz lub dzwonisz. Rozmawiamy o potrzebach, ilości, terminie i tym, co ma wyrażać koszulka Twojej firmy.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">Krok 02</div>
-      <div class="step-title">Projekt i wizualizacja</div>
-      <div class="step-desc">Przygotowujemy projekt kroju i nadruku. Dostajesz wizualizację do akceptacji — bez kosztów na tym etapie.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">Krok 03</div>
-      <div class="step-title">Próbka fizyczna</div>
-      <div class="step-desc">Przed produkcją wysyłamy fizyczną próbkę. Dotykasz materiału, widzisz kolor, akceptujesz lub korygujesz.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">Krok 04</div>
-      <div class="step-title">Produkcja i dostawa</div>
-      <div class="step-desc">Po akceptacji próbki startuje produkcja. Realizacja 10–21 dni roboczych. Dostawa pod wskazany adres z fakturą VAT.</div>
-    </div>
-  </div>
+<!-- PROCESS TEASER -->
+<section class="process-teaser" id="proces">
+  <div class="section-eyebrow">Jak działamy</div>
+  <h2 class="section-title">Prosty proces,<br>premium wynik.</h2>
+  <p class="process-teaser-text">Od pierwszej rozmowy po dostawę pod Twoje drzwi — cztery przejrzyste kroki bez niespodzianek. Zajmujemy się wszystkim, Ty tylko akceptujesz.</p>
+  <a class="process-cta" href="/proces">Zobacz proces realizacji →</a>
 </section>
 
 <!-- CONTACT FORM -->
@@ -767,7 +796,12 @@
     <div class="footer-cols">
       <div class="footer-col">
         <div class="footer-col-title">Firma</div>
+        <a href="/o-nas">O nas</a>
+        <a href="/oferta">Oferta</a>
+        <a href="/produkty">Produkty</a>
         <a href="/realizacje">Realizacje</a>
+        <a href="/proces">Proces</a>
+        <a href="/blog">Blog</a>
         <a href="/#kontakt">Kontakt</a>
       </div>
       <div class="footer-col">
@@ -777,14 +811,6 @@
         <a href="/koszulki-dla-klubu-sportowego">Kluby sportowe</a>
         <a href="/koszulki-eventowe">Eventy i konferencje</a>
         <a href="/odziez-firmowa-wroclaw">Firmy z Wrocławia</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Produkty</div>
-        <a href="/koszulki-z-haftem-logo">Koszulki z haftem</a>
-        <a href="/bluzy-firmowe">Bluzy firmowe</a>
-        <a href="/koszulki-polo-dla-firm">Polo dla firm</a>
-        <a href="/odziez-firmowa-z-nadrukiem">Odzież z nadrukiem</a>
-        <a href="/blog/haft-vs-nadruk-co-wybrac">Blog</a>
       </div>
     </div>
 
@@ -840,6 +866,21 @@
       alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl');
     }
   });
+
+  // ── Menu mobilne (hamburger) ──
+  (function() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const closeBtn = document.getElementById('nav-close');
+    if (!toggle || !menu || !overlay) return;
+    const open = () => { menu.classList.add('open'); overlay.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    const close = () => { menu.classList.remove('open'); overlay.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
 </script>
 
 </body>
