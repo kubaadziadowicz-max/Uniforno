@@ -125,54 +125,87 @@
   .btn-ghost::after { content: '→'; }
 
   .hero-right {
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: column; justify-content: center;
     background: var(--warm);
+    padding: 48px;
   }
-  .hero-text-panel {
-    flex: 1; display: flex; flex-direction: column; justify-content: center;
-    padding: 60px 48px;
+  .hero-features {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
   }
-  .htp-item {
-    display: flex; align-items: flex-start; gap: 20px;
-    padding: 28px 0;
-    border-bottom: 0.5px solid var(--border);
+  .feature-card {
+    background: var(--paper);
+    border: 0.5px solid var(--border);
+    padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
   }
-  .htp-item:first-child { border-top: 0.5px solid var(--border); }
-  .htp-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent); flex-shrink: 0; margin-top: 6px;
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(26,25,22,0.08);
   }
-  .htp-title {
+  .feature-icon {
+    color: var(--accent);
+    display: flex; align-items: center;
+  }
+  .feature-icon svg { width: 28px; height: 28px; }
+  .feature-title {
     font-size: 15px; font-weight: 500; color: var(--ink);
-    margin-bottom: 4px; letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
   }
-  .htp-desc {
+  .feature-desc {
     font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.6;
   }
-  .htp-stat {
-    margin-top: 32px;
+  .hero-stat-line {
+    margin-top: 20px; text-align: center;
     font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
     color: var(--accent); text-transform: uppercase;
   }
-  .hero-stats {
+
+  /* ── SHOWCASE (photo sections) ── */
+  .showcase {
     display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 64px;
+    padding: 96px 48px;
     border-top: 0.5px solid var(--border);
   }
-  .stat {
-    padding: 24px 28px;
-    border-right: 0.5px solid var(--border);
+  .showcase-media {
+    border-radius: 16px; overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--warm);
   }
-  .stat:last-child { border-right: none; }
-  .stat-val {
+  .showcase-media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .showcase--reverse .showcase-media { order: 2; }
+  .showcase-body { max-width: 460px; }
+  .showcase-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .showcase-title {
     font-family: var(--font-display);
-    font-size: 36px; font-weight: 500;
-    color: var(--ink); line-height: 1;
-    margin-bottom: 4px;
+    font-size: clamp(30px, 3.5vw, 46px);
+    font-weight: 500; line-height: 1.15; color: var(--ink);
+    margin-bottom: 18px;
   }
-  .stat-label {
-    font-size: 12px; font-weight: 400;
-    color: var(--muted); letter-spacing: 0.03em;
+  .showcase-text {
+    font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--muted);
   }
+  .showcase-center {
+    text-align: center;
+    padding: 96px 48px;
+    border-top: 0.5px solid var(--border);
+  }
+  .showcase-center .showcase-media {
+    aspect-ratio: auto;
+    max-width: 420px; margin: 0 auto 40px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px;
+  }
+  .showcase-center .showcase-media img {
+    width: 100%; height: auto; object-fit: contain;
+  }
+  .showcase-center .showcase-body { max-width: 560px; margin: 0 auto; }
 
   /* ── MANIFESTO ── */
   .manifesto {
@@ -194,35 +227,6 @@
   }
   .manifesto-text strong {
     font-weight: 600;
-  }
-
-  /* ── PILLARS ── */
-  .pillars {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    border-top: 0.5px solid var(--border);
-  }
-  .pillar {
-    padding: 48px 36px;
-    border-right: 0.5px solid var(--border);
-    position: relative;
-    transition: background 0.3s;
-  }
-  .pillar:last-child { border-right: none; }
-  .pillar:hover { background: var(--warm); }
-  .pillar-num {
-    font-family: var(--font-display);
-    font-size: 48px; font-weight: 400; color: var(--border);
-    line-height: 1; margin-bottom: 24px;
-    transition: color 0.3s;
-  }
-  .pillar:hover .pillar-num { color: var(--accent); }
-  .pillar-title {
-    font-size: 15px; font-weight: 500; letter-spacing: 0.02em;
-    color: var(--ink); margin-bottom: 10px;
-  }
-  .pillar-desc {
-    font-size: 13px; font-weight: 300; line-height: 1.6;
-    color: var(--muted);
   }
 
   /* ── MADE IN POLAND ── */
@@ -407,74 +411,74 @@
   }
   .form-submit:hover { background: var(--accent); color: var(--ink); }
 
-  /* ── DLA KOGO ── */
-  .dla-kogo {
-    border-top: 0.5px solid var(--border);
-    padding: 80px 48px;
-  }
-  .dla-kogo-header {
-    display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
-    align-items: start; margin-bottom: 56px;
-  }
-  .dla-kogo-label {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
-    color: var(--accent); text-transform: uppercase; padding-top: 8px;
-  }
-  .dla-kogo-title {
-    font-family: var(--font-display);
-    font-size: clamp(28px, 3vw, 40px);
-    font-weight: 500; line-height: 1.2; color: var(--ink);
-    text-wrap: balance;
-  }
-  .dla-kogo-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    border-top: 0.5px solid var(--border);
-    border-left: 0.5px solid var(--border);
-  }
-  .dla-kogo-card {
-    padding: 32px 28px;
-    border-right: 0.5px solid var(--border);
-    border-bottom: 0.5px solid var(--border);
-    text-decoration: none; color: var(--ink);
-    display: flex; flex-direction: column; gap: 12px;
-    transition: background 0.25s;
-  }
-  .dla-kogo-card:hover { background: var(--warm); }
-  .dla-kogo-card-num {
-    font-family: var(--font-display);
-    font-size: 32px; font-weight: 400; color: var(--border);
-    line-height: 1; transition: color 0.25s;
-  }
-  .dla-kogo-card:hover .dla-kogo-card-num { color: var(--accent); }
-  .dla-kogo-card-title {
-    font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.3;
-  }
-  .dla-kogo-card-arrow {
-    font-size: 13px; color: var(--accent); margin-top: auto;
-  }
-
   /* ── FOOTER ── */
-  footer {
-    padding: 32px 48px;
+  .site-footer {
+    background: var(--ink); color: var(--paper);
+    padding: 72px 48px 32px;
     border-top: 0.5px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
   }
-  .footer-logo {
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 48px; flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 0.5px solid rgba(245,242,235,0.14);
+  }
+  .footer-logo-lg {
     font-family: var(--font-display);
-    font-size: 18px; font-weight: 600;
-    color: var(--ink); letter-spacing: 0.06em;
+    font-size: 28px; font-weight: 600; letter-spacing: 0.06em;
+    margin-bottom: 22px;
   }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy {
-    font-size: 12px; font-weight: 300; color: var(--muted);
+  .footer-logo-lg span { color: var(--accent); }
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; }
+  .footer-contact a, .footer-contact .footer-address {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 300; color: rgba(245,242,235,0.7);
+    text-decoration: none; transition: color 0.2s;
   }
-  .footer-links { display: flex; gap: 20px; }
-  .footer-links a {
-    font-size: 12px; font-weight: 300; color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
+  .footer-contact a:hover { color: var(--paper); }
+  .footer-contact svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+  .footer-social { margin-top: 20px; }
+  .footer-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border: 0.5px solid rgba(245,242,235,0.22); border-radius: 50%;
+    color: var(--paper);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
-  .footer-links a:hover { color: var(--ink); }
+  .footer-social a:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+  .footer-social svg { width: 18px; height: 18px; }
+  .footer-cta {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+    background: var(--accent); color: var(--ink);
+    padding: 14px 28px; text-decoration: none; white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .footer-cta:hover { background: var(--paper); }
+  .footer-cols {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+    padding: 48px 0;
+    border-bottom: 0.5px solid rgba(245,242,235,0.14);
+  }
+  .footer-col { display: flex; flex-direction: column; gap: 14px; }
+  .footer-col-title {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 4px;
+  }
+  .footer-col a {
+    font-size: 14px; font-weight: 300; color: rgba(245,242,235,0.7);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--paper); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 28px; gap: 16px; flex-wrap: wrap;
+  }
+  .footer-copy, .footer-bottom a {
+    font-size: 12px; font-weight: 300; color: rgba(245,242,235,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-bottom a:hover { color: var(--paper); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -500,7 +504,7 @@
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 60px 24px 40px; border-right: none; border-bottom: 0.5px solid var(--border); }
-    .hero-right { display: none; }
+    .hero-right { padding: 32px 24px; }
     .manifesto { grid-template-columns: 1fr; gap: 24px; padding: 60px 24px; }
     .pillars { grid-template-columns: 1fr 1fr; }
     .pillar { border-bottom: 0.5px solid var(--border); }
@@ -510,102 +514,18 @@
     .step { border-bottom: 0.5px solid var(--border); }
     .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
-    .dla-kogo { padding: 60px 24px; }
-    .dla-kogo-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-    .dla-kogo-grid { grid-template-columns: 1fr 1fr; }
+    .showcase { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
+    .showcase--reverse .showcase-media { order: 0; }
+    .showcase-body { max-width: none; }
+    .showcase-center { padding: 60px 24px; }
+    .site-footer { padding: 56px 24px 28px; }
   }
 
-  @media (max-width: 768px) {
-    .pillars { display: none; }
-    .hero-right {
-      display: block !important;
-      background: var(--warm);
-      padding: 24px 0 20px;
-      position: relative;
-      width: 100%;
-      max-width: 100vw;
-      overflow: hidden;
-    }
-    .hero-text-panel {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      max-width: 100%;
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .hero-text-panel::-webkit-scrollbar { display: none; }
-    .htp-item {
-      flex: 0 0 100%;
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-      scroll-snap-align: center;
-      border-top: none !important;
-      border-bottom: none;
-      padding: 8px 56px 24px;
-      box-sizing: border-box;
-    }
-    .htp-item > div:last-child {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-    .htp-item .htp-title,
-    .htp-item .htp-desc {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      white-space: normal;
-      hyphens: auto;
-      max-width: 100%;
-    }
-    .htp-stat { display: none; }
-    .htp-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 36px;
-      height: 36px;
-      background: rgba(245,242,235,0.9);
-      border: 0.5px solid var(--border);
-      color: var(--ink);
-      cursor: pointer;
-      padding: 0;
-      z-index: 2;
-      transition: background 0.2s, color 0.2s;
-    }
-    .htp-arrow:hover { background: var(--ink); color: var(--paper); }
-    .htp-arrow:disabled { opacity: 0.35; cursor: default; }
-    .htp-arrow:disabled:hover { background: rgba(245,242,235,0.9); color: var(--ink); }
-    .htp-arrow-prev { left: 8px; }
-    .htp-arrow-next { right: 8px; }
-    .htp-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 0 4px;
-    }
-    .htp-dot-nav {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(26,25,22,0.18);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.25s, transform 0.25s;
-    }
-    .htp-dot-nav.active {
-      background: var(--accent);
-      transform: scale(1.3);
-    }
+  @media (max-width: 620px) {
+    .hero-features { grid-template-columns: 1fr; }
+    .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
   }
 </style>
 </head>
@@ -626,60 +546,46 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Koszulki Premium · B2B · Made in Poland</div>
-    <h1>Koszulki,<br>które <em>mówią</em><br>o Twojej<br>firmie.</h1>
-    <p class="hero-desc">Nie robimy masówki. Każdy krój projektujemy pod klienta — materiał, fason, wykończenie. Tylko polskie dzianiny, tylko polska produkcja.</p>
+    <div class="hero-eyebrow">Odzież Premium · B2B · Made in Poland</div>
+    <h1>Odzież,<br>która <em>mówi</em><br>o Twojej<br>firmie.</h1>
+    <p class="hero-desc">Każdy krój możemy zaprojektować pod klienta — materiał, fason, wykończenie. Oferujemy koszulki, bluzy, polo, torby i wiele więcej. Wszystko produkujemy etycznie w Polsce, z polskich materiałów.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#kontakt">Zapytaj o wycenę</a>
       <a class="btn-ghost" href="#o-nas">Dowiedz się więcej</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-text-panel">
-      <div class="htp-item">
-        <div class="htp-dot"></div>
-        <div>
-          <div class="htp-title">Krój szyty pod klienta</div>
-          <div class="htp-desc">Nie wybierasz z katalogu. Projektujemy każdą koszulkę od zera — fason, gramatura, wykończenie.</div>
+    <div class="hero-features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
         </div>
+        <div class="feature-title">Krój pod klienta</div>
+        <div class="feature-desc">Projektujemy fason, gramaturę i wykończenie dokładnie pod Twoją firmę.</div>
       </div>
-      <div class="htp-item">
-        <div class="htp-dot"></div>
-        <div>
-          <div class="htp-title">Polskie dzianiny premium</div>
-          <div class="htp-desc">Współpracujemy wyłącznie z polskimi dostawcami. Każda partia materiału jest przez nas weryfikowana.</div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
         </div>
+        <div class="feature-title">Polskie materiały premium</div>
+        <div class="feature-desc">Szyjemy z polskich dzianin. Każda partia materiału jest przez nas weryfikowana.</div>
       </div>
-      <div class="htp-item">
-        <div class="htp-dot"></div>
-        <div>
-          <div class="htp-title">Precyzja wykończenia</div>
-          <div class="htp-desc">Dbamy o każdy szew. Nasze koszulki wyglądają i czują się profesjonalnie — przy pierwszym i setnym praniu.</div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
+        <div class="feature-title">Ekspresowa produkcja</div>
+        <div class="feature-desc">Pełna produkcja w Polsce oznacza krótkie terminy i pełną kontrolę jakości.</div>
       </div>
-      <div class="htp-item">
-        <div class="htp-dot"></div>
-        <div>
-          <div class="htp-title">Szyte w Polsce</div>
-          <div class="htp-desc">Produkcja lokalna — krótsze terminy, kontrola jakości na każdym etapie, wsparcie polskich szwalni.</div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
+        <div class="feature-title">Łatwy kontakt</div>
+        <div class="feature-desc">Bezpłatna wycena w 24h. Oddzwaniamy w ciągu godziny.</div>
       </div>
-      <div class="htp-item">
-        <div class="htp-dot"></div>
-        <div>
-          <div class="htp-title">Trwałość na lata</div>
-          <div class="htp-desc">Setki prań bez utraty kształtu i koloru. Koszulka, którą pracownicy będą chcieli nosić po pracy.</div>
-        </div>
-      </div>
-      <div class="htp-stat">od 30 sztuk · zamówienia B2B · wycena w 24h</div>
     </div>
-    <button class="htp-arrow htp-arrow-prev" id="htp-prev" aria-label="Poprzedni slajd" type="button">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="htp-arrow htp-arrow-next" id="htp-next" aria-label="Następny slajd" type="button">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="htp-dots" id="htp-dots" aria-hidden="true"></div>
+    <div class="hero-stat-line">od 30 sztuk · zamówienia B2B · wycena w 24h</div>
   </div>
 </section>
 
@@ -687,31 +593,43 @@
 <section class="manifesto" id="o-nas">
   <div class="manifesto-label">Nasza filozofia</div>
   <p class="manifesto-text">
-    Rynek jest pełen firm, które drukują logo na tanim materiale i nazywają to koszulką firmową. My robimy coś innego — <strong>projektujemy koszulki, które przetrwają setki prań i które pracownicy będą chcieli nosić</strong> po pracy.
+    Większość rynku to szybki nadruk na cienkich, gotowych koszulkach. My tworzymy odzież premium od podstaw. <strong>Szyjemy rzeczy, które przetrwają lata intensywnej eksploatacji</strong> i które nosi się z własnego wyboru — długo po zakończeniu pracy czy wydarzenia.
   </p>
 </section>
 
-<!-- PILLARS -->
-<section class="pillars">
-  <div class="pillar">
-    <div class="pillar-num">01</div>
-    <div class="pillar-title">Każdy krój pod klienta</div>
-    <div class="pillar-desc">Nie wybierasz z katalogu. Rozmawiamy o tym, jak ma wyglądać koszulka Twojej firmy i projektujemy ją od zera.</div>
+<!-- SHOWCASE A -->
+<section class="showcase">
+  <div class="showcase-media">
+    <img src="/images/mockup2-osoba.jpg" alt="Osoba w koszulce firmowej premium od Uniforno" loading="lazy">
   </div>
-  <div class="pillar">
-    <div class="pillar-num">02</div>
-    <div class="pillar-title">Jakość na lata</div>
-    <div class="pillar-desc">Koszulki które prują się po sezonie to nie oszczędność — to koszt wizerunkowy. Nasze służą latami.</div>
+  <div class="showcase-body">
+    <div class="showcase-eyebrow">Jakość premium</div>
+    <h2 class="showcase-title">Odzież, którą chce się nosić</h2>
+    <p class="showcase-text">Nasza odzież nie ląduje na dnie szafy po pierwszym praniu. Szyjemy z polskich dzianin o wysokiej gramaturze, dbając o każdy szew i wykończenie. To ubrania, które pracownicy zakładają z własnego wyboru — także po godzinach, długo po zakończeniu pracy czy wydarzenia. Premium jakość, którą czuć od pierwszego dotyku.</p>
   </div>
-  <div class="pillar">
-    <div class="pillar-num">03</div>
-    <div class="pillar-title">Tylko premium</div>
-    <div class="pillar-desc">Nie obsługujemy masowych zamówień na najtańszy produkt. Jeśli zależy Ci na jakości — jesteśmy dla Ciebie.</div>
+</section>
+
+<!-- SHOWCASE B -->
+<section class="showcase showcase--reverse">
+  <div class="showcase-media">
+    <img src="/images/mockup3-osoba.jpg" alt="Koszulka firmowa z indywidualnie zaprojektowanym krojem" loading="lazy">
   </div>
-  <div class="pillar">
-    <div class="pillar-num">04</div>
-    <div class="pillar-title">Wycena w 24h</div>
-    <div class="pillar-desc">Bezpłatna oferta trafia na Twoją skrzynkę w ciągu jednego dnia roboczego.</div>
+  <div class="showcase-body">
+    <div class="showcase-eyebrow">Projekt pod Ciebie</div>
+    <h2 class="showcase-title">Krój projektowany pod Ciebie</h2>
+    <p class="showcase-text">Nie wybierasz z gotowego katalogu. Każdą sztukę szyjemy od podstaw — dobieramy fason, gramaturę i wykończenie dokładnie pod charakter Twojej firmy. Oversize, slim czy klasyczny krój, kołnierzyk lub jego brak, długość i detale — wszystko ustalamy wspólnie i realizujemy w polskiej szwalni z pełną kontrolą nad każdym etapem.</p>
+  </div>
+</section>
+
+<!-- SHOWCASE C -->
+<section class="showcase-center">
+  <div class="showcase-media">
+    <img src="/images/mockup1-back.png" alt="Koszulka z trwałym haftem i nadrukiem logo" loading="lazy">
+  </div>
+  <div class="showcase-body">
+    <div class="showcase-eyebrow">Znakowanie</div>
+    <h2 class="showcase-title">Trwały haft i nadruk</h2>
+    <p class="showcase-text">Haft komputerowy i nowoczesny nadruk, które przetrwają setki prań bez pękania i blaknięcia. Dobieramy technikę znakowania do specyfiki logo i materiału — tak, aby Twój znak wyglądał nienagannie przez cały okres użytkowania odzieży.</p>
   </div>
 </section>
 
@@ -818,79 +736,63 @@
 </section>
 
 <!-- FOOTER -->
-<!-- DLA KOGO -->
-<section class="dla-kogo">
-  <div class="dla-kogo-header">
-    <div class="dla-kogo-label">Dla kogo szyjemy</div>
-    <h2 class="dla-kogo-title">Koszulki premium dla firm, eventów i organizacji — zawsze szyte indywidualnie.</h2>
-  </div>
-  <div class="dla-kogo-grid">
-    <a class="dla-kogo-card" href="/koszulki-dla-pracownikow">
-      <div class="dla-kogo-card-num">01</div>
-      <div class="dla-kogo-card-title">Koszulki dla pracowników</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/koszulki-dla-restauracji">
-      <div class="dla-kogo-card-num">02</div>
-      <div class="dla-kogo-card-title">Restauracje i gastronomia</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/koszulki-eventowe">
-      <div class="dla-kogo-card-num">03</div>
-      <div class="dla-kogo-card-title">Eventy i konferencje</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/koszulki-dla-klubu-sportowego">
-      <div class="dla-kogo-card-num">04</div>
-      <div class="dla-kogo-card-title">Kluby sportowe</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/odziez-firmowa-wroclaw">
-      <div class="dla-kogo-card-num">05</div>
-      <div class="dla-kogo-card-title">Firmy z Wrocławia</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/koszulki-z-haftem-logo">
-      <div class="dla-kogo-card-num">06</div>
-      <div class="dla-kogo-card-title">Koszulki z haftem logo</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/bluzy-firmowe">
-      <div class="dla-kogo-card-num">07</div>
-      <div class="dla-kogo-card-title">Bluzy firmowe</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/koszulki-polo-dla-firm">
-      <div class="dla-kogo-card-num">08</div>
-      <div class="dla-kogo-card-title">Koszulki polo dla firm</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/odziez-firmowa-z-nadrukiem">
-      <div class="dla-kogo-card-num">09</div>
-      <div class="dla-kogo-card-title">Odzież firmowa z nadrukiem</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/bluzy-robocze-z-nadrukiem">
-      <div class="dla-kogo-card-num">10</div>
-      <div class="dla-kogo-card-title">Bluzy robocze z nadrukiem</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-    <a class="dla-kogo-card" href="/projektowanie-logo-dla-firmy">
-      <div class="dla-kogo-card-num">11</div>
-      <div class="dla-kogo-card-title">Projektowanie logo dla firmy</div>
-      <div class="dla-kogo-card-arrow">→</div>
-    </a>
-  </div>
-</section>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-lg">Uniforn<span>o</span></div>
+        <div class="footer-contact">
+          <a href="tel:+48780159705">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +48 780 159 705
+          </a>
+          <a href="mailto:kontakt@uniforno.pl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            kontakt@uniforno.pl
+          </a>
+          <div class="footer-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            ul. Sokolnicza 7/17, 53-676 Wrocław
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook Uniforno">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <a class="footer-cta" href="/#kontakt">Zapytaj o wycenę</a>
+    </div>
 
-<footer>
-  <div class="footer-logo">Uniforn<span>o</span></div>
-  <div class="footer-copy">© 2025 Uniforno. Polska produkcja, polska jakość.</div>
-  <div class="footer-links">
-    <a href="/polityka-prywatnosci">Polityka prywatności</a>
-    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Firma</div>
+        <a href="/realizacje">Realizacje</a>
+        <a href="/#kontakt">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Dla kogo szyjemy</div>
+        <a href="/koszulki-dla-pracownikow">Koszulki dla pracowników</a>
+        <a href="/koszulki-dla-restauracji">Restauracje i gastronomia</a>
+        <a href="/koszulki-dla-klubu-sportowego">Kluby sportowe</a>
+        <a href="/koszulki-eventowe">Eventy i konferencje</a>
+        <a href="/odziez-firmowa-wroclaw">Firmy z Wrocławia</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Produkty</div>
+        <a href="/koszulki-z-haftem-logo">Koszulki z haftem</a>
+        <a href="/bluzy-firmowe">Bluzy firmowe</a>
+        <a href="/koszulki-polo-dla-firm">Polo dla firm</a>
+        <a href="/odziez-firmowa-z-nadrukiem">Odzież z nadrukiem</a>
+        <a href="/blog/haft-vs-nadruk-co-wybrac">Blog</a>
+      </div>
+    </div>
 
-</div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Uniforno. Wszystkie prawa zastrzeżone.</div>
+      <a href="/polityka-prywatnosci">Polityka prywatności</a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -938,62 +840,6 @@
       alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl');
     }
   });
-
-  // ── Karuzela kafelków hero (mobile) ──
-  (function() {
-    const panel = document.querySelector('.hero-text-panel');
-    const dotsContainer = document.getElementById('htp-dots');
-    const prevBtn = document.getElementById('htp-prev');
-    const nextBtn = document.getElementById('htp-next');
-    if (!panel || !dotsContainer) return;
-    const items = panel.querySelectorAll('.htp-item');
-    if (!items.length) return;
-
-    let currentIdx = 0;
-
-    items.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'htp-dot-nav' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Slajd ' + (i + 1));
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = dotsContainer.querySelectorAll('.htp-dot-nav');
-
-    function goTo(idx) {
-      idx = Math.max(0, Math.min(items.length - 1, idx));
-      items[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    }
-
-    function updateState(idx) {
-      currentIdx = idx;
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      if (prevBtn) prevBtn.disabled = idx === 0;
-      if (nextBtn) nextBtn.disabled = idx === items.length - 1;
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIdx - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIdx + 1));
-
-    let scrollTimer;
-    panel.addEventListener('scroll', () => {
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => {
-        const center = panel.scrollLeft + panel.clientWidth / 2;
-        let activeIdx = 0;
-        let minDist = Infinity;
-        items.forEach((item, i) => {
-          const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-          const dist = Math.abs(itemCenter - center);
-          if (dist < minDist) { minDist = dist; activeIdx = i; }
-        });
-        updateState(activeIdx);
-      }, 60);
-    });
-
-    updateState(0);
-  })();
 </script>
 
 </body>
