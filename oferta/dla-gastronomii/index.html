@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proces realizacji | Uniforno</title>
-<meta name="description" content="Proces realizacji zamówienia w Uniforno — cztery przejrzyste kroki: brief, projekt, model do akceptacji, produkcja i dostawa.">
-<link rel="canonical" href="https://uniforno.pl/proces">
+<title>Odzież dla gastronomii i hoteli | Uniforno</title>
+<meta name="description" content="Odzież dla gastronomii i hoteli — polo, t-shirty i bluzy odporne na setki prań. Premium jakość dla sektora HoReCa. Wycena w 24h.">
+<link rel="canonical" href="https://uniforno.pl/oferta/dla-gastronomii">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -108,19 +108,28 @@
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
   }
 
-  .timeline { max-width: 720px; margin: 0 auto; padding: 40px 48px 20px; }
-  .timeline-step { display: grid; grid-template-columns: 64px 1fr; gap: 28px; }
-  .timeline-marker { display: flex; flex-direction: column; align-items: center; }
-  .timeline-icon { width: 64px; height: 64px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--warm); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
-  .timeline-icon svg { width: 26px; height: 26px; }
-  .timeline-line { flex: 1; width: 0.5px; background: var(--border); margin: 10px 0; min-height: 24px; }
-  .timeline-step:last-child .timeline-line { display: none; }
-  .timeline-body { padding-bottom: 48px; padding-top: 8px; }
-  .timeline-step:last-child .timeline-body { padding-bottom: 0; }
-  .timeline-num { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
-  .timeline-title { font-family: var(--font-display); font-size: 27px; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
-  .timeline-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); }
-  @media (max-width: 900px) { .timeline { padding: 24px 24px 10px; } .timeline-step { grid-template-columns: 52px 1fr; gap: 20px; } .timeline-icon { width: 52px; height: 52px; } .timeline-icon svg { width: 22px; height: 22px; } }
+  .form-grid { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+  input, textarea, select { font-family: var(--font-body); font-size: 14px; font-weight: 300; background: #fbf9f4; color: var(--ink); border: 0.5px solid var(--border); padding: 12px 14px; outline: none; transition: border-color 0.2s; width: 100%; appearance: none; }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 120px; }
+  .checkbox-row { display: flex; align-items: center; gap: 12px; }
+  .checkbox-row input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 24px; height: 24px; flex-shrink: 0; border: 1.5px solid var(--muted); background: transparent; cursor: pointer; position: relative; transition: border-color 0.2s, background 0.2s; }
+  .checkbox-row input[type="checkbox"]:checked { border-color: var(--ink); background: var(--ink); }
+  .checkbox-row input[type="checkbox"]:checked::after { content: ''; position: absolute; left: 5px; top: 2px; width: 10px; height: 15px; border: 2.5px solid var(--paper); border-top: none; border-left: none; transform: rotate(45deg); }
+  .checkbox-row input[type="checkbox"]:focus { outline: 1.5px solid var(--accent); outline-offset: 2px; }
+  .checkbox-row label { font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 300; color: var(--muted); line-height: 1.5; }
+  .checkbox-row label a { color: var(--ink); }
+  .form-submit { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--ink); color: var(--paper); padding: 15px 32px; border: none; cursor: pointer; width: 100%; transition: background 0.2s, color 0.2s; }
+  .form-submit:hover { background: var(--accent); color: var(--ink); }
+  .form-success-box { display:none; padding: 32px; background: var(--warm); border-left: 2px solid var(--accent); }
+  .form-success-box .fs-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .form-success-box .fs-text { font-size: 15px; font-weight: 300; color: var(--muted); margin: 0; }
+  .seg-form-wrap { max-width: 720px; margin: 0 auto; padding: 24px 48px 120px; }
+  .seg-form-label { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 24px; text-align: center; }
+  @media (max-width: 980px) { .seg-form-wrap { padding: 16px 24px 90px; } .form-row { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -176,29 +185,41 @@
 
 <div class="page-main">
 <header class="sub-hero">
-  <div class="page-eyebrow">Proces realizacji</div>
-  <h1 class="sub-title">Prosty proces, premium wynik.</h1>
-  <p class="sub-intro">Od pierwszej rozmowy po dostawę pod Twoje drzwi. Zajmujemy się wszystkim — Ty tylko akceptujesz.</p>
+  <div class="page-eyebrow">Oferta</div>
+  <h1 class="sub-title">Odzież dla gastronomii i hoteli</h1>
 </header>
-<section class="timeline">
-    <div class="timeline-step">
-      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><div class="timeline-line"></div></div>
-      <div class="timeline-body"><div class="timeline-num">Krok 01</div><h2 class="timeline-title">Brief i rozmowa</h2><p class="timeline-desc">Wypełniasz formularz lub dzwonisz. Rozmawiamy o Twoich potrzebach, ilości, terminie i tym, co ma wyrażać odzież Twojej firmy.</p></div>
-    </div>
-    <div class="timeline-step">
-      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></div><div class="timeline-line"></div></div>
-      <div class="timeline-body"><div class="timeline-num">Krok 02</div><h2 class="timeline-title">Projekt i wizualizacja</h2><p class="timeline-desc">Przygotowujemy projekt kroju i znakowania. Dostajesz wizualizację do akceptacji — bez żadnych kosztów na tym etapie.</p></div>
-    </div>
-    <div class="timeline-step">
-      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><div class="timeline-line"></div></div>
-      <div class="timeline-body"><div class="timeline-num">Krok 03</div><h2 class="timeline-title">Model do akceptacji</h2><p class="timeline-desc">Przed produkcją szyjemy i wysyłamy gotowy model ubrania do sprawdzenia. Oceniasz krój, materiał i kolor na żywo, akceptujesz lub zgłaszasz poprawki.</p></div>
-    </div>
-    <div class="timeline-step">
-      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div class="timeline-line"></div></div>
-      <div class="timeline-body"><div class="timeline-num">Krok 04</div><h2 class="timeline-title">Produkcja i dostawa</h2><p class="timeline-desc">Po akceptacji startuje produkcja. Realizacja 10–21 dni roboczych. Dostarczamy pod wskazany adres — a jeśli istnieje taka potrzeba, możemy wysłać odzież na różne adresy.</p></div>
+<section class="prose">
+  <p>Sektor HoReCa wymaga od odzieży bezwzględnej niezawodności. Obsługa sali, recepcjoniści czy barmani pracują w niezwykle dynamicznym środowisku, a ich ubiór to kluczowy element budowania doświadczenia gości. Przypadkowe tekstylia szybko ulegają zniszczeniu, dlatego Uniforno tworzy rozwiązania gotowe na najtrudniejsze wyzwania. Szyjemy eleganckie koszulki polo, klasyczne t-shirty oraz ciepłe bluzy, które wytrzymują setki cykli intensywnego prania, nie kurcząc się i nie tracąc pierwotnego odcienia. Bazujemy na wysokogatunkowych, polskich materiałach, gwarantując obsłudze pełną swobodę ruchów i termiczny komfort przez całą zmianę. Dostarczamy odzież premium, która podkreśla wysoki standard Twojej restauracji lub hotelu, sprawiając, że personel zawsze prezentuje się nienagannie i profesjonalnie.</p>
+</section>
+<section class="seg-form-wrap">
+  <div class="seg-form-label">Zapytaj o wycenę</div>
+  <form class="form-grid" id="kontakt-form" action="https://formspree.io/f/xeewojzo" method="POST">
+      <div class="form-row">
+        <div class="field"><label for="firma">Nazwa firmy</label><input type="text" id="firma" name="firma" placeholder="Twoja firma sp. z o.o." required></div>
+        <div class="field"><label for="imie">Imię i nazwisko</label><input type="text" id="imie" name="imie" placeholder="Anna Kowalska" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="anna@firma.pl" required></div>
+        <div class="field"><label for="telefon">Telefon</label><input type="tel" id="telefon" name="telefon" placeholder="+48 600 000 000"></div>
+      </div>
+      <div class="field"><label for="ilosc">Szacowana ilość sztuk</label>
+        <select id="ilosc" name="ilosc"><option value="">Wybierz przedział</option><option>30–100 sztuk</option><option>100–300 sztuk</option><option>300–1000 sztuk</option><option>Powyżej 1000 sztuk</option></select>
+      </div>
+      <div class="field"><label for="wiadomosc">Opowiedz nam o projekcie</label>
+        <textarea id="wiadomosc" name="wiadomosc" placeholder="Czego potrzebujesz? Termin, event, specjalne wymagania..." required></textarea>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="rodo" name="rodo" required>
+        <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Uniforno w celu odpowiedzi na zapytanie, zgodnie z <a href="/polityka-prywatnosci">Polityką Prywatności</a>.</label>
+      </div>
+      <input type="hidden" name="_subject" value="Zapytanie z oferty — Odzież dla gastronomii i hoteli">
+      <button type="submit" class="form-submit" id="form-submit-btn">Wyślij zapytanie →</button>
+    </form>
+    <div id="form-success" class="form-success-box">
+      <p class="fs-title">Dziękujemy!</p>
+      <p class="fs-text">Odezwiemy się w ciągu 24 godzin.</p>
     </div>
 </section>
-<section class="sub-cta"><a class="btn-dark" href="/kontakt">Zapytaj o wycenę →</a></section>
 </div>
 
 <footer class="site-footer">
@@ -269,6 +290,28 @@
     if (closeBtn) closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', close);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
+  (function() {
+    const form = document.getElementById('kontakt-form');
+    if (!form) return;
+    const btn = document.getElementById('form-submit-btn');
+    const success = document.getElementById('form-success');
+    const rodo = document.getElementById('rodo');
+    const rodoError = document.createElement('p');
+    rodoError.textContent = 'Zaznacz zgodę na przetwarzanie danych, aby wysłać formularz.';
+    rodoError.style.cssText = 'color:#c0392b; font-size:13px; margin-top:6px; display:none;';
+    rodo.closest('.checkbox-row').insertAdjacentElement('afterend', rodoError);
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (!rodo.checked) { rodoError.style.display = 'block'; rodo.closest('.checkbox-row').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      rodoError.style.display = 'none';
+      btn.disabled = true; btn.textContent = 'Wysyłanie…';
+      try {
+        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (response.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+        else { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Coś poszło nie tak. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
+      } catch (err) { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
+    });
   })();
 </script>
 

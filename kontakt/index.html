@@ -5,7 +5,7 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kontakt | Uniforno</title>
-<meta name="description" content="Kontakt Uniforno — napisz lub zadzwoń. Wycena odzieży firmowej premium w 24h. Wrocław, ul. Sokolnicza 7/17.">
+<meta name="description" content="Kontakt Uniforno — napisz lub zadzwoń. Wycena odzieży firmowej premium w 24h. Siechnice, ul. Jesionowa 3.">
 <link rel="canonical" href="https://uniforno.pl/kontakt">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,39 +22,52 @@
   body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
   .page-main { flex: 1; }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
   .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
   .logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links > li { position: relative; }
   .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
+  .has-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+  .chev { width: 12px; height: 12px; transition: transform 0.25s; }
+  .has-dropdown:hover .chev { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; opacity: 0; visibility: hidden; transition: opacity 0.2s; }
+  .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; }
+  .dropdown-inner { background: var(--paper); border: 0.5px solid var(--border); box-shadow: 0 20px 44px rgba(26,25,22,0.10); min-width: 250px; padding: 8px 0; }
+  .dropdown-inner a { display: block; padding: 11px 22px; font-size: 13px; color: var(--muted); white-space: nowrap; transition: color 0.2s, background 0.2s; }
+  .dropdown-inner a:hover { color: var(--ink); background: var(--warm); }
   .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
   .nav-cta:hover { background: var(--accent); color: var(--ink); }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; line-height: 0; }
   .nav-toggle svg { width: 26px; height: 26px; }
   .menu-overlay { position: fixed; inset: 0; background: rgba(26,25,22,0.4); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
   .menu-overlay.open { opacity: 1; pointer-events: auto; }
-  .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: min(82vw, 340px); background: var(--paper); border-left: 0.5px solid var(--border); z-index: 200; transform: translateX(100%); transition: transform 0.32s ease; padding: 88px 32px 32px; display: flex; flex-direction: column; box-shadow: -24px 0 60px rgba(26,25,22,0.10); }
+  .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: min(82vw, 340px); background: var(--paper); border-left: 0.5px solid var(--border); z-index: 200; transform: translateX(100%); transition: transform 0.32s ease; padding: 88px 32px 40px; display: flex; flex-direction: column; box-shadow: -24px 0 60px rgba(26,25,22,0.10); overflow-y: auto; }
   .mobile-menu.open { transform: translateX(0); }
-  .mobile-menu a { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 15px 0; border-bottom: 0.5px solid var(--border); transition: color 0.2s; }
-  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu > a { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 15px 0; border-bottom: 0.5px solid var(--border); transition: color 0.2s; }
+  .mobile-menu > a:hover { color: var(--accent); }
+  .mobile-sub { display: flex; flex-direction: column; padding: 6px 0 10px; border-bottom: 0.5px solid var(--border); }
+  .mobile-sub a { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--muted); text-decoration: none; padding: 9px 0 9px 16px; transition: color 0.2s; }
+  .mobile-sub a:hover { color: var(--accent); }
   .mobile-menu .mobile-cta { margin-top: 24px; background: var(--ink); color: var(--paper); font-family: var(--font-body); text-align: center; border: none; border-bottom: none; padding: 16px; font-size: 13px; letter-spacing: 0.06em; font-weight: 500; transition: background 0.2s, color 0.2s; }
   .mobile-menu .mobile-cta:hover { background: var(--accent); color: var(--ink); }
   .nav-close { position: absolute; top: 22px; right: 24px; background: none; border: none; cursor: pointer; color: var(--ink); line-height: 0; }
   .nav-close svg { width: 24px; height: 24px; }
 
-  /* SUB HERO */
-  .sub-hero { padding: 180px 48px 56px; text-align: center; }
+  .sub-hero { padding: 180px 48px 40px; text-align: center; }
   .page-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; }
   .sub-title { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); margin: 16px 0 20px; }
   .sub-intro { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--muted); max-width: 540px; margin: 0 auto; }
 
-  /* CTA button (shared) */
+  .prose { max-width: 760px; margin: 0 auto; padding: 12px 48px 8px; }
+  .prose p { font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--ink); margin-bottom: 20px; }
+  .prose p:last-child { margin-bottom: 0; }
+
   .btn-dark { font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.08em; background: var(--ink); color: var(--paper); text-decoration: none; display: inline-block; padding: 18px 44px; border: none; cursor: pointer; transition: background 0.2s, color 0.2s; }
   .btn-dark:hover { background: var(--accent); color: var(--ink); }
+  .sub-cta { text-align: center; padding: 48px 48px 130px; }
 
-  /* FOOTER */
   .site-footer { background: var(--ink); color: var(--paper); padding: 72px 48px 32px; border-top: 0.5px solid var(--border); }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
   .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 0.5px solid rgba(245,242,235,0.14); }
@@ -79,12 +92,14 @@
   .footer-copy, .footer-bottom a { font-size: 12px; font-weight: 300; color: rgba(245,242,235,0.5); text-decoration: none; transition: color 0.2s; }
   .footer-bottom a:hover { color: var(--paper); }
 
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .nav-cta { display: none; }
     .nav-toggle { display: inline-flex; }
-    .sub-hero { padding: 140px 24px 40px; }
+    .sub-hero { padding: 140px 24px 32px; }
+    .prose { padding: 12px 24px 8px; }
+    .sub-cta { padding: 36px 24px 90px; }
     .site-footer { padding: 56px 24px 28px; }
   }
   @media (max-width: 620px) {
@@ -93,8 +108,6 @@
     .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
   }
 
-  /* KONTAKT */
-  .kontakt-wrap { max-width: 1160px; margin: 0 auto; padding: 40px 48px 130px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 72px; align-items: start; }
   .form-grid { display: flex; flex-direction: column; gap: 16px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .field { display: flex; flex-direction: column; gap: 6px; }
@@ -111,18 +124,22 @@
   .checkbox-row label a { color: var(--ink); }
   .form-submit { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--ink); color: var(--paper); padding: 15px 32px; border: none; cursor: pointer; width: 100%; transition: background 0.2s, color 0.2s; }
   .form-submit:hover { background: var(--accent); color: var(--ink); }
+  .form-success-box { display:none; padding: 32px; background: var(--warm); border-left: 2px solid var(--accent); }
+  .form-success-box .fs-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .form-success-box .fs-text { font-size: 15px; font-weight: 300; color: var(--muted); margin: 0; }
+  .kontakt-wrap { max-width: 1160px; margin: 0 auto; padding: 30px 48px 130px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 72px; align-items: start; }
   .kontakt-info-col { display: flex; flex-direction: column; }
   .info-item { display: flex; gap: 18px; align-items: flex-start; padding: 26px 0; border-bottom: 0.5px solid var(--border); }
   .info-item:first-child { border-top: 0.5px solid var(--border); }
   .info-icon { width: 46px; height: 46px; border-radius: 50%; border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
   .info-icon svg { width: 20px; height: 20px; }
   .info-title { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
-  .info-value { font-family: var(--font-display); font-size: 21px; color: var(--ink); font-weight: 500; text-decoration: none; line-height: 1.3; display: inline-block; }
+  .info-value { font-family: var(--font-body); font-size: 17px; font-weight: 400; color: var(--ink); text-decoration: none; line-height: 1.45; display: inline-block; letter-spacing: 0.01em; }
   a.info-value:hover { color: var(--accent); }
   .info-note { margin-top: 28px; font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.6; }
   .info-note strong { color: var(--ink); font-weight: 500; }
-  @media (max-width: 900px) {
-    .kontakt-wrap { grid-template-columns: 1fr; gap: 48px; padding: 30px 24px 90px; }
+  @media (max-width: 980px) {
+    .kontakt-wrap { grid-template-columns: 1fr; gap: 44px; padding: 20px 24px 90px; }
     .form-row { grid-template-columns: 1fr; }
   }
 </style>
@@ -133,7 +150,17 @@
   <a class="logo" href="/">Uniforn<span>o</span></a>
   <ul class="nav-links">
     <li><a href="/o-nas">O nas</a></li>
-    <li><a href="/oferta">Oferta</a></li>
+    <li class="has-dropdown">
+      <a href="/oferta">Oferta <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="dropdown"><div class="dropdown-inner">
+        <a href="/oferta/dla-firm">Dla firm i pracowników</a>
+        <a href="/oferta/dla-gastronomii">Dla gastronomii i hoteli</a>
+        <a href="/oferta/dla-klubow-sportowych">Dla klubów sportowych</a>
+        <a href="/oferta/dla-eventow">Dla eventów i konferencji</a>
+        <a href="/oferta/dla-szkol">Dla szkół i uczelni</a>
+        <a href="/oferta/dla-agencji">Dla agencji i influencerów</a>
+      </div></div>
+    </li>
     <li><a href="/produkty">Produkty</a></li>
     <li><a href="/realizacje">Realizacje</a></li>
     <li><a href="/proces">Proces</a></li>
@@ -152,6 +179,14 @@
   </button>
   <a href="/o-nas">O nas</a>
   <a href="/oferta">Oferta</a>
+  <div class="mobile-sub">
+    <a href="/oferta/dla-firm">Dla firm i pracowników</a>
+    <a href="/oferta/dla-gastronomii">Dla gastronomii i hoteli</a>
+    <a href="/oferta/dla-klubow-sportowych">Dla klubów sportowych</a>
+    <a href="/oferta/dla-eventow">Dla eventów i konferencji</a>
+    <a href="/oferta/dla-szkol">Dla szkół i uczelni</a>
+    <a href="/oferta/dla-agencji">Dla agencji i influencerów</a>
+  </div>
   <a href="/produkty">Produkty</a>
   <a href="/realizacje">Realizacje</a>
   <a href="/proces">Proces</a>
@@ -166,42 +201,21 @@
   <h1 class="sub-title">Porozmawiajmy o Twoim projekcie.</h1>
   <p class="sub-intro">Każde zamówienie zaczynamy od rozmowy. Odpiszemy w ciągu 24 godzin roboczych.</p>
 </header>
-
 <section class="kontakt-wrap">
   <div class="kontakt-form-col">
     <form class="form-grid" id="kontakt-form" action="https://formspree.io/f/xeewojzo" method="POST">
       <div class="form-row">
-        <div class="field">
-          <label for="firma">Nazwa firmy</label>
-          <input type="text" id="firma" name="firma" placeholder="Twoja firma sp. z o.o." required>
-        </div>
-        <div class="field">
-          <label for="imie">Imię i nazwisko</label>
-          <input type="text" id="imie" name="imie" placeholder="Anna Kowalska" required>
-        </div>
+        <div class="field"><label for="firma">Nazwa firmy</label><input type="text" id="firma" name="firma" placeholder="Twoja firma sp. z o.o." required></div>
+        <div class="field"><label for="imie">Imię i nazwisko</label><input type="text" id="imie" name="imie" placeholder="Anna Kowalska" required></div>
       </div>
       <div class="form-row">
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="anna@firma.pl" required>
-        </div>
-        <div class="field">
-          <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="+48 600 000 000">
-        </div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="anna@firma.pl" required></div>
+        <div class="field"><label for="telefon">Telefon</label><input type="tel" id="telefon" name="telefon" placeholder="+48 600 000 000"></div>
       </div>
-      <div class="field">
-        <label for="ilosc">Szacowana ilość sztuk</label>
-        <select id="ilosc" name="ilosc">
-          <option value="">Wybierz przedział</option>
-          <option>30–100 sztuk</option>
-          <option>100–300 sztuk</option>
-          <option>300–1000 sztuk</option>
-          <option>Powyżej 1000 sztuk</option>
-        </select>
+      <div class="field"><label for="ilosc">Szacowana ilość sztuk</label>
+        <select id="ilosc" name="ilosc"><option value="">Wybierz przedział</option><option>30–100 sztuk</option><option>100–300 sztuk</option><option>300–1000 sztuk</option><option>Powyżej 1000 sztuk</option></select>
       </div>
-      <div class="field">
-        <label for="wiadomosc">Opowiedz nam o projekcie</label>
+      <div class="field"><label for="wiadomosc">Opowiedz nam o projekcie</label>
         <textarea id="wiadomosc" name="wiadomosc" placeholder="Czego potrzebujesz? Termin, event, specjalne wymagania..." required></textarea>
       </div>
       <div class="checkbox-row">
@@ -211,34 +225,15 @@
       <input type="hidden" name="_subject" value="Nowe zapytanie — Uniforno (strona /kontakt)">
       <button type="submit" class="form-submit" id="form-submit-btn">Wyślij zapytanie →</button>
     </form>
-    <div id="form-success" style="display:none; padding: 32px; background: var(--warm); border-left: 2px solid var(--accent);">
-      <p style="font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px;">Dziękujemy!</p>
-      <p style="font-size: 15px; font-weight: 300; color: var(--muted); margin: 0;">Odezwiemy się w ciągu 24 godzin.</p>
+    <div id="form-success" class="form-success-box">
+      <p class="fs-title">Dziękujemy!</p>
+      <p class="fs-text">Odezwiemy się w ciągu 24 godzin.</p>
     </div>
   </div>
-
   <div class="kontakt-info-col">
-    <div class="info-item">
-      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-      <div>
-        <div class="info-title">Zadzwoń do nas</div>
-        <a class="info-value" href="tel:+48780159705">+48 780 159 705</a>
-      </div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-      <div>
-        <div class="info-title">Napisz do nas</div>
-        <a class="info-value" href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
-      </div>
-    </div>
-    <div class="info-item">
-      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-      <div>
-        <div class="info-title">Odwiedź nas</div>
-        <div class="info-value">ul. Sokolnicza 7/17,<br>53-676 Wrocław</div>
-      </div>
-    </div>
+    <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="info-title">Zadzwoń do nas</div><a class="info-value" href="tel:+48780159705">+48 780 159 705</a></div></div>
+    <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="info-title">Napisz do nas</div><a class="info-value" href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a></div></div>
+    <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="info-title">Odwiedź nas</div><div class="info-value">ul. Jesionowa 3,<br>55-011 Siechnice</div></div></div>
     <p class="info-note"><strong>Wolisz zadzwonić?</strong> Oddzwaniamy w ciągu godziny.</p>
   </div>
 </section>
@@ -260,7 +255,7 @@
           </a>
           <div class="footer-address">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            ul. Sokolnicza 7/17, 53-676 Wrocław
+            ul. Jesionowa 3, 55-011 Siechnice
           </div>
         </div>
         <div class="footer-social">
@@ -284,11 +279,12 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Dla kogo szyjemy</div>
-        <a href="/koszulki-dla-pracownikow">Koszulki dla pracowników</a>
-        <a href="/koszulki-dla-restauracji">Restauracje i gastronomia</a>
-        <a href="/koszulki-dla-klubu-sportowego">Kluby sportowe</a>
-        <a href="/koszulki-eventowe">Eventy i konferencje</a>
-        <a href="/odziez-firmowa-wroclaw">Firmy z Wrocławia</a>
+        <a href="/oferta/dla-firm">Dla firm i pracowników</a>
+        <a href="/oferta/dla-gastronomii">Dla gastronomii i hoteli</a>
+        <a href="/oferta/dla-klubow-sportowych">Dla klubów sportowych</a>
+        <a href="/oferta/dla-eventow">Dla eventów i konferencji</a>
+        <a href="/oferta/dla-szkol">Dla szkół i uczelni</a>
+        <a href="/oferta/dla-agencji">Dla agencji i influencerów</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -312,7 +308,6 @@
     overlay.addEventListener('click', close);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
   })();
-
   (function() {
     const form = document.getElementById('kontakt-form');
     if (!form) return;
@@ -325,27 +320,14 @@
     rodo.closest('.checkbox-row').insertAdjacentElement('afterend', rodoError);
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      if (!rodo.checked) {
-        rodoError.style.display = 'block';
-        rodo.closest('.checkbox-row').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
+      if (!rodo.checked) { rodoError.style.display = 'block'; rodo.closest('.checkbox-row').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
       rodoError.style.display = 'none';
-      btn.disabled = true;
-      btn.textContent = 'Wysyłanie…';
+      btn.disabled = true; btn.textContent = 'Wysyłanie…';
       try {
         const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (response.ok) {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        } else {
-          btn.disabled = false; btn.textContent = 'Wyślij zapytanie →';
-          alert('Coś poszło nie tak. Spróbuj ponownie lub napisz na kontakt@uniforno.pl');
-        }
-      } catch (err) {
-        btn.disabled = false; btn.textContent = 'Wyślij zapytanie →';
-        alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl');
-      }
+        if (response.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+        else { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Coś poszło nie tak. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
+      } catch (err) { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
     });
   })();
 </script>
