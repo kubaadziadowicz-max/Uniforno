@@ -130,6 +130,24 @@
   .seg-form-wrap { max-width: 720px; margin: 0 auto; padding: 24px 48px 120px; }
   .seg-form-label { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 24px; text-align: center; }
   @media (max-width: 980px) { .seg-form-wrap { padding: 16px 24px 90px; } .form-row { grid-template-columns: 1fr; } }
+  .accordion { max-width: 760px; margin: 0 auto; padding: 12px 48px 16px; }
+  .accordion-item { border: 0.5px solid var(--border); background: var(--paper); }
+  .accordion-header { width: 100%; display: flex; align-items: center; gap: 16px; padding: 26px 28px; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-body); }
+  .accordion-icon { color: var(--accent); display: flex; flex-shrink: 0; }
+  .accordion-icon svg { width: 24px; height: 24px; }
+  .accordion-title { flex: 1; font-family: var(--font-display); font-size: 23px; font-weight: 500; color: var(--ink); line-height: 1.25; }
+  .accordion-chev { color: var(--accent); flex-shrink: 0; display: flex; transition: transform 0.3s ease; }
+  .accordion-chev svg { width: 22px; height: 22px; }
+  .accordion-item.open .accordion-chev { transform: rotate(180deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .accordion-body-inner { padding: 0 28px 28px; }
+  .accordion-body-inner p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--muted); }
+  @media (max-width: 980px) {
+    .accordion { padding: 12px 24px 16px; }
+    .accordion-header { padding: 22px 20px; gap: 12px; }
+    .accordion-title { font-size: 20px; }
+    .accordion-body-inner { padding: 0 20px 24px; }
+  }
 </style>
 </head>
 <body>
@@ -190,6 +208,18 @@
 </header>
 <section class="prose">
   <p>Perfekcyjna organizacja wydarzenia wymaga wyrazistej identyfikacji wizualnej. W chaosie dużych konferencji, targów czy festiwali uczestnicy muszą błyskawicznie zlokalizować obsługę techniczną, hostessy i koordynatorów. Uniforno dostarcza niezawodną odzież eventową, która przyciąga wzrok i gwarantuje pełen profesjonalizm organizacji. Szyjemy od podstaw widoczne z daleka koszulki, ciepłe bluzy oraz eleganckie polo, aplikując na nich niesamowicie trwałe nadruki. Zamiast sięgać po masowe tekstylia z importu, które kończą na dnie szafy tuż po demontażu sceny, tworzymy produkty premium z grubych, polskich materiałów. To najwyższa jakość, która sprawia, że pamiątkowe, świetnie skrojone ubrania z wydarzenia stają się później ulubionym elementem prywatnej garderoby uczestników.</p>
+</section>
+<section class="accordion">
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
+      <span class="accordion-title">Nie masz pomysłu na logo lub grafikę?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Świetne wydarzenie zasługuje na równie dobrą oprawę wizualną. Jeśli nie masz gotowej grafiki, zaprojektujemy ją specjalnie pod Twoje wydarzenie. Wystarczy, że opowiesz nam o charakterze eventu, grupie docelowej i kierunku, który masz w głowie — resztą zajmiemy się my. Przygotujemy propozycje dopasowane do Twoich wytycznych i identyfikacji wizualnej, a po akceptacji od razu przeniesiemy je na odzież. Jeden kontakt, jeden proces, gotowy efekt — bez szukania osobnego grafika i koordynowania dwóch podwykonawców.</p>
+    </div></div>
+  </div>
 </section>
 <section class="seg-form-wrap">
   <div class="seg-form-label">Zapytaj o wycenę</div>
@@ -313,6 +343,15 @@
       } catch (err) { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
     });
   })();
+  document.querySelectorAll('.accordion-header').forEach(function(h){
+    h.addEventListener('click', function(){
+      var item = h.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var open = item.classList.toggle('open');
+      h.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.style.maxHeight = open ? (body.scrollHeight + 'px') : '';
+    });
+  });
 </script>
 
 </body>
