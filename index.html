@@ -290,11 +290,12 @@
     padding: 100px 48px;
     background: var(--ink); color: var(--paper);
     border-top: 0.5px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between; gap: 64px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-  .mip-left { flex: 0 1 60%; }
-  .mip-text { max-width: 560px; }
-  .mip-cta-wrap { flex-shrink: 0; }
+  .mip-left { max-width: 640px; }
+  .mip-eyebrow { justify-content: center; }
+  .mip-text { max-width: 560px; margin: 0 auto; }
+  .mip-cta-wrap { margin-top: 36px; }
   .mip-cta {
     font-family: var(--font-body);
     font-size: 14px; font-weight: 500; letter-spacing: 0.08em;
@@ -574,10 +575,7 @@
     .manifesto { grid-template-columns: 1fr; gap: 24px; padding: 60px 24px; }
     .pillars { grid-template-columns: 1fr 1fr; }
     .pillar { border-bottom: 0.5px solid var(--border); }
-    .made-in-poland { padding: 60px 24px; flex-direction: column; align-items: center; text-align: center; gap: 32px; }
-    .made-in-poland .mip-left { flex: 1 1 auto; }
-    .made-in-poland .mip-eyebrow { justify-content: center; }
-    .made-in-poland .mip-text { margin-left: auto; margin-right: auto; }
+    .made-in-poland { padding: 60px 24px; }
     .process-teaser { padding: 72px 24px; }
     .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
