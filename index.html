@@ -157,6 +157,13 @@
   .hero h1 em {
     font-style: italic; color: var(--accent);
   }
+  .hero-subhead {
+    font-family: var(--font-body);
+    font-size: clamp(17px, 1.7vw, 20px);
+    font-weight: 400; line-height: 1.45;
+    color: var(--ink); max-width: 440px;
+    margin: -14px 0 28px;
+  }
   .hero-desc {
     font-size: 16px; font-weight: 300; line-height: 1.7;
     color: var(--muted); max-width: 420px;
@@ -557,6 +564,7 @@
   }
   .hero-eyebrow  { animation-delay: 0.1s; }
   .hero h1       { animation-delay: 0.25s; }
+  .hero-subhead  { animation-delay: 0.33s; }
   .hero-desc     { animation-delay: 0.4s; }
   .hero-actions  { animation-delay: 0.55s; }
 
@@ -652,6 +660,7 @@
   <div class="hero-left">
     <div class="hero-eyebrow">Odzież Premium · B2B · Made in Poland</div>
     <h1>Odzież,<br>która <em>mówi</em><br>o Twojej<br>firmie.</h1>
+    <h2 class="hero-subhead">Odzież firmowa premium i koszulki dla firm — szyte w Polsce</h2>
     <p class="hero-desc">Każdy krój możemy zaprojektować pod klienta — materiał, fason, wykończenie. Oferujemy koszulki, bluzy, polo, torby i wiele więcej. Wszystko produkujemy etycznie w Polsce, z polskich materiałów.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#kontakt">Zapytaj o wycenę</a>
