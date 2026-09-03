@@ -955,7 +955,7 @@
         <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Uniforno w celu odpowiedzi na zapytanie, zgodnie z <a href="#" style="color: var(--ink);">Polityką Prywatności</a>.</label>
       </div>
       <input type="hidden" name="_subject" value="Nowe zapytanie — Uniforno">
-      <input type="hidden" name="_next" value="">
+      <input type="hidden" name="_next" value="https://uniforno.pl/dziekujemy">
       <button type="submit" class="form-submit" id="form-submit-btn">Wyślij zapytanie →</button>
     </form>
     <div id="form-success" style="display:none; padding: 32px; background: var(--warm); border-left: 2px solid var(--accent); margin-top: 0;">
@@ -1054,8 +1054,7 @@
       });
 
       if (response.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
+        window.location.href = (form.querySelector('input[name="_next"]') || {}).value || 'https://uniforno.pl/dziekujemy';
       } else {
         btn.disabled = false;
         btn.textContent = 'Wyślij zapytanie →';
