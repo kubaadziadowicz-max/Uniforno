@@ -123,6 +123,14 @@
   .product-featured-note { font-size: 12px; font-weight: 300; color: rgba(245,242,235,0.68); line-height: 1.55; }
   @media (max-width: 900px) { .products { padding: 20px 24px 40px; } .product-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } }
+
+  .related { max-width: 1120px; margin: 0 auto; padding: 24px 48px 8px; text-align: center; }
+  .related-title { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .related-intro { font-size: 15px; font-weight: 300; color: var(--muted); margin-bottom: 26px; }
+  .related-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .related-links a { font-size: 14px; font-weight: 400; color: var(--ink); text-decoration: none; border: 0.5px solid var(--border); padding: 12px 22px; transition: background 0.2s, border-color 0.2s; }
+  .related-links a:hover { background: var(--warm); border-color: var(--accent); }
+  @media (max-width: 900px) { .related { padding: 24px 24px 8px; } }
 </style>
 </head>
 <body>
@@ -191,6 +199,10 @@
       <div class="product-name">T-shirty</div>
     </div>
     <div class="product-card">
+      <div class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/><path d="M12 2v6"/><path d="m10 3.4 2-1.1 2 1.1"/></svg></div>
+      <div class="product-name">Koszulki polo</div>
+    </div>
+    <div class="product-card">
       <div class="product-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-2 0-3.2 1-4 2.5L3.5 8.8a2 2 0 0 0-.8 1.6V13l3 1v6a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-6l3-1v-2.6a2 2 0 0 0-.8-1.6L16 5.5C15.2 4 14 3 12 3z"/><path d="M12 3v5"/><path d="M10.5 14h3v4h-3z"/></svg></div>
       <div class="product-name">Bluzy z kapturem</div>
     </div>
@@ -219,6 +231,18 @@
       <div class="product-name">Krój na Twoje potrzeby</div>
       <div class="product-featured-note">Nie znalazłeś czego szukasz? Zaprojektujemy to dla Ciebie.</div>
     </div>
+  </div>
+</section>
+<section class="related">
+  <h2 class="related-title">Sprawdź konkretne produkty i usługi</h2>
+  <p class="related-intro">Zobacz nasze najczęściej wybierane kategorie odzieży firmowej i usługi:</p>
+  <div class="related-links">
+    <a href="/koszulki-polo-dla-firm">Koszulki polo dla firm</a>
+    <a href="/koszulki-z-haftem-logo">Koszulki z haftem logo</a>
+    <a href="/bluzy-firmowe">Bluzy firmowe z logo</a>
+    <a href="/odziez-firmowa-z-nadrukiem">Odzież firmowa z nadrukiem</a>
+    <a href="/bluzy-robocze-z-nadrukiem">Bluzy robocze z nadrukiem</a>
+    <a href="/projektowanie-logo-dla-firmy">Projektowanie logo dla firmy</a>
   </div>
 </section>
 <section class="sub-cta"><a class="btn-dark" href="/kontakt">Zapytaj o wycenę →</a></section>
