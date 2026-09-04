@@ -15,17 +15,17 @@
     {
       "source": "/koszulki-eventowe",
       "destination": "/oferta/dla-eventow",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/koszulki-dla-klubu-sportowego",
       "destination": "/oferta/dla-klubow-sportowych",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/koszulki-dla-restauracji",
       "destination": "/oferta/dla-gastronomii",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
