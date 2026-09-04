@@ -11,6 +11,21 @@
       "source": "/odziej-firmowa-wroclaw",
       "destination": "/odziez-firmowa-wroclaw",
       "permanent": true
+    },
+    {
+      "source": "/koszulki-eventowe",
+      "destination": "/oferta/dla-eventow",
+      "permanent": true
+    },
+    {
+      "source": "/koszulki-dla-klubu-sportowego",
+      "destination": "/oferta/dla-klubow-sportowych",
+      "permanent": true
+    },
+    {
+      "source": "/koszulki-dla-restauracji",
+      "destination": "/oferta/dla-gastronomii",
+      "permanent": true
     }
   ]
 }
