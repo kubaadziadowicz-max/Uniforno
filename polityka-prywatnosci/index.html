@@ -12,9 +12,15 @@
     'ad_personalization': 'denied',
     'analytics_storage': 'denied'
   });
-  if (document.cookie.indexOf('uniforno_consent=granted') !== -1) {
-    gtag('consent', 'update', { 'analytics_storage': 'granted' });
-  }
+  (function(){
+    var m = document.cookie.match(/(?:^|; )uniforno_consent=([^;]+)/);
+    var c = m ? m[1] : null;
+    if (c === 'all') {
+      gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+    } else if (c === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  })();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZT34N2VNCC"></script>
 <script>
@@ -186,7 +192,7 @@
 
   <div class="page-eyebrow">Dokument prawny</div>
   <h1>Polityka prywatności</h1>
-  <p class="last-updated">Ostatnia aktualizacja: 5 września 2026 r.</p>
+  <p class="last-updated">Ostatnia aktualizacja: 12 września 2026 r.</p>
 
   <h2>1. Administrator danych osobowych</h2>
   <p>Administratorem Twoich danych osobowych jest:</p>
@@ -226,13 +232,13 @@
   <ul>
     <li>dostawcom usług poczty elektronicznej i hostingu,</li>
     <li>dostawcom narzędzi do obsługi formularzy kontaktowych (Formspree, Inc.),</li>
-    <li>dostawcy narzędzi analitycznych (Google Ireland Limited / Google LLC — usługa Google Analytics),</li>
+    <li>dostawcy narzędzi analitycznych i marketingowych (Google Ireland Limited / Google LLC — usługi Google Analytics i Google Ads),</li>
     <li>podmiotom świadczącym usługi księgowe i prawne — wyłącznie w zakresie niezbędnym.</li>
   </ul>
   <p>Nie sprzedajemy ani nie udostępniamy Twoich danych osobom trzecim w celach marketingowych.</p>
 
   <h2>6. Przekazywanie danych poza EOG</h2>
-  <p>W związku z korzystaniem z usług Formspree oraz Google Analytics (dostawcy z siedzibą w USA) Twoje dane mogą być przekazywane do państwa trzeciego. Zarówno Formspree, Inc., jak i Google LLC stosują standardowe klauzule umowne zatwierdzone przez Komisję Europejską, co zapewnia odpowiedni poziom ochrony danych.</p>
+  <p>W związku z korzystaniem z usług Formspree oraz usług Google (Google Analytics i Google Ads) — dostawców z siedzibą w USA — Twoje dane mogą być przekazywane do państwa trzeciego. Zarówno Formspree, Inc., jak i Google LLC stosują standardowe klauzule umowne zatwierdzone przez Komisję Europejską, co zapewnia odpowiedni poziom ochrony danych.</p>
 
   <h2>7. Twoje prawa</h2>
   <p>W związku z przetwarzaniem Twoich danych osobowych przysługują Ci następujące prawa:</p>
@@ -250,11 +256,12 @@
   <h2>8. Dobrowolność podania danych</h2>
   <p>Podanie danych osobowych w formularzu kontaktowym jest dobrowolne, jednak niezbędne do udzielenia odpowiedzi na Twoje zapytanie. Brak podania danych uniemożliwia nawiązanie kontaktu.</p>
 
-  <h2>9. Pliki cookies i narzędzia analityczne</h2>
+  <h2>9. Pliki cookies, analityka i marketing</h2>
   <p>Strona uniforno.pl korzysta z plików cookies oraz z narzędzia analitycznego <strong>Google Analytics 4 (GA4)</strong>, dostarczanego przez Google Ireland Limited / Google LLC, w celu analizy ruchu na stronie, sposobu korzystania z niej przez użytkowników oraz ulepszania naszych usług.</p>
   <p>Google Analytics zbiera zanonimizowane dane statystyczne o odwiedzinach, takie jak liczba i źródła wizyt, przeglądane podstrony, przybliżona lokalizacja (na podstawie adresu IP), rodzaj urządzenia i przeglądarki. Dane te mają charakter statystyczny i nie służą do identyfikacji konkretnych osób.</p>
-  <p>Analitykę uruchamiamy wyłącznie po wyrażeniu przez Ciebie zgody. Przy pierwszej wizycie wyświetlamy baner zgody na pliki cookies — dopóki nie klikniesz „Akceptuję", Google Analytics nie zbiera żadnych danych (stosujemy mechanizm Google Consent Mode, w którym domyślnym stanem zgody jest „odmowa"). Klikając „Odrzucam", całkowicie blokujesz analitykę. Podstawą prawną przetwarzania danych analitycznych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać, usuwając pliki cookies w przeglądarce lub ponownie odrzucając zgodę.</p>
-  <p>Do zapamiętania Twojego wyboru używamy niezbędnego, funkcjonalnego pliku cookie, który nie wymaga zgody. Dane analityczne przetwarza Google, które może przekazywać je do USA na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Więcej informacji znajdziesz w <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">polityce prywatności Google</a>.</p>
+  <p>Analitykę i działania marketingowe uruchamiamy wyłącznie po wyrażeniu przez Ciebie zgody. Przy pierwszej wizycie wyświetlamy baner zgody na pliki cookies z wyborem: „Akceptuję wszystkie" (zgoda na pliki analityczne i marketingowe) albo „Tylko niezbędne" (pozostają wyłącznie pliki niezbędne do działania strony). Dopóki nie wyrazisz zgody, Google Analytics oraz Google Ads nie zbierają żadnych danych — stosujemy mechanizm Google Consent Mode, w którym domyślnym stanem zgody jest „odmowa". Podstawą prawną przetwarzania danych analitycznych i marketingowych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać, usuwając pliki cookies w przeglądarce lub ponownie wybierając „Tylko niezbędne".</p>
+  <p>Po wyrażeniu zgody marketingowej korzystamy z plików cookie <strong>Google Ads</strong>, które służą do pomiaru konwersji (np. wysłania formularza kontaktowego) oraz do działań marketingowych i remarketingowych. Pozwalają nam one ocenić skuteczność kampanii reklamowych i lepiej docierać z ofertą do zainteresowanych odbiorców. Jeśli wybierzesz „Tylko niezbędne", pliki te nie są uruchamiane.</p>
+  <p>Do zapamiętania Twojego wyboru używamy niezbędnego, funkcjonalnego pliku cookie, który nie wymaga zgody. Dane analityczne i marketingowe przetwarza Google, które może przekazywać je do USA na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Więcej informacji znajdziesz w <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">polityce prywatności Google</a>.</p>
 
   <h2>10. Zmiany polityki prywatności</h2>
   <p>Zastrzegamy sobie prawo do zmiany niniejszej polityki prywatności. Aktualną wersję dokumentu zawsze znajdziesz pod adresem <a href="https://uniforno.pl/polityka-prywatnosci">uniforno.pl/polityka-prywatnosci</a>. Data ostatniej aktualizacji jest widoczna na górze strony.</p>
@@ -298,10 +305,10 @@
 </style>
 <div id="cookie-banner" role="dialog" aria-label="Zgoda na pliki cookies">
   <div class="cookie-inner">
-    <div class="cookie-text">Ta strona używa plików cookies, w tym Google Analytics, do analizy ruchu i ulepszania naszych usług. Analityka uruchomi się dopiero po Twojej zgodzie. Szczegóły znajdziesz w <a href="/polityka-prywatnosci">polityce prywatności</a>.</div>
+    <div class="cookie-text">Ta strona używa plików cookies. Niezbędne pliki zapewniają jej działanie, a za Twoją zgodą korzystamy też z Google Analytics (analiza ruchu) oraz plików marketingowych Google Ads. Szczegóły znajdziesz w <a href="/polityka-prywatnosci">polityce prywatności</a>.</div>
     <div class="cookie-actions">
-      <button class="cookie-btn cookie-reject" id="cookie-reject" type="button">Odrzucam</button>
-      <button class="cookie-btn cookie-accept" id="cookie-accept" type="button">Akceptuję</button>
+      <button class="cookie-btn cookie-reject" id="cookie-reject" type="button">Tylko niezbędne</button>
+      <button class="cookie-btn cookie-accept" id="cookie-accept" type="button">Akceptuję wszystkie</button>
     </div>
   </div>
 </div>
@@ -321,13 +328,17 @@
     var accept = document.getElementById('cookie-accept');
     var reject = document.getElementById('cookie-reject');
     if (accept) accept.addEventListener('click', function() {
-      setConsent('granted');
-      if (typeof gtag === 'function') { gtag('consent', 'update', { 'analytics_storage': 'granted' }); }
+      setConsent('all');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+      }
       banner.classList.remove('show');
     });
     if (reject) reject.addEventListener('click', function() {
-      setConsent('denied');
-      if (typeof gtag === 'function') { gtag('consent', 'update', { 'analytics_storage': 'denied' }); }
+      setConsent('necessary');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied' });
+      }
       banner.classList.remove('show');
     });
   })();
