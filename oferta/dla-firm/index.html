@@ -38,6 +38,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Jakie jest minimum zamówienia?", "acceptedAnswer": { "@type": "Answer", "text": "Realizujemy zamówienia od 30 sztuk." } },
+    { "@type": "Question", "name": "Ile trwa realizacja?", "acceptedAnswer": { "@type": "Answer", "text": "Wycenę przygotowujemy w 24h. Czas produkcji ustalamy indywidualnie przy zamówieniu — zależy od ilości i rodzaju znakowania." } },
+    { "@type": "Question", "name": "Czy robicie próbkę przed produkcją?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przed produkcją możesz otrzymać próbkę materiału lub gotowy wzór do akceptacji, żeby mieć pewność co do jakości i wyglądu." } },
+    { "@type": "Question", "name": "Jakie metody znakowania stosujecie?", "acceptedAnswer": { "@type": "Answer", "text": "Haft oraz nadruk (m.in. sitodruk i DTG). Metodę dobieramy do projektu, materiału i ilości." } },
+    { "@type": "Question", "name": "Czy szyjecie od podstaw, czy zdobicie gotowe produkty?", "acceptedAnswer": { "@type": "Answer", "text": "Szyjemy od podstaw w Polsce, z własnym krojem pod klienta. To nie jest nadruk na gotowej koszulce z hurtowni — pełna kontrola nad jakością i dopasowaniem." } },
+    { "@type": "Question", "name": "Jak wygląda wycena?", "acceptedAnswer": { "@type": "Answer", "text": "Wycena jest bezpłatna i niezobowiązująca. Wystarczy zadzwonić lub napisać — odpowiadamy w 24h." } }
+  ]
+}
+</script>
 <style>
   :root {
     --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
@@ -160,6 +174,54 @@
   .seg-form-wrap { max-width: 720px; margin: 0 auto; padding: 24px 48px 120px; }
   .seg-form-label { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 24px; text-align: center; }
   @media (max-width: 980px) { .seg-form-wrap { padding: 16px 24px 90px; } .form-row { grid-template-columns: 1fr; } }
+
+  /* nagłówki sekcji na landingu */
+  .seg-h2 { max-width: 760px; margin: 0 auto; padding: 44px 48px 0; font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.15; color: var(--ink); text-align: center; }
+  @media (max-width: 900px) { .seg-h2 { padding: 36px 24px 0; } }
+
+  /* proces (timeline) — 1:1 z /proces */
+  .timeline { max-width: 720px; margin: 0 auto; padding: 40px 48px 20px; }
+  .timeline-step { display: grid; grid-template-columns: 64px 1fr; gap: 28px; }
+  .timeline-marker { display: flex; flex-direction: column; align-items: center; }
+  .timeline-icon { width: 64px; height: 64px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--warm); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+  .timeline-icon svg { width: 26px; height: 26px; }
+  .timeline-line { flex: 1; width: 0.5px; background: var(--border); margin: 10px 0; min-height: 24px; }
+  .timeline-step:last-child .timeline-line { display: none; }
+  .timeline-body { padding-bottom: 48px; padding-top: 8px; }
+  .timeline-step:last-child .timeline-body { padding-bottom: 0; }
+  .timeline-num { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
+  .timeline-title { font-family: var(--font-display); font-size: 27px; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
+  .timeline-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); }
+  @media (max-width: 900px) { .timeline { padding: 24px 24px 10px; } .timeline-step { grid-template-columns: 52px 1fr; gap: 20px; } .timeline-icon { width: 52px; height: 52px; } .timeline-icon svg { width: 22px; height: 22px; } }
+
+  /* link do artykułu z cenami */
+  .mid-cta { text-align: center; padding: 20px 48px 8px; }
+  @media (max-width: 900px) { .mid-cta { padding: 20px 24px 8px; } }
+
+  /* FAQ (accordion) — spójne z /oferta/* */
+  .accordion { max-width: 760px; margin: 0 auto; padding: 12px 48px 16px; }
+  .accordion-item { border: 0.5px solid var(--border); background: var(--paper); }
+  .accordion-item + .accordion-item { border-top: none; }
+  .accordion-header { width: 100%; display: flex; align-items: center; gap: 16px; padding: 26px 28px; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-body); }
+  .accordion-icon { color: var(--accent); display: flex; flex-shrink: 0; }
+  .accordion-icon svg { width: 24px; height: 24px; }
+  .accordion-title { flex: 1; font-family: var(--font-display); font-size: 23px; font-weight: 500; color: var(--ink); line-height: 1.25; }
+  .accordion-chev { color: var(--accent); flex-shrink: 0; display: flex; transition: transform 0.3s ease; }
+  .accordion-chev svg { width: 22px; height: 22px; }
+  .accordion-item.open .accordion-chev { transform: rotate(180deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .accordion-body-inner { padding: 0 28px 28px; }
+  .accordion-body-inner p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--muted); }
+  @media (max-width: 900px) { .accordion { padding: 12px 24px 16px; } .accordion-header { padding: 22px 20px; gap: 12px; } .accordion-title { font-size: 20px; } .accordion-body-inner { padding: 0 20px 24px; } }
+
+  /* wezwanie do wyceny */
+  .quote-cta { max-width: 720px; margin: 0 auto; padding: 12px 48px 8px; text-align: center; }
+  .quote-cta p { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--muted); margin: 0 auto 22px; max-width: 560px; }
+  .quote-contacts { display: flex; gap: 14px 40px; justify-content: center; flex-wrap: wrap; }
+  .quote-contacts a { font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 500; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: color 0.2s; }
+  .quote-contacts a:hover { color: var(--accent); }
+  .quote-contacts svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
+  @media (max-width: 900px) { .quote-cta { padding: 12px 24px 8px; } }
 </style>
 </head>
 <body>
@@ -233,7 +295,105 @@
 
   <h2>Dla kogo szyjemy spójne kolekcje?</h2>
   <p>To rozwiązanie dla firm, które nie chcą iść na wizerunkowe kompromisy. Sprawdza się wszędzie, gdzie w jednym miejscu pracują różne działy i stanowiska — od kilkuosobowego zespołu po rozbudowaną strukturę z osobnymi pionami. Wszędzie tam, gdzie spójny styl przekłada się na autorytet firmy, dostarczamy tekstylia gotowe na lata intensywnego użytkowania. Ubierz cały zespół w polską jakość premium.</p>
+
+  <h2>Wszystko w jednym miejscu</h2>
+  <p>Nie musisz szukać osobno krawca, hafciarni i drukarni. Projekt, krój, szycie i znakowanie robimy u siebie — od pomysłu po gotowy produkt z Twoim logo. Ty zajmujesz się firmą, resztą zajmujemy się my.</p>
 </section>
+
+<h2 class="seg-h2">Jak wygląda współpraca</h2>
+<section class="timeline">
+    <div class="timeline-step">
+      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><div class="timeline-line"></div></div>
+      <div class="timeline-body"><div class="timeline-num">Krok 01</div><h2 class="timeline-title">Brief i rozmowa</h2><p class="timeline-desc">Wypełniasz formularz lub dzwonisz. Rozmawiamy o Twoich potrzebach, ilości, terminie i tym, co ma wyrażać odzież Twojej firmy.</p></div>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></div><div class="timeline-line"></div></div>
+      <div class="timeline-body"><div class="timeline-num">Krok 02</div><h2 class="timeline-title">Projekt i wizualizacja</h2><p class="timeline-desc">Przygotowujemy projekt kroju i znakowania. Dostajesz wizualizację do akceptacji — bez żadnych kosztów na tym etapie.</p></div>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><div class="timeline-line"></div></div>
+      <div class="timeline-body"><div class="timeline-num">Krok 03</div><h2 class="timeline-title">Model do akceptacji</h2><p class="timeline-desc">Przed produkcją szyjemy i wysyłamy gotowy model ubrania do sprawdzenia. Oceniasz krój, materiał i kolor na żywo, akceptujesz lub zgłaszasz poprawki.</p></div>
+    </div>
+    <div class="timeline-step">
+      <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div class="timeline-line"></div></div>
+      <div class="timeline-body"><div class="timeline-num">Krok 04</div><h2 class="timeline-title">Produkcja i dostawa</h2><p class="timeline-desc">Po akceptacji startuje produkcja. Realizacja 10–21 dni roboczych. Dostarczamy pod wskazany adres — a jeśli istnieje taka potrzeba, możemy wysłać odzież na różne adresy.</p></div>
+    </div>
+</section>
+
+<section class="mid-cta"><a class="btn-dark" href="/blog/ile-kosztuje-koszulka-firmowa-z-logo">Sprawdź, ile kosztuje odzież firmowa →</a></section>
+
+<h2 class="seg-h2">Najczęściej zadawane pytania</h2>
+<section class="accordion">
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Jakie jest minimum zamówienia?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Realizujemy zamówienia od 30 sztuk.</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Ile trwa realizacja?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Wycenę przygotowujemy w 24h. Czas produkcji ustalamy indywidualnie przy zamówieniu — zależy od ilości i rodzaju znakowania.</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Czy robicie próbkę przed produkcją?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Tak. Przed produkcją możesz otrzymać próbkę materiału lub gotowy wzór do akceptacji, żeby mieć pewność co do jakości i wyglądu.</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Jakie metody znakowania stosujecie?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Haft oraz nadruk (m.in. sitodruk i DTG). Metodę dobieramy do projektu, materiału i ilości.</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Czy szyjecie od podstaw, czy zdobicie gotowe produkty?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Szyjemy od podstaw w Polsce, z własnym krojem pod klienta. To nie jest nadruk na gotowej koszulce z hurtowni — pełna kontrola nad jakością i dopasowaniem.</p>
+    </div></div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-header" type="button" aria-expanded="false">
+      <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+      <span class="accordion-title">Jak wygląda wycena?</span>
+      <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </button>
+    <div class="accordion-body"><div class="accordion-body-inner">
+      <p>Wycena jest bezpłatna i niezobowiązująca. Wystarczy zadzwonić lub napisać — odpowiadamy w 24h.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="quote-cta">
+  <p>Wycena jest bezpłatna i niezobowiązująca. Nie wiesz, od czego zacząć? Wystarczy, że zadzwonisz lub napiszesz — odpowiadamy w ciągu 24 godzin.</p>
+  <div class="quote-contacts">
+    <a href="tel:+48780159705"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+48 780 159 705</a>
+    <a href="mailto:kontakt@uniforno.pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>kontakt@uniforno.pl</a>
+  </div>
+</section>
+
 <section class="seg-form-wrap">
   <div class="seg-form-label">Zapytaj o wycenę</div>
   <form class="form-grid" id="kontakt-form" action="https://formspree.io/f/xeewojzo" method="POST">
@@ -357,6 +517,15 @@
       } catch (err) { btn.disabled = false; btn.textContent = 'Wyślij zapytanie →'; alert('Błąd połączenia. Spróbuj ponownie lub napisz na kontakt@uniforno.pl'); }
     });
   })();
+  document.querySelectorAll('.accordion-header').forEach(function(h){
+    h.addEventListener('click', function(){
+      var item = h.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var open = item.classList.toggle('open');
+      h.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.style.maxHeight = open ? (body.scrollHeight + 'px') : '';
+    });
+  });
 </script>
 
 <!-- Cookie consent banner -->
