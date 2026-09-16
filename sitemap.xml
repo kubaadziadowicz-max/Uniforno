@@ -116,6 +116,12 @@
   </url>
 
   <url>
+    <loc>https://uniforno.pl/koszulki-firmowe-z-logo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://uniforno.pl/odziez-firmowa-z-nadrukiem</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
