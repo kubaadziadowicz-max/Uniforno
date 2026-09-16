@@ -45,9 +45,9 @@
   "mainEntity": [
     { "@type": "Question", "name": "Jakie jest minimum zamówienia?", "acceptedAnswer": { "@type": "Answer", "text": "Realizujemy zamówienia od 30 sztuk." } },
     { "@type": "Question", "name": "Nadruk czy haft — co wybrać na koszulki?", "acceptedAnswer": { "@type": "Answer", "text": "Nadruk sprawdza się przy kolorowych grafikach i większych seriach, haft przy prestiżowym, trwałym znakowaniu. Doradzimy przy wycenie i dobierzemy technikę do projektu." } },
-    { "@type": "Question", "name": "Czy szyjecie koszulki od podstaw, czy zdobicie gotowe?", "acceptedAnswer": { "@type": "Answer", "text": "Szyjemy od podstaw w Polsce, z własnym krojem pod klienta — to nie nadruk na gotowej koszulce z hurtowni." } },
-    { "@type": "Question", "name": "Ile trwa realizacja?", "acceptedAnswer": { "@type": "Answer", "text": "Wycenę przygotowujemy w 24h. Czas produkcji ustalamy indywidualnie, zależnie od ilości i rodzaju znakowania." } },
-    { "@type": "Question", "name": "Czy zobaczę koszulkę przed produkcją?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przed produkcją przygotowujemy model do akceptacji, żebyś miał pewność co do jakości i wyglądu." } },
+    { "@type": "Question", "name": "Szyjecie koszulki od podstaw, czy zdobicie gotowe?", "acceptedAnswer": { "@type": "Answer", "text": "Szyjemy od podstaw w Polsce, z własnym krojem pod klienta — to nie nadruk na gotowej koszulce z hurtowni." } },
+    { "@type": "Question", "name": "Ile trwa realizacja?", "acceptedAnswer": { "@type": "Answer", "text": "Wycenę przygotowujemy w 24h. Realizacja trwa przeważnie 10–21 dni roboczych, w zależności od ilości i rodzaju znakowania." } },
+    { "@type": "Question", "name": "Czy zobaczę projekt przed produkcją?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Przed produkcją dostajesz wizualizację do akceptacji — z umiejscowieniem logo, kolorami i całą kompozycją." } },
     { "@type": "Question", "name": "Jak wygląda wycena?", "acceptedAnswer": { "@type": "Answer", "text": "Wycena jest bezpłatna i niezobowiązująca. Wystarczy zadzwonić lub napisać — odpowiadamy w 24h." } }
   ]
 }
@@ -102,10 +102,24 @@
   .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .accordion-body-inner { padding: 0 24px 24px; }
   .accordion-body-inner p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--muted); margin: 0; }
+  /* proces (timeline) — spójny z /proces i /oferta/dla-firm */
+  .timeline { max-width: 640px; margin: 24px auto 0; }
+  .timeline-step { display: grid; grid-template-columns: 60px 1fr; gap: 24px; }
+  .timeline-marker { display: flex; flex-direction: column; align-items: center; }
+  .timeline-icon { width: 60px; height: 60px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--warm); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+  .timeline-icon svg { width: 24px; height: 24px; }
+  .timeline-line { flex: 1; width: 0.5px; background: var(--border); margin: 10px 0; min-height: 20px; }
+  .timeline-step:last-child .timeline-line { display: none; }
+  .timeline-body { padding-bottom: 40px; padding-top: 6px; }
+  .timeline-step:last-child .timeline-body { padding-bottom: 0; }
+  .timeline-num { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 6px; }
+  .timeline-title { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
+  .timeline-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); }
+  @media (max-width: 900px) { .timeline-step { grid-template-columns: 48px 1fr; gap: 18px; } .timeline-icon { width: 48px; height: 48px; } .timeline-icon svg { width: 20px; height: 20px; } }
   .cta-section { padding: 100px 48px; background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .cta-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
   .cta-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--accent); }
-  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; }
+  .cta-headline { font-family: var(--font-display); font-size: clamp(36px, 4vw, 54px); font-weight: 500; line-height: 1.1; color: var(--paper); }
   .cta-headline em { font-style: italic; color: var(--accent); }
   .cta-right { display: flex; flex-direction: column; gap: 20px; }
   .cta-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,242,235,0.7); }
@@ -172,7 +186,29 @@
   </div>
   <div class="content-block">
     <h2>Dla kogo szyjemy koszulki z logo</h2>
-    <p>Realizujemy zamówienia od 30 sztuk — dla firm ubierających zespół, na eventy i targi, dla kadry i obsługi, a także jako element odzieży reprezentacyjnej. Każde zamówienie zaczynamy od briefu i projektu, a przed produkcją przygotowujemy model do akceptacji, żebyś dokładnie wiedział, co otrzymasz.</p>
+    <p>Realizujemy zamówienia od 30 sztuk — dla firm ubierających zespół, na eventy i targi, dla kadry i obsługi, a także jako element odzieży reprezentacyjnej. Każde zamówienie zaczynamy od briefu i projektu, a przed produkcją dostajesz wizualizację do akceptacji, żebyś dokładnie wiedział, co otrzymasz.</p>
+  </div>
+
+  <div class="content-block">
+    <h2>Jak wygląda współpraca</h2>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><div class="timeline-line"></div></div>
+        <div class="timeline-body"><div class="timeline-num">Krok 01</div><h2 class="timeline-title">Brief i rozmowa</h2><p class="timeline-desc">Wypełniasz formularz lub dzwonisz. Rozmawiamy o Twoich potrzebach, ilości, terminie i tym, co ma wyrażać odzież Twojej firmy.</p></div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg></div><div class="timeline-line"></div></div>
+        <div class="timeline-body"><div class="timeline-num">Krok 02</div><h2 class="timeline-title">Projekt i wizualizacja</h2><p class="timeline-desc">Przygotowujemy projekt kroju i znakowania. Dostajesz wizualizację do akceptacji — bez żadnych kosztów na tym etapie.</p></div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><div class="timeline-line"></div></div>
+        <div class="timeline-body"><div class="timeline-num">Krok 03</div><h2 class="timeline-title">Wizualizacja do akceptacji</h2><p class="timeline-desc">Zanim ruszy produkcja, na wizualizacji potwierdzasz umiejscowienie logo i nadruków, dobór kolorów oraz całą kompozycję. Akceptujesz albo zgłaszasz poprawki, a my nanosimy je aż do finalnej wersji — do szycia przechodzimy dopiero po Twojej akceptacji.</p></div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-marker"><div class="timeline-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div><div class="timeline-line"></div></div>
+        <div class="timeline-body"><div class="timeline-num">Krok 04</div><h2 class="timeline-title">Produkcja i dostawa</h2><p class="timeline-desc">Po akceptacji startuje produkcja. Realizacja 10–21 dni roboczych. Dostarczamy pod wskazany adres — a jeśli istnieje taka potrzeba, możemy wysłać odzież na różne adresy.</p></div>
+      </div>
+    </div>
   </div>
 
   <div class="content-block">
@@ -201,7 +237,7 @@
       <div class="accordion-item">
         <button class="accordion-header" type="button" aria-expanded="false">
           <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
-          <span class="accordion-title">Czy szyjecie koszulki od podstaw, czy zdobicie gotowe?</span>
+          <span class="accordion-title">Szyjecie koszulki od podstaw, czy zdobicie gotowe?</span>
           <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body"><div class="accordion-body-inner">
@@ -215,17 +251,17 @@
           <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body"><div class="accordion-body-inner">
-          <p>Wycenę przygotowujemy w 24h. Czas produkcji ustalamy indywidualnie, zależnie od ilości i rodzaju znakowania.</p>
+          <p>Wycenę przygotowujemy w 24h. Realizacja trwa przeważnie 10–21 dni roboczych, w zależności od ilości i rodzaju znakowania.</p>
         </div></div>
       </div>
       <div class="accordion-item">
         <button class="accordion-header" type="button" aria-expanded="false">
           <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
-          <span class="accordion-title">Czy zobaczę koszulkę przed produkcją?</span>
+          <span class="accordion-title">Czy zobaczę projekt przed produkcją?</span>
           <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </button>
         <div class="accordion-body"><div class="accordion-body-inner">
-          <p>Tak. Przed produkcją przygotowujemy model do akceptacji, żebyś miał pewność co do jakości i wyglądu.</p>
+          <p>Tak. Przed produkcją dostajesz wizualizację do akceptacji — z umiejscowieniem logo, kolorami i całą kompozycją.</p>
         </div></div>
       </div>
       <div class="accordion-item">
