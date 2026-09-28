@@ -65,8 +65,6 @@
   .dropdown-inner { background: var(--paper); border: 0.5px solid var(--border); box-shadow: 0 20px 44px rgba(26,25,22,0.10); min-width: 250px; padding: 8px 0; }
   .dropdown-inner a { display: block; padding: 11px 22px; font-size: 13px; color: var(--muted); white-space: nowrap; transition: color 0.2s, background 0.2s; }
   .dropdown-inner a:hover { color: var(--ink); background: var(--warm); }
-  .dropdown-group-title { padding: 12px 22px 4px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
-  .dropdown-group-title:not(:first-child) { margin-top: 6px; padding-top: 12px; border-top: 0.5px solid var(--border); }
   .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
   .nav-cta:hover { background: var(--accent); color: var(--ink); }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; line-height: 0; }
@@ -80,7 +78,6 @@
   .mobile-sub { display: flex; flex-direction: column; padding: 6px 0 10px; border-bottom: 0.5px solid var(--border); }
   .mobile-sub a { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--muted); text-decoration: none; padding: 9px 0 9px 16px; transition: color 0.2s; }
   .mobile-sub a:hover { color: var(--accent); }
-  .mobile-sub-title { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); padding: 10px 0 2px 16px; }
   .mobile-menu .mobile-cta { margin-top: 24px; background: var(--ink); color: var(--paper); font-family: var(--font-body); text-align: center; border: none; border-bottom: none; padding: 16px; font-size: 13px; letter-spacing: 0.06em; font-weight: 500; transition: background 0.2s, color 0.2s; }
   .mobile-menu .mobile-cta:hover { background: var(--accent); color: var(--ink); }
   .nav-close { position: absolute; top: 22px; right: 24px; background: none; border: none; cursor: pointer; color: var(--ink); line-height: 0; }
@@ -163,6 +160,12 @@
   .related-links a { font-size: 14px; font-weight: 400; color: var(--ink); text-decoration: none; border: 0.5px solid var(--border); padding: 12px 22px; transition: background 0.2s, border-color 0.2s; }
   .related-links a:hover { background: var(--warm); border-color: var(--accent); }
   @media (max-width: 900px) { .related { padding: 24px 24px 8px; } }
+
+  .make-panel { max-width: 1120px; margin: 0 auto; padding: 8px 48px 120px; }
+  .make-panel-inner { background: var(--warm); border: 0.5px solid var(--border); padding: 56px 40px; text-align: center; }
+  .make-panel-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ink); margin-bottom: 14px; line-height: 1.15; }
+  .make-panel-text { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
+  @media (max-width: 900px) { .make-panel { padding: 8px 24px 90px; } .make-panel-inner { padding: 40px 24px; } }
 </style>
 </head>
 <body>
@@ -185,23 +188,9 @@
     <li class="has-dropdown">
       <a href="/produkty">Produkty <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
       <div class="dropdown"><div class="dropdown-inner">
-        <div class="dropdown-group-title">Koszulki</div>
-        <a href="/produkty#koszulki">Oversize</a>
-        <a href="/produkty#koszulki">Regular</a>
-        <a href="/produkty#koszulki">Polo</a>
-        <div class="dropdown-group-title">Bluzy</div>
-        <a href="/produkty#bluzy">Z kapturem oversize</a>
-        <a href="/produkty#bluzy">Z kapturem regular</a>
-        <a href="/produkty#bluzy">Crewneck oversize</a>
-        <a href="/produkty#bluzy">Crewneck regular</a>
-        <a href="/produkty#bluzy">Rozpinana oversize</a>
-        <a href="/produkty#bluzy">Rozpinana regular</a>
-        <div class="dropdown-group-title">Spodnie</div>
-        <a href="/produkty#spodnie">Dresy oversize</a>
-        <a href="/produkty#spodnie">Dresy regular</a>
-        <a href="/produkty#spodnie">Krótkie oversize</a>
-        <a href="/produkty#spodnie">Krótkie regular</a>
-        <div class="dropdown-group-title">Torby</div>
+        <a href="/produkty#koszulki">Koszulki</a>
+        <a href="/produkty#bluzy">Bluzy</a>
+        <a href="/produkty#spodnie">Spodnie</a>
         <a href="/produkty#torby">Torby</a>
       </div></div>
     </li>
@@ -232,23 +221,9 @@
   </div>
   <a href="/produkty">Produkty</a>
   <div class="mobile-sub">
-    <div class="mobile-sub-title">Koszulki</div>
-    <a href="/produkty#koszulki">Oversize</a>
-    <a href="/produkty#koszulki">Regular</a>
-    <a href="/produkty#koszulki">Polo</a>
-    <div class="mobile-sub-title">Bluzy</div>
-    <a href="/produkty#bluzy">Z kapturem oversize</a>
-    <a href="/produkty#bluzy">Z kapturem regular</a>
-    <a href="/produkty#bluzy">Crewneck oversize</a>
-    <a href="/produkty#bluzy">Crewneck regular</a>
-    <a href="/produkty#bluzy">Rozpinana oversize</a>
-    <a href="/produkty#bluzy">Rozpinana regular</a>
-    <div class="mobile-sub-title">Spodnie</div>
-    <a href="/produkty#spodnie">Dresy oversize</a>
-    <a href="/produkty#spodnie">Dresy regular</a>
-    <a href="/produkty#spodnie">Krótkie oversize</a>
-    <a href="/produkty#spodnie">Krótkie regular</a>
-    <div class="mobile-sub-title">Torby</div>
+    <a href="/produkty#koszulki">Koszulki</a>
+    <a href="/produkty#bluzy">Bluzy</a>
+    <a href="/produkty#spodnie">Spodnie</a>
     <a href="/produkty#torby">Torby</a>
   </div>
   <a href="/realizacje">Realizacje</a>
@@ -270,14 +245,14 @@
   <div class="prod-section" id="koszulki">
     <h2 class="prod-section-title">Koszulki</h2>
     <div class="prod-grid">
-      <a class="prod-card" href="/koszulki-firmowe-z-logo">
+      <a class="prod-card" href="/produkty/koszulka">
         <div class="prod-card-img"><img src="/images/koszulka.png" alt="Koszulka premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Koszulka</div>
           <div class="prod-card-desc">Klasyczny t-shirt premium z Twoim logo — miękka, gęsta dzianina i krój szyty pod klienta.</div>
         </div>
       </a>
-      <a class="prod-card" href="/koszulki-polo-dla-firm">
+      <a class="prod-card" href="/produkty/polo">
         <div class="prod-card-img"><img src="/images/polo.png" alt="Koszulka polo premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Koszulka polo</div>
@@ -290,21 +265,21 @@
   <div class="prod-section" id="bluzy">
     <h2 class="prod-section-title">Bluzy</h2>
     <div class="prod-grid">
-      <a class="prod-card" href="/bluzy-firmowe">
+      <a class="prod-card" href="/produkty/bluza-z-kapturem">
         <div class="prod-card-img"><img src="/images/bluza-kaptur.png" alt="Bluza z kapturem premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Bluza z kapturem</div>
           <div class="prod-card-desc">Ciepła, gruba bluza z kapturem z haftem lub nadrukiem — na chłodniejsze dni.</div>
         </div>
       </a>
-      <a class="prod-card" href="/bluzy-firmowe">
+      <a class="prod-card" href="/produkty/crewneck">
         <div class="prod-card-img"><img src="/images/crewneck.png" alt="Bluza crewneck premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Crewneck</div>
           <div class="prod-card-desc">Klasyczna bluza bez kaptura — ponadczasowy krój i premium wykończenie.</div>
         </div>
       </a>
-      <a class="prod-card" href="/bluzy-firmowe">
+      <a class="prod-card" href="/produkty/bluza-rozpinana">
         <div class="prod-card-img"><img src="/images/bluza-zip.png" alt="Bluza rozpinana premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Bluza rozpinana</div>
@@ -317,14 +292,14 @@
   <div class="prod-section" id="spodnie">
     <h2 class="prod-section-title">Spodnie</h2>
     <div class="prod-grid">
-      <a class="prod-card" href="/kontakt">
+      <a class="prod-card" href="/produkty/dresy">
         <div class="prod-card-img"><img src="/images/dresy.png" alt="Dresowe spodnie premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Dresy</div>
           <div class="prod-card-desc">Dresowe spodnie z miękkiej dzianiny — komfort i spójny wygląd zespołu.</div>
         </div>
       </a>
-      <a class="prod-card" href="/kontakt">
+      <a class="prod-card" href="/produkty/krotkie-spodenki">
         <div class="prod-card-img"><img src="/images/krotkie-spodenki.png" alt="Krótkie spodenki dresowe premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Krótkie spodenki</div>
@@ -337,7 +312,7 @@
   <div class="prod-section" id="torby">
     <h2 class="prod-section-title">Torby</h2>
     <div class="prod-grid">
-      <a class="prod-card" href="/kontakt">
+      <a class="prod-card" href="/produkty/torby">
         <div class="prod-card-img"><img src="/images/torba.png" alt="Torba bawełniana premium z logo" loading="lazy" width="1000" height="1000"></div>
         <div class="prod-card-body">
           <div class="prod-card-name">Torby</div>
@@ -361,7 +336,13 @@
     <a href="/projektowanie-logo-dla-firmy">Projektowanie logo dla firmy</a>
   </div>
 </section>
-<section class="sub-cta"><a class="btn-dark" href="/kontakt">Zapytaj o wycenę →</a></section>
+<section class="make-panel">
+  <div class="make-panel-inner">
+    <h2 class="make-panel-title">Nie znalazłeś swojego kroju lub produktu?</h2>
+    <p class="make-panel-text">Wykonamy go od podstaw — od projektu, przez krój, po gotową sztukę. Powiedz nam, co chcesz stworzyć.</p>
+    <a class="btn-dark" href="/kontakt">Zapytaj o wycenę</a>
+  </div>
+</section>
 </div>
 
 <footer class="site-footer">

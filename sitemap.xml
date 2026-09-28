@@ -68,6 +68,36 @@
   </url>
 
   <url>
+    <loc>https://uniforno.pl/produkty/crewneck</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/produkty/bluza-rozpinana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/produkty/dresy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/produkty/krotkie-spodenki</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/produkty/torby</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://uniforno.pl/proces</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
