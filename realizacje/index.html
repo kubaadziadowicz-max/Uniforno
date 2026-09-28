@@ -77,20 +77,35 @@
     color: var(--ink); text-decoration: none;
   }
   .logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    font-size: 13px; font-weight: 400; letter-spacing: 0.04em;
-    color: var(--muted); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
-  .nav-cta {
-    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
-    background: var(--ink); color: var(--paper);
-    padding: 10px 24px; text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
+  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links > li { position: relative; }
+  .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .has-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+  .chev { width: 12px; height: 12px; transition: transform 0.25s; }
+  .has-dropdown:hover .chev { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; opacity: 0; visibility: hidden; transition: opacity 0.2s; }
+  .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; }
+  .dropdown-inner { background: var(--paper); border: 0.5px solid var(--border); box-shadow: 0 20px 44px rgba(26,25,22,0.10); min-width: 250px; padding: 8px 0; }
+  .dropdown-inner a { display: block; padding: 11px 22px; font-size: 13px; color: var(--muted); white-space: nowrap; transition: color 0.2s, background 0.2s; }
+  .dropdown-inner a:hover { color: var(--ink); background: var(--warm); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
   .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; line-height: 0; }
+  .nav-toggle svg { width: 26px; height: 26px; }
+  .menu-overlay { position: fixed; inset: 0; background: rgba(26,25,22,0.4); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .menu-overlay.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: min(82vw, 340px); background: var(--paper); border-left: 0.5px solid var(--border); z-index: 200; transform: translateX(100%); transition: transform 0.32s ease; padding: 88px 32px 40px; display: flex; flex-direction: column; box-shadow: -24px 0 60px rgba(26,25,22,0.10); overflow-y: auto; }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu > a { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 15px 0; border-bottom: 0.5px solid var(--border); transition: color 0.2s; }
+  .mobile-menu > a:hover { color: var(--accent); }
+  .mobile-sub { display: flex; flex-direction: column; padding: 6px 0 10px; border-bottom: 0.5px solid var(--border); }
+  .mobile-sub a { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--muted); text-decoration: none; padding: 9px 0 9px 16px; transition: color 0.2s; }
+  .mobile-sub a:hover { color: var(--accent); }
+  .mobile-menu .mobile-cta { margin-top: 24px; background: var(--ink); color: var(--paper); font-family: var(--font-body); text-align: center; border: none; border-bottom: none; padding: 16px; font-size: 13px; letter-spacing: 0.06em; font-weight: 500; transition: background 0.2s, color 0.2s; }
+  .mobile-menu .mobile-cta:hover { background: var(--accent); color: var(--ink); }
+  .nav-close { position: absolute; top: 22px; right: 24px; background: none; border: none; cursor: pointer; color: var(--ink); line-height: 0; }
+  .nav-close svg { width: 24px; height: 24px; }
 
   /* ── PAGE HEADER ── */
   .page-header {
@@ -306,6 +321,8 @@
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
     .page-header { grid-template-columns: 1fr; gap: 24px; padding: 120px 24px 60px; }
     .realizacje { padding: 0 0 80px; }
     .realizacja { grid-template-columns: 1fr; min-height: auto; }
@@ -341,12 +358,64 @@
   <a class="logo" href="/">Uniforn<span>o</span></a>
   <ul class="nav-links">
     <li><a href="/o-nas">O nas</a></li>
-    <li><a href="/realizacje" class="active">Realizacje</a></li>
+    <li class="has-dropdown">
+      <a href="/oferta">Oferta <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="dropdown"><div class="dropdown-inner">
+        <a href="/oferta/dla-firm">Dla całego zespołu</a>
+        <a href="/oferta/dla-gastronomii">Dla gastronomii i hoteli</a>
+        <a href="/oferta/dla-klubow-sportowych">Dla klubów sportowych</a>
+        <a href="/oferta/dla-eventow">Dla eventów i konferencji</a>
+        <a href="/oferta/dla-szkol">Dla szkół i uczelni</a>
+        <a href="/oferta/dla-agencji">Dla agencji i influencerów</a>
+      </div></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/produkty">Produkty <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="dropdown"><div class="dropdown-inner">
+        <a href="/produkty#koszulki">Koszulki</a>
+        <a href="/produkty#bluzy">Bluzy</a>
+        <a href="/produkty#spodnie">Spodnie</a>
+        <a href="/produkty#torby">Torby</a>
+      </div></div>
+    </li>
+    <li><a href="/realizacje">Realizacje</a></li>
     <li><a href="/proces">Proces</a></li>
+    <li><a href="/blog">Blog</a></li>
     <li><a href="/kontakt">Kontakt</a></li>
   </ul>
   <a class="nav-cta" href="/kontakt">Zapytaj o wycenę</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
+<div class="menu-overlay" id="menu-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="nav-close" id="nav-close" aria-label="Zamknij menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/o-nas">O nas</a>
+  <a href="/oferta">Oferta</a>
+  <div class="mobile-sub">
+    <a href="/oferta/dla-firm">Dla całego zespołu</a>
+    <a href="/oferta/dla-gastronomii">Dla gastronomii i hoteli</a>
+    <a href="/oferta/dla-klubow-sportowych">Dla klubów sportowych</a>
+    <a href="/oferta/dla-eventow">Dla eventów i konferencji</a>
+    <a href="/oferta/dla-szkol">Dla szkół i uczelni</a>
+    <a href="/oferta/dla-agencji">Dla agencji i influencerów</a>
+  </div>
+  <a href="/produkty">Produkty</a>
+  <div class="mobile-sub">
+    <a href="/produkty#koszulki">Koszulki</a>
+    <a href="/produkty#bluzy">Bluzy</a>
+    <a href="/produkty#spodnie">Spodnie</a>
+    <a href="/produkty#torby">Torby</a>
+  </div>
+  <a href="/realizacje">Realizacje</a>
+  <a href="/proces">Proces</a>
+  <a href="/blog">Blog</a>
+  <a href="/kontakt">Kontakt</a>
+  <a class="mobile-cta" href="/kontakt">Zapytaj o wycenę</a>
+</div>
 
 <!-- PAGE HEADER -->
 <header class="page-header">
@@ -482,6 +551,22 @@
       el.classList.toggle('flipped');
     });
   });
+</script>
+
+<script>
+  (function() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const closeBtn = document.getElementById('nav-close');
+    if (!toggle || !menu || !overlay) return;
+    const open = () => { menu.classList.add('open'); overlay.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    const close = () => { menu.classList.remove('open'); overlay.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
 </script>
 
 <!-- Cookie consent banner -->
