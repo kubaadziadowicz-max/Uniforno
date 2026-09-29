@@ -35,6 +35,9 @@
 <title>Produkty | Uniforno — koszulki, bluzy, polo i odzież firmowa</title>
 <meta name="description" content="Produkty Uniforno — t-shirty, bluzy z kapturem, bluzy zapinane, half-zip, polo, spodnie dresowe i torby. Każdy krój projektujemy pod klienta.">
 <link rel="canonical" href="https://uniforno.pl/produkty">
+<link rel="alternate" hreflang="pl" href="https://uniforno.pl/produkty">
+<link rel="alternate" hreflang="en" href="https://uniforno.pl/en/produkty">
+<link rel="alternate" hreflang="x-default" href="https://uniforno.pl/produkty">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -166,6 +169,13 @@
   .make-panel-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ink); margin-bottom: 14px; line-height: 1.15; }
   .make-panel-text { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
   @media (max-width: 900px) { .make-panel { padding: 8px 24px 90px; } .make-panel-inner { padding: 40px 24px; } }
+  /* language switcher */
+  .lang-switch { display: inline-flex; align-items: center; gap: 7px; margin-left: 22px; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
+  .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch .lang-cur { color: var(--ink); font-weight: 600; }
+  .lang-switch .lang-sep { color: var(--border); }
+  @media (max-width: 980px) { .lang-switch { margin-left: 14px; } }
 </style>
 </head>
 <body>
@@ -199,6 +209,7 @@
     <li><a href="/blog">Blog</a></li>
     <li><a href="/kontakt">Kontakt</a></li>
   </ul>
+  <div class="lang-switch"><span class="lang-cur">PL</span><span class="lang-sep">/</span><a href="/en/produkty">EN</a></div>
   <a class="nav-cta" href="/kontakt">Zapytaj o wycenę</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>

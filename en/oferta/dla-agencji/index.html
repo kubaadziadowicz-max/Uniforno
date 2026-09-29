@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  (function(){
+    var m = document.cookie.match(/(?:^|; )uniforno_consent=([^;]+)/);
+    var c = m ? m[1] : null;
+    if (c === 'all') {
+      gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+    } else if (c === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  })();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZT34N2VNCC"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-ZT34N2VNCC');
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clothing for agencies &amp; influencers | Uniforno</title>
+<meta name="description" content="Clothing for agencies and influencers — premium sweatshirts, t-shirts and polos for welcome packs and signature collections. Made in Poland. Quote in 24h.">
+<link rel="canonical" href="https://uniforno.pl/en/oferta/dla-agencji">
+<link rel="alternate" hreflang="pl" href="https://uniforno.pl/oferta/dla-agencji">
+<link rel="alternate" hreflang="en" href="https://uniforno.pl/en/oferta/dla-agencji">
+<link rel="alternate" hreflang="x-default" href="https://uniforno.pl/oferta/dla-agencji">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916; --paper: #f5f2eb; --warm: #e8e2d5;
+    --accent: #c8a96e; --muted: #7a7670; --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-weight: 300; line-height: 1.6; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
+  .page-main { flex: 1; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--paper); border-bottom: 0.5px solid var(--border); backdrop-filter: blur(8px); }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links > li { position: relative; }
+  .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .has-dropdown > a { display: inline-flex; align-items: center; gap: 4px; }
+  .chev { width: 12px; height: 12px; transition: transform 0.25s; }
+  .has-dropdown:hover .chev { transform: rotate(180deg); }
+  .dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 18px; opacity: 0; visibility: hidden; transition: opacity 0.2s; }
+  .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; }
+  .dropdown-inner { background: var(--paper); border: 0.5px solid var(--border); box-shadow: 0 20px 44px rgba(26,25,22,0.10); min-width: 250px; padding: 8px 0; }
+  .dropdown-inner a { display: block; padding: 11px 22px; font-size: 13px; color: var(--muted); white-space: nowrap; transition: color 0.2s, background 0.2s; }
+  .dropdown-inner a:hover { color: var(--ink); background: var(--warm); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--ink); color: var(--paper); padding: 10px 24px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .nav-cta:hover { background: var(--accent); color: var(--ink); }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--ink); padding: 4px; line-height: 0; }
+  .nav-toggle svg { width: 26px; height: 26px; }
+  .menu-overlay { position: fixed; inset: 0; background: rgba(26,25,22,0.4); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .menu-overlay.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: min(82vw, 340px); background: var(--paper); border-left: 0.5px solid var(--border); z-index: 200; transform: translateX(100%); transition: transform 0.32s ease; padding: 88px 32px 40px; display: flex; flex-direction: column; box-shadow: -24px 0 60px rgba(26,25,22,0.10); overflow-y: auto; }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu > a { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 15px 0; border-bottom: 0.5px solid var(--border); transition: color 0.2s; }
+  .mobile-menu > a:hover { color: var(--accent); }
+  .mobile-sub { display: flex; flex-direction: column; padding: 6px 0 10px; border-bottom: 0.5px solid var(--border); }
+  .mobile-sub a { font-family: var(--font-body); font-size: 14px; font-weight: 300; color: var(--muted); text-decoration: none; padding: 9px 0 9px 16px; transition: color 0.2s; }
+  .mobile-sub a:hover { color: var(--accent); }
+  .mobile-menu .mobile-cta { margin-top: 24px; background: var(--ink); color: var(--paper); font-family: var(--font-body); text-align: center; border: none; border-bottom: none; padding: 16px; font-size: 13px; letter-spacing: 0.06em; font-weight: 500; transition: background 0.2s, color 0.2s; }
+  .mobile-menu .mobile-cta:hover { background: var(--accent); color: var(--ink); }
+  .nav-close { position: absolute; top: 22px; right: 24px; background: none; border: none; cursor: pointer; color: var(--ink); line-height: 0; }
+  .nav-close svg { width: 24px; height: 24px; }
+
+  .sub-hero { padding: 180px 48px 40px; text-align: center; }
+  .page-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; }
+  .sub-title { font-family: var(--font-display); font-size: clamp(40px, 5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); margin: 16px 0 20px; }
+  .sub-intro { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--muted); max-width: 540px; margin: 0 auto; }
+
+  .prose { max-width: 760px; margin: 0 auto; padding: 12px 48px 8px; }
+  .prose p { font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--ink); margin-bottom: 20px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .btn-dark { font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.08em; background: var(--ink); color: var(--paper); text-decoration: none; display: inline-block; padding: 18px 44px; border: none; cursor: pointer; transition: background 0.2s, color 0.2s; }
+  .btn-dark:hover { background: var(--accent); color: var(--ink); }
+  .sub-cta { text-align: center; padding: 48px 48px 130px; }
+
+  .site-footer { background: var(--ink); color: var(--paper); padding: 72px 48px 32px; border-top: 0.5px solid var(--border); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; flex-wrap: wrap; padding-bottom: 48px; border-bottom: 0.5px solid rgba(245,242,235,0.14); }
+  .footer-logo-lg { font-family: var(--font-display); font-size: 28px; font-weight: 600; letter-spacing: 0.06em; margin-bottom: 22px; }
+  .footer-logo-lg span { color: var(--accent); }
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; }
+  .footer-contact a, .footer-contact .footer-address { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 300; color: rgba(245,242,235,0.7); text-decoration: none; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--paper); }
+  .footer-contact svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+  .footer-social { margin-top: 20px; }
+  .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 0.5px solid rgba(245,242,235,0.22); border-radius: 50%; color: var(--paper); transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .footer-social a:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+  .footer-social svg { width: 18px; height: 18px; }
+  .footer-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.06em; background: var(--accent); color: var(--ink); padding: 14px 28px; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .footer-cta:hover { background: var(--paper); }
+  .footer-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; padding: 48px 0; border-bottom: 0.5px solid rgba(245,242,235,0.14); }
+  .footer-col { display: flex; flex-direction: column; gap: 14px; }
+  .footer-col-title { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
+  .footer-col a { font-size: 14px; font-weight: 300; color: rgba(245,242,235,0.7); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--paper); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; gap: 16px; flex-wrap: wrap; }
+  .footer-copy, .footer-bottom a { font-size: 12px; font-weight: 300; color: rgba(245,242,235,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--paper); }
+
+  @media (max-width: 980px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .sub-hero { padding: 140px 24px 32px; }
+    .prose { padding: 12px 24px 8px; }
+    .sub-cta { padding: 36px 24px 90px; }
+    .site-footer { padding: 56px 24px 28px; }
+  }
+  @media (max-width: 620px) {
+    .footer-cols { grid-template-columns: 1fr; gap: 32px; }
+    .footer-top { flex-direction: column; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+
+  .form-grid { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+  input, textarea, select { font-family: var(--font-body); font-size: 14px; font-weight: 300; background: #fbf9f4; color: var(--ink); border: 0.5px solid var(--border); padding: 12px 14px; outline: none; transition: border-color 0.2s; width: 100%; appearance: none; }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+  textarea { resize: vertical; min-height: 120px; }
+  .checkbox-row { display: flex; align-items: center; gap: 12px; }
+  .checkbox-row input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 24px; height: 24px; flex-shrink: 0; border: 1.5px solid var(--muted); background: transparent; cursor: pointer; position: relative; transition: border-color 0.2s, background 0.2s; }
+  .checkbox-row input[type="checkbox"]:checked { border-color: var(--ink); background: var(--ink); }
+  .checkbox-row input[type="checkbox"]:checked::after { content: ''; position: absolute; left: 5px; top: 2px; width: 10px; height: 15px; border: 2.5px solid var(--paper); border-top: none; border-left: none; transform: rotate(45deg); }
+  .checkbox-row input[type="checkbox"]:focus { outline: 1.5px solid var(--accent); outline-offset: 2px; }
+  .checkbox-row label { font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 300; color: var(--muted); line-height: 1.5; }
+  .checkbox-row label a { color: var(--ink); }
+  .form-submit { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; background: var(--ink); color: var(--paper); padding: 15px 32px; border: none; cursor: pointer; width: 100%; transition: background 0.2s, color 0.2s; }
+  .form-submit:hover { background: var(--accent); color: var(--ink); }
+  .form-success-box { display:none; padding: 32px; background: var(--warm); border-left: 2px solid var(--accent); }
+  .form-success-box .fs-title { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+  .form-success-box .fs-text { font-size: 15px; font-weight: 300; color: var(--muted); margin: 0; }
+  .seg-form-wrap { max-width: 720px; margin: 0 auto; padding: 24px 48px 120px; }
+  .seg-form-label { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--ink); margin-bottom: 24px; text-align: center; }
+  @media (max-width: 980px) { .seg-form-wrap { padding: 16px 24px 90px; } .form-row { grid-template-columns: 1fr; } }
+  /* language switcher */
+  .lang-switch { display: inline-flex; align-items: center; gap: 7px; margin-left: 22px; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
+  .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch .lang-cur { color: var(--ink); font-weight: 600; }
+  .lang-switch .lang-sep { color: var(--border); }
+  @media (max-width: 980px) { .lang-switch { margin-left: 14px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/en/">Uniforn<span>o</span></a>
+  <ul class="nav-links">
+    <li><a href="/en/o-nas">About</a></li>
+    <li class="has-dropdown">
+      <a href="/en/oferta">Solutions <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="dropdown"><div class="dropdown-inner">
+        <a href="/en/oferta/dla-firm">For your whole team</a>
+        <a href="/en/oferta/dla-gastronomii">For hospitality & hotels</a>
+        <a href="/en/oferta/dla-klubow-sportowych">For sports clubs</a>
+        <a href="/en/oferta/dla-eventow">For events & conferences</a>
+        <a href="/en/oferta/dla-szkol">For schools & universities</a>
+        <a href="/en/oferta/dla-agencji">For agencies & influencers</a>
+      </div></div>
+    </li>
+    <li class="has-dropdown">
+      <a href="/en/produkty">Products <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="dropdown"><div class="dropdown-inner">
+        <a href="/en/produkty#koszulki">T-shirts</a>
+        <a href="/en/produkty#bluzy">Sweatshirts</a>
+        <a href="/en/produkty#spodnie">Bottoms</a>
+        <a href="/en/produkty#torby">Bags</a>
+      </div></div>
+    </li>
+    <li><a href="/en/realizacje">Portfolio</a></li>
+    <li><a href="/en/proces">Process</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/en/kontakt">Contact</a></li>
+  </ul>
+  <div class="lang-switch"><a href="/oferta/dla-agencji">PL</a><span class="lang-sep">/</span><span class="lang-cur">EN</span></div>
+  <a class="nav-cta" href="/en/kontakt">Get a quote</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+<div class="menu-overlay" id="menu-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="nav-close" id="nav-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="/en/o-nas">About</a>
+  <a href="/en/oferta">Solutions</a>
+  <div class="mobile-sub">
+    <a href="/en/oferta/dla-firm">For your whole team</a>
+    <a href="/en/oferta/dla-gastronomii">For hospitality & hotels</a>
+    <a href="/en/oferta/dla-klubow-sportowych">For sports clubs</a>
+    <a href="/en/oferta/dla-eventow">For events & conferences</a>
+    <a href="/en/oferta/dla-szkol">For schools & universities</a>
+    <a href="/en/oferta/dla-agencji">For agencies & influencers</a>
+  </div>
+  <a href="/en/produkty">Products</a>
+  <div class="mobile-sub">
+    <a href="/en/produkty#koszulki">T-shirts</a>
+    <a href="/en/produkty#bluzy">Sweatshirts</a>
+    <a href="/en/produkty#spodnie">Bottoms</a>
+    <a href="/en/produkty#torby">Bags</a>
+  </div>
+  <a href="/en/realizacje">Portfolio</a>
+  <a href="/en/proces">Process</a>
+  <a href="/blog">Blog</a>
+  <a href="/en/kontakt">Contact</a>
+  <a class="mobile-cta" href="/en/kontakt">Get a quote</a>
+</div>
+
+<div class="page-main">
+<header class="sub-hero">
+  <div class="page-eyebrow">Our offer</div>
+  <h1 class="sub-title">Clothing for agencies &amp; influencers</h1>
+</header>
+<section class="prose">
+  <p>When you’re building a personal brand or designing a new campaign for a client, there’s no room for compromise on image. A poor-quality giveaway can ruin the most carefully thought-out marketing strategy. Uniforno delivers premium clothing that forms the perfect physical foundation for exclusive welcome packs and signature collections. We make substantial sweatshirts, refined t-shirts and polos from thick, Polish materials. We care about every smallest finishing detail, so the final product delights the people who receive it. Our domestic production from scratch means full control over form, colour and durable branding. With us you’ll create clothing that fans and business partners will treat as genuinely valuable everyday fashion.</p>
+</section>
+<section class="seg-form-wrap">
+  <div class="seg-form-label">Request a quote</div>
+  <form class="form-grid" id="kontakt-form" action="https://formspree.io/f/xeewojzo" method="POST">
+      <div class="form-row">
+        <div class="field"><label for="firma">Company name</label><input type="text" id="firma" name="firma" placeholder="Your company Ltd." required></div>
+        <div class="field"><label for="imie">Full name</label><input type="text" id="imie" name="imie" placeholder="Jane Smith" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="jane@company.com" required></div>
+        <div class="field"><label for="telefon">Phone</label><input type="tel" id="telefon" name="telefon" placeholder="+48 600 000 000"></div>
+      </div>
+      <div class="field"><label for="ilosc">Estimated quantity</label>
+        <select id="ilosc" name="ilosc"><option value="">Select a range</option><option>30–100 pieces</option><option>100–300 pieces</option><option>300–1000 pieces</option><option>Over 1000 pieces</option></select>
+      </div>
+      <div class="field"><label for="wiadomosc">Tell us about your project</label>
+        <textarea id="wiadomosc" name="wiadomosc" placeholder="What do you need? Timeline, event, special requirements..." required></textarea>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="rodo" name="rodo" required>
+        <label for="rodo">I consent to Uniforno processing my personal data in order to respond to my inquiry, in accordance with the <a href="/en/polityka-prywatnosci">Privacy Policy</a>.</label>
+      </div>
+      <input type="hidden" name="_subject" value="Inquiry — Clothing for agencies & influencers (EN)">
+      <input type="hidden" name="_next" value="https://uniforno.pl/en/dziekujemy">
+      <button type="submit" class="form-submit" id="form-submit-btn">Send inquiry →</button>
+    </form>
+    <div id="form-success" class="form-success-box">
+      <p class="fs-title">Thank you!</p>
+      <p class="fs-text">We'll get back to you within 24 hours.</p>
+    </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-lg">Uniforn<span>o</span></div>
+        <div class="footer-contact">
+          <a href="tel:+48780159705">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +48 780 159 705
+          </a>
+          <a href="mailto:kontakt@uniforno.pl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            kontakt@uniforno.pl
+          </a>
+          <div class="footer-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            ul. Jesionowa 3, 55-011 Siechnice
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook Uniforno">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <a class="footer-cta" href="/en/kontakt">Get a quote</a>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="/en/o-nas">About</a>
+        <a href="/en/oferta">Solutions</a>
+        <a href="/en/produkty">Products</a>
+        <a href="/en/realizacje">Portfolio</a>
+        <a href="/en/proces">Process</a>
+        <a href="/blog">Blog</a>
+        <a href="/en/kontakt">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Who we make for</div>
+        <a href="/en/oferta/dla-firm">For your whole team</a>
+        <a href="/en/oferta/dla-gastronomii">For hospitality & hotels</a>
+        <a href="/en/oferta/dla-klubow-sportowych">For sports clubs</a>
+        <a href="/en/oferta/dla-eventow">For events & conferences</a>
+        <a href="/en/oferta/dla-szkol">For schools & universities</a>
+        <a href="/en/oferta/dla-agencji">For agencies & influencers</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Uniforno. All rights reserved.</div>
+      <a href="/en/polityka-prywatnosci">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const closeBtn = document.getElementById('nav-close');
+    if (!toggle || !menu || !overlay) return;
+    const open = () => { menu.classList.add('open'); overlay.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    const close = () => { menu.classList.remove('open'); overlay.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    toggle.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  })();
+  (function() {
+    const form = document.getElementById('kontakt-form');
+    if (!form) return;
+    const btn = document.getElementById('form-submit-btn');
+    const success = document.getElementById('form-success');
+    const rodo = document.getElementById('rodo');
+    const rodoError = document.createElement('p');
+    rodoError.textContent = 'Please accept the data-processing consent to submit the form.';
+    rodoError.style.cssText = 'color:#c0392b; font-size:13px; margin-top:6px; display:none;';
+    rodo.closest('.checkbox-row').insertAdjacentElement('afterend', rodoError);
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (!rodo.checked) { rodoError.style.display = 'block'; rodo.closest('.checkbox-row').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+      rodoError.style.display = 'none';
+      btn.disabled = true; btn.textContent = 'Sending…';
+      try {
+        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (response.ok) { window.location.href = (form.querySelector('input[name="_next"]') || {}).value || 'https://uniforno.pl/en/dziekujemy'; }
+        else { btn.disabled = false; btn.textContent = 'Send inquiry →'; alert('Something went wrong. Please try again or email kontakt@uniforno.pl'); }
+      } catch (err) { btn.disabled = false; btn.textContent = 'Send inquiry →'; alert('Connection error. Please try again or email kontakt@uniforno.pl'); }
+    });
+  })();
+</script>
+
+<!-- Cookie consent banner -->
+<style>
+  #cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; background: #f5f2eb; border-top: 1px solid rgba(26,25,22,0.14); box-shadow: 0 -8px 30px rgba(26,25,22,0.10); padding: 20px 24px; display: none; }
+  #cookie-banner.show { display: block; }
+  #cookie-banner .cookie-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: space-between; }
+  #cookie-banner .cookie-text { font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; font-weight: 300; line-height: 1.6; color: #1a1916; max-width: 700px; }
+  #cookie-banner .cookie-text a { color: #c8a96e; text-decoration: underline; }
+  #cookie-banner .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  #cookie-banner .cookie-btn { font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; padding: 11px 26px; border: none; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  #cookie-banner .cookie-accept { background: #1a1916; color: #f5f2eb; }
+  #cookie-banner .cookie-accept:hover { background: #c8a96e; color: #1a1916; }
+  #cookie-banner .cookie-reject { background: transparent; color: #1a1916; border: 1px solid rgba(26,25,22,0.30); }
+  #cookie-banner .cookie-reject:hover { border-color: #1a1916; }
+  @media (max-width: 640px) {
+    #cookie-banner .cookie-inner { flex-direction: column; align-items: stretch; gap: 16px; }
+    #cookie-banner .cookie-actions { width: 100%; }
+    #cookie-banner .cookie-btn { flex: 1; }
+  }
+</style>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-inner">
+    <div class="cookie-text">We use cookies so the site works properly, to measure its performance and — with your consent — to run marketing. You can accept all cookies or keep only the essential ones. More in our <a href="/en/polityka-prywatnosci">Privacy Policy</a>.</div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-reject" id="cookie-reject" type="button">Essential only</button>
+      <button class="cookie-btn cookie-accept" id="cookie-accept" type="button">Accept all</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    function getConsent() {
+      var m = document.cookie.match(/(?:^|; )uniforno_consent=([^;]+)/);
+      return m ? m[1] : null;
+    }
+    function setConsent(v) {
+      var d = new Date(); d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+      document.cookie = 'uniforno_consent=' + v + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+    if (!getConsent()) { banner.classList.add('show'); }
+    var accept = document.getElementById('cookie-accept');
+    var reject = document.getElementById('cookie-reject');
+    if (accept) accept.addEventListener('click', function() {
+      setConsent('all');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+      }
+      banner.classList.remove('show');
+    });
+    if (reject) reject.addEventListener('click', function() {
+      setConsent('necessary');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied' });
+      }
+      banner.classList.remove('show');
+    });
+  })();
+</script>
+</body>
+</html>

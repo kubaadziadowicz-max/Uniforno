@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) + Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  (function(){
+    var m = document.cookie.match(/(?:^|; )uniforno_consent=([^;]+)/);
+    var c = m ? m[1] : null;
+    if (c === 'all') {
+      gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+    } else if (c === 'granted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  })();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZT34N2VNCC"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-ZT34N2VNCC');
+</script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Uniforno</title>
+<meta name="description" content="Uniforno’s Privacy Policy — how we process and protect your personal data in accordance with the GDPR.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://uniforno.pl/en/polityka-prywatnosci" />
+<link rel="alternate" hreflang="pl" href="https://uniforno.pl/polityka-prywatnosci">
+<link rel="alternate" hreflang="en" href="https://uniforno.pl/en/polityka-prywatnosci">
+<link rel="alternate" hreflang="x-default" href="https://uniforno.pl/polityka-prywatnosci">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1916;
+    --paper: #f5f2eb;
+    --warm: #e8e2d5;
+    --accent: #c8a96e;
+    --muted: #7a7670;
+    --border: rgba(26,25,22,0.12);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--paper);
+    border-bottom: 0.5px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+
+  /* CONTENT */
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 140px 48px 100px;
+  }
+
+  .page-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .page-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 0.5px; background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500; line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .last-updated {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 500;
+    color: var(--ink);
+    margin-top: 48px; margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  ul {
+    margin: 0 0 14px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul li {
+    font-size: 15px; font-weight: 300; line-height: 1.75;
+    color: var(--ink);
+    padding: 4px 0 4px 20px;
+    position: relative;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 13px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .admin-box {
+    background: var(--warm);
+    border-left: 2px solid var(--accent);
+    padding: 24px 28px;
+    margin: 20px 0 14px;
+  }
+  .admin-box p { margin: 0; font-size: 14px; line-height: 1.8; }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 48px;
+    border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy {
+    font-size: 12px; font-weight: 300; color: var(--muted);
+  }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px; font-weight: 300; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 24px; }
+    .page-wrap { padding: 120px 24px 80px; }
+    footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  }
+  /* language switcher */
+  .lang-switch { display: inline-flex; align-items: center; gap: 7px; margin-left: 22px; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
+  .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch .lang-cur { color: var(--ink); font-weight: 600; }
+  .lang-switch .lang-sep { color: var(--border); }
+  @media (max-width: 980px) { .lang-switch { margin-left: 14px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/en/">Uniforn<span>o</span></a>
+  <div class="lang-switch"><a href="/polityka-prywatnosci">PL</a><span class="lang-sep">/</span><span class="lang-cur">EN</span></div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-eyebrow">Legal document</div>
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last updated: 12 September 2026.</p>
+
+  <h2>1. Data controller</h2>
+  <p>The controller of your personal data is:</p>
+  <div class="admin-box">
+    <p>
+      <strong>Uniforno Jakub Dziadowicz</strong><br>
+      ul. Jesionowa 3, 55-011 Siechnice, Poland<br>
+      Tax ID (NIP): 8961672354<br>
+      Email: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+    </p>
+  </div>
+  <p>The controller operates under the <strong>Uniforno</strong> brand and is available at <a href="https://uniforno.pl/en/">uniforno.pl</a>.</p>
+
+  <h2>2. What data we collect and why</h2>
+  <p>Through the contact form available on the site we collect the following personal data:</p>
+  <ul>
+    <li>full name</li>
+    <li>company name</li>
+    <li>email address</li>
+    <li>phone number</li>
+  </ul>
+  <p>This data is collected solely to respond to a submitted quote or commercial (B2B) inquiry and to make contact regarding that inquiry.</p>
+
+  <h2>3. Legal basis for processing</h2>
+  <p>The legal basis for processing your personal data is:</p>
+  <ul>
+    <li><strong>Art. 6(1)(b) GDPR</strong> — processing is necessary to take steps at the data subject’s request prior to entering into a contract,</li>
+    <li><strong>Art. 6(1)(f) GDPR</strong> — the controller’s legitimate interest in being able to respond to the business inquiries addressed to us.</li>
+  </ul>
+
+  <h2>4. Data retention period</h2>
+  <p>Your personal data will be stored for the period necessary to handle the inquiry, and then for the time required by tax and accounting law — but no longer than 5 years from the end of cooperation or the last contact.</p>
+  <p>If the inquiry does not result in a contract, the data is deleted promptly after the correspondence ends, no later than after 6 months.</p>
+
+  <h2>5. Data recipients</h2>
+  <p>Your data may be shared with entities providing us with services necessary to run our business, in particular:</p>
+  <ul>
+    <li>email and hosting providers,</li>
+    <li>providers of contact-form tools (Formspree, Inc.),</li>
+    <li>providers of analytics and marketing tools (Google Ireland Limited / Google LLC — Google Analytics and Google Ads services),</li>
+    <li>providers of accounting and legal services — only to the extent necessary.</li>
+  </ul>
+  <p>We do not sell or share your data with third parties for marketing purposes.</p>
+
+  <h2>6. Data transfers outside the EEA</h2>
+  <p>In connection with the use of Formspree and Google services (Google Analytics and Google Ads) — providers based in the USA — your data may be transferred to a third country. Both Formspree, Inc. and Google LLC apply the standard contractual clauses approved by the European Commission, which ensures an adequate level of data protection.</p>
+
+  <h2>7. Your rights</h2>
+  <p>In connection with the processing of your personal data, you have the following rights:</p>
+  <ul>
+    <li>the <strong>right of access</strong> to your data and to receive a copy of it,</li>
+    <li>the <strong>right to rectification</strong> (correction) of your data,</li>
+    <li>the <strong>right to erasure</strong> of your data (the right to be forgotten),</li>
+    <li>the <strong>right to restrict processing</strong> of your data,</li>
+    <li>the <strong>right to data portability</strong>,</li>
+    <li>the <strong>right to object</strong> to the processing of your data,</li>
+    <li>the <strong>right to lodge a complaint</strong> with the supervisory authority — the President of the Personal Data Protection Office (ul. Stawki 2, 00-193 Warsaw, Poland, <a href="https://uodo.gov.pl">uodo.gov.pl</a>).</li>
+  </ul>
+  <p>To exercise your rights, contact us at: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>.</p>
+
+  <h2>8. Voluntary provision of data</h2>
+  <p>Providing personal data in the contact form is voluntary but necessary to respond to your inquiry. Not providing the data makes it impossible for us to make contact.</p>
+
+  <h2>9. Cookies, analytics and marketing</h2>
+  <p>The uniforno.pl website uses cookies and the <strong>Google Analytics 4 (GA4)</strong> analytics tool, provided by Google Ireland Limited / Google LLC, to analyse site traffic, how users interact with it and to improve our services.</p>
+  <p>Google Analytics collects anonymised statistical data about visits, such as the number and sources of visits, the pages viewed, approximate location (based on IP address), and device and browser type. This data is statistical in nature and is not used to identify specific individuals.</p>
+  <p>We activate analytics and marketing only after you give consent. On your first visit we display a cookie consent banner with a choice: “Accept all” (consent to analytics and marketing cookies) or “Essential only” (only cookies necessary for the site to work remain). Until you give consent, Google Analytics and Google Ads collect no data — we use the Google Consent Mode mechanism, in which the default consent state is “denied”. The legal basis for processing analytics and marketing data is your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time by deleting cookies in your browser or by choosing “Essential only” again.</p>
+  <p>After marketing consent, we use <strong>Google Ads</strong> cookies, which serve to measure conversions (e.g. submitting the contact form) and for marketing and remarketing. They let us assess the effectiveness of advertising campaigns and better reach interested audiences with our offer. If you choose “Essential only”, these cookies are not activated.</p>
+  <p>To remember your choice we use a necessary, functional cookie that does not require consent. Analytics and marketing data is processed by Google, which may transfer it to the USA under standard contractual clauses approved by the European Commission. You can find out more in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>.</p>
+
+  <h2>10. Changes to the privacy policy</h2>
+  <p>We reserve the right to change this privacy policy. You will always find the current version of the document at <a href="https://uniforno.pl/en/polityka-prywatnosci">uniforno.pl/en/polityka-prywatnosci</a>. The date of the last update is shown at the top of the page.</p>
+
+  <h2>11. Contact</h2>
+  <p>For all matters relating to the protection of personal data, you can contact us:</p>
+  <ul>
+    <li>email: <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a></li>
+    <li>address: Uniforno Jakub Dziadowicz, ul. Jesionowa 3, 55-011 Siechnice, Poland</li>
+  </ul>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Uniforn<span>o</span></div>
+  <div class="footer-copy">© 2025 Uniforno. Polish production, Polish quality.</div>
+  <div class="footer-links">
+    <a href="/en/polityka-prywatnosci">Privacy Policy</a>
+    <a href="mailto:kontakt@uniforno.pl">kontakt@uniforno.pl</a>
+  </div>
+</footer>
+
+<!-- Cookie consent banner -->
+<style>
+  #cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; background: #f5f2eb; border-top: 1px solid rgba(26,25,22,0.14); box-shadow: 0 -8px 30px rgba(26,25,22,0.10); padding: 20px 24px; display: none; }
+  #cookie-banner.show { display: block; }
+  #cookie-banner .cookie-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: space-between; }
+  #cookie-banner .cookie-text { font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; font-weight: 300; line-height: 1.6; color: #1a1916; max-width: 700px; }
+  #cookie-banner .cookie-text a { color: #c8a96e; text-decoration: underline; }
+  #cookie-banner .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  #cookie-banner .cookie-btn { font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; padding: 11px 26px; border: none; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  #cookie-banner .cookie-accept { background: #1a1916; color: #f5f2eb; }
+  #cookie-banner .cookie-accept:hover { background: #c8a96e; color: #1a1916; }
+  #cookie-banner .cookie-reject { background: transparent; color: #1a1916; border: 1px solid rgba(26,25,22,0.30); }
+  #cookie-banner .cookie-reject:hover { border-color: #1a1916; }
+  @media (max-width: 640px) {
+    #cookie-banner .cookie-inner { flex-direction: column; align-items: stretch; gap: 16px; }
+    #cookie-banner .cookie-actions { width: 100%; }
+    #cookie-banner .cookie-btn { flex: 1; }
+  }
+</style>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-inner">
+    <div class="cookie-text">We use cookies so the site works properly, to measure its performance and — with your consent — to run marketing. You can accept all cookies or keep only the essential ones. More in our <a href="/en/polityka-prywatnosci">Privacy Policy</a>.</div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-reject" id="cookie-reject" type="button">Essential only</button>
+      <button class="cookie-btn cookie-accept" id="cookie-accept" type="button">Accept all</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    function getConsent() {
+      var m = document.cookie.match(/(?:^|; )uniforno_consent=([^;]+)/);
+      return m ? m[1] : null;
+    }
+    function setConsent(v) {
+      var d = new Date(); d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+      document.cookie = 'uniforno_consent=' + v + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+    if (!getConsent()) { banner.classList.add('show'); }
+    var accept = document.getElementById('cookie-accept');
+    var reject = document.getElementById('cookie-reject');
+    if (accept) accept.addEventListener('click', function() {
+      setConsent('all');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
+      }
+      banner.classList.remove('show');
+    });
+    if (reject) reject.addEventListener('click', function() {
+      setConsent('necessary');
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied' });
+      }
+      banner.classList.remove('show');
+    });
+  })();
+</script>
+</body>
+</html>

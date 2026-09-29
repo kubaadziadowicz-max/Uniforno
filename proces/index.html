@@ -35,6 +35,9 @@
 <title>Proces realizacji | Uniforno</title>
 <meta name="description" content="Proces realizacji zamówienia w Uniforno — cztery przejrzyste kroki: brief, projekt, model do akceptacji, produkcja i dostawa.">
 <link rel="canonical" href="https://uniforno.pl/proces">
+<link rel="alternate" hreflang="pl" href="https://uniforno.pl/proces">
+<link rel="alternate" hreflang="en" href="https://uniforno.pl/en/proces">
+<link rel="alternate" hreflang="x-default" href="https://uniforno.pl/proces">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -149,6 +152,13 @@
   .timeline-title { font-family: var(--font-display); font-size: 27px; font-weight: 500; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
   .timeline-desc { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--muted); }
   @media (max-width: 900px) { .timeline { padding: 24px 24px 10px; } .timeline-step { grid-template-columns: 52px 1fr; gap: 20px; } .timeline-icon { width: 52px; height: 52px; } .timeline-icon svg { width: 22px; height: 22px; } }
+  /* language switcher */
+  .lang-switch { display: inline-flex; align-items: center; gap: 7px; margin-left: 22px; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
+  .lang-switch a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .lang-switch a:hover { color: var(--ink); }
+  .lang-switch .lang-cur { color: var(--ink); font-weight: 600; }
+  .lang-switch .lang-sep { color: var(--border); }
+  @media (max-width: 980px) { .lang-switch { margin-left: 14px; } }
 </style>
 </head>
 <body>
@@ -182,6 +192,7 @@
     <li><a href="/blog">Blog</a></li>
     <li><a href="/kontakt">Kontakt</a></li>
   </ul>
+  <div class="lang-switch"><span class="lang-cur">PL</span><span class="lang-sep">/</span><a href="/en/proces">EN</a></div>
   <a class="nav-cta" href="/kontakt">Zapytaj o wycenę</a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
