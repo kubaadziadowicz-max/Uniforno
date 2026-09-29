@@ -742,7 +742,22 @@
   .faq-item:last-child { border-bottom: 0.5px solid var(--border); }
   .faq-item h3 { font-family: var(--font-display); font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; line-height: 1.3; color: var(--ink); margin-bottom: 10px; }
   .faq-item p { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--muted); }
-  @media (max-width: 900px) { .faq { padding: 60px 24px; } }
+  /* FAQ (accordion) — spójne z /oferta/* */
+  .accordion { max-width: 760px; margin: 0 auto; padding: 12px 0 16px; }
+  .accordion-item { border: 0.5px solid var(--border); background: var(--paper); }
+  .accordion-item + .accordion-item { border-top: none; }
+  .accordion-header { width: 100%; display: flex; align-items: center; gap: 16px; padding: 26px 28px; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-body); }
+  .accordion-icon { color: var(--accent); display: flex; flex-shrink: 0; }
+  .accordion-icon svg { width: 24px; height: 24px; }
+  .accordion-title { flex: 1; font-family: var(--font-display); font-size: 23px; font-weight: 500; color: var(--ink); line-height: 1.25; }
+  .accordion-chev { color: var(--accent); flex-shrink: 0; display: flex; transition: transform 0.3s ease; }
+  .accordion-chev svg { width: 22px; height: 22px; }
+  .accordion-item.open .accordion-chev { transform: rotate(180deg); }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .accordion-body-inner { padding: 0 28px 28px; }
+  .accordion-body-inner p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--muted); }
+  .accordion-body-inner p a { color: var(--accent); text-decoration: underline; }
+  @media (max-width: 900px) { .faq { padding: 60px 24px; } .accordion-header { padding: 22px 20px; gap: 12px; } .accordion-title { font-size: 20px; } .accordion-body-inner { padding: 0 20px 24px; } }
 </style>
 </head>
 <body>
@@ -963,33 +978,77 @@
       <div class="faq-eyebrow">FAQ</div>
       <h2>Najczęściej zadawane pytania</h2>
     </div>
-    <div class="faq-item">
-      <h3>Jaki jest minimalny nakład zamówienia?</h3>
-      <p>Realizujemy zamówienia od 30 sztuk.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Ile trwa realizacja zamówienia?</h3>
-      <p>Standardowo około 20 dni, w zależności od wielkości i stopnia skomplikowania zamówienia. Dokładny termin potwierdzamy na etapie wyceny.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Ile kosztuje odzież firmowa z logo?</h3>
-      <p>Koszt zależy od typu znakowania (haft lub nadruk), kroju, użytego materiału oraz jego gramatury i właściwości. Dlatego każdą wycenę przygotowujemy indywidualnie — dopasowaną do konkretnego projektu.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Jak szybko otrzymam wycenę?</h3>
-      <p>Konkretną ofertę wysyłamy mailem w ciągu 24 godzin od przesłania zapytania.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Czy szyjecie w Polsce?</h3>
-      <p>Tak. Cały proces realizujemy w polskiej szwalni, z polskich materiałów — kontrolujemy każdy etap powstawania odzieży.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Jakie metody znakowania oferujecie?</h3>
-      <p>Stosujemy haft komputerowy oraz nadruk. Metodę dobieramy do rodzaju materiału i projektu, tak aby znakowanie było trwałe i zachowało jakość po wielu praniach.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Czy projektujecie logo lub grafikę?</h3>
-      <p>Tak. Możemy przygotować samo logo lub grafikę, albo zająć się tym w ramach produkcji odzieży. Zobacz też: <a href="/projektowanie-logo-dla-firmy">projektowanie logo dla firmy</a>.</p>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Jaki jest minimalny nakład zamówienia?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Realizujemy zamówienia od 30 sztuk.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Ile trwa realizacja zamówienia?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Standardowo około 20 dni, w zależności od wielkości i stopnia skomplikowania zamówienia. Dokładny termin potwierdzamy na etapie wyceny.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Ile kosztuje odzież firmowa z logo?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Koszt zależy od typu znakowania (haft lub nadruk), kroju, użytego materiału oraz jego gramatury i właściwości. Dlatego każdą wycenę przygotowujemy indywidualnie — dopasowaną do konkretnego projektu.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Jak szybko otrzymam wycenę?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Konkretną ofertę wysyłamy mailem w ciągu 24 godzin od przesłania zapytania.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Czy szyjecie w Polsce?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Tak. Cały proces realizujemy w polskiej szwalni, z polskich materiałów — kontrolujemy każdy etap powstawania odzieży.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Jakie metody znakowania oferujecie?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Stosujemy haft komputerowy oraz nadruk. Metodę dobieramy do rodzaju materiału i projektu, tak aby znakowanie było trwałe i zachowało jakość po wielu praniach.</p>
+        </div></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span class="accordion-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="accordion-title">Czy projektujecie logo lub grafikę?</span>
+          <span class="accordion-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </button>
+        <div class="accordion-body"><div class="accordion-body-inner">
+          <p>Tak. Możemy przygotować samo logo lub grafikę, albo zająć się tym w ramach produkcji odzieży. Zobacz też: <a href="/projektowanie-logo-dla-firmy">projektowanie logo dla firmy</a>.</p>
+        </div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1172,6 +1231,17 @@
     overlay.addEventListener('click', close);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
   })();
+
+  // ── FAQ accordion (spójne z /oferta/*) ──
+  document.querySelectorAll('.accordion-header').forEach(function(h){
+    h.addEventListener('click', function(){
+      var item = h.closest('.accordion-item');
+      var body = item.querySelector('.accordion-body');
+      var open = item.classList.toggle('open');
+      h.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.style.maxHeight = open ? (body.scrollHeight + 'px') : '';
+    });
+  });
 </script>
 
 <!-- Cookie consent banner -->
