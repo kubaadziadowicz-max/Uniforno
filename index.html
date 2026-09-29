@@ -479,6 +479,25 @@
     color: var(--ink);
   }
 
+  /* ── 3 KIERUNKI ── */
+  .kierunki { max-width: 1200px; margin: 0 auto; padding: 100px 48px; }
+  .kierunki-head { text-align: center; margin-bottom: 44px; }
+  .kierunki-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .kierunek-card { position: relative; display: block; overflow: hidden; text-decoration: none; aspect-ratio: 4 / 5; background: var(--warm); }
+  .kierunek-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
+  .kierunek-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,25,22,0.74) 0%, rgba(26,25,22,0.18) 55%, rgba(26,25,22,0.04) 100%); transition: background 0.3s ease; }
+  .kierunek-card:hover img { transform: scale(1.05); }
+  .kierunek-card:hover::after { background: linear-gradient(to top, rgba(26,25,22,0.84) 0%, rgba(26,25,22,0.4) 60%, rgba(26,25,22,0.15) 100%); }
+  .kierunek-overlay { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 30px 28px; }
+  .kierunek-name { font-family: var(--font-display); font-size: 27px; font-weight: 500; line-height: 1.1; color: var(--paper); margin-bottom: 8px; }
+  .kierunek-text { font-size: 14px; font-weight: 300; line-height: 1.55; color: rgba(245,242,235,0.88); }
+  @media (max-width: 860px) {
+    .kierunki { padding: 64px 24px; }
+    .kierunki-grid { grid-template-columns: 1fr; gap: 14px; }
+    .kierunek-card { aspect-ratio: 16 / 10; }
+    .kierunek-overlay { padding: 24px 22px; }
+  }
+
   /* ── PROCESS TEASER ── */
   .process-teaser {
     padding: 160px 48px;
@@ -891,6 +910,37 @@
   </div>
   <div class="mip-cta-wrap">
     <a class="mip-cta" href="/o-nas">Poznaj Uniforno →</a>
+  </div>
+</section>
+
+<!-- 3 KIERUNKI -->
+<section class="kierunki">
+  <div class="kierunki-head">
+    <div class="section-eyebrow">Kierunki</div>
+    <h2 class="section-title">Co dla Ciebie tworzymy</h2>
+  </div>
+  <div class="kierunki-grid">
+    <a class="kierunek-card" href="/oferta/dla-firm">
+      <img src="/images/panel-firmy.png" alt="Odzież dla firm — Uniforno" loading="lazy" width="760" height="950">
+      <div class="kierunek-overlay">
+        <h3 class="kierunek-name">Odzież dla firm</h3>
+        <p class="kierunek-text">Spójna, trwała odzież z logo dla całego zespołu.</p>
+      </div>
+    </a>
+    <a class="kierunek-card" href="/marki-odziezowe">
+      <img src="/images/panel-marki.png" alt="Produkcja odzieży dla marek — Uniforno" loading="lazy" width="760" height="950">
+      <div class="kierunek-overlay">
+        <h3 class="kierunek-name">Marki odzieżowe</h3>
+        <p class="kierunek-text">Produkcja pod własną markę — od projektu po gotową kolekcję.</p>
+      </div>
+    </a>
+    <a class="kierunek-card" href="/oferta">
+      <img src="/images/panel-instytucje.png" alt="Odzież dla instytucji i wydarzeń — Uniforno" loading="lazy" width="760" height="950">
+      <div class="kierunek-overlay">
+        <h3 class="kierunek-name">Odzież dla instytucji i wydarzeń</h3>
+        <p class="kierunek-text">Dla szkół, uczelni, klubów i eventów.</p>
+      </div>
+    </a>
   </div>
 </section>
 
