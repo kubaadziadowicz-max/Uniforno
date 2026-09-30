@@ -303,4 +303,78 @@
     <priority>0.6</priority>
   </url>
 
+
+  <!-- English mirror (/en/) — landings & blog -->
+  <url>
+    <loc>https://uniforno.pl/en/koszulki-firmowe-z-logo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/odziez-firmowa-wroclaw</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/koszulki-z-haftem-logo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/bluzy-firmowe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/koszulki-polo-dla-firm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/odziez-firmowa-z-nadrukiem</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/bluzy-robocze-z-nadrukiem</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/koszulki-dla-pracownikow</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/projektowanie-logo-dla-firmy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/blog</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/blog/haft-vs-nadruk-co-wybrac</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://uniforno.pl/en/blog/ile-kosztuje-koszulka-firmowa-z-logo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
