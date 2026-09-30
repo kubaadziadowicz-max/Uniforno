@@ -244,12 +244,13 @@
     <li>email and hosting providers,</li>
     <li>providers of contact-form tools (Formspree, Inc.),</li>
     <li>providers of analytics and marketing tools (Google Ireland Limited / Google LLC — Google Analytics and Google Ads services),</li>
+    <li>providers of marketing and remarketing tools (Meta Platforms Ireland Limited — Meta Pixel / Facebook),</li>
     <li>providers of accounting and legal services — only to the extent necessary.</li>
   </ul>
   <p>We do not sell or share your data with third parties for marketing purposes.</p>
 
   <h2>6. Data transfers outside the EEA</h2>
-  <p>In connection with the use of Formspree and Google services (Google Analytics and Google Ads) — providers based in the USA — your data may be transferred to a third country. Both Formspree, Inc. and Google LLC apply the standard contractual clauses approved by the European Commission, which ensures an adequate level of data protection.</p>
+  <p>In connection with the use of Formspree, Google services (Google Analytics and Google Ads) and Meta (Meta Pixel) — providers linked to entities based in the USA — your data may be transferred to a third country. Both Formspree, Inc. and Google LLC apply the standard contractual clauses approved by the European Commission, which ensures an adequate level of data protection.</p>
 
   <h2>7. Your rights</h2>
   <p>In connection with the processing of your personal data, you have the following rights:</p>
@@ -272,6 +273,7 @@
   <p>Google Analytics collects anonymised statistical data about visits, such as the number and sources of visits, the pages viewed, approximate location (based on IP address), and device and browser type. This data is statistical in nature and is not used to identify specific individuals.</p>
   <p>We activate analytics and marketing only after you give consent. On your first visit we display a cookie consent banner with a choice: “Accept all” (consent to analytics and marketing cookies) or “Essential only” (only cookies necessary for the site to work remain). Until you give consent, Google Analytics and Google Ads collect no data — we use the Google Consent Mode mechanism, in which the default consent state is “denied”. The legal basis for processing analytics and marketing data is your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time by deleting cookies in your browser or by choosing “Essential only” again.</p>
   <p>After marketing consent, we use <strong>Google Ads</strong> cookies, which serve to measure conversions (e.g. submitting the contact form) and for marketing and remarketing. They let us assess the effectiveness of advertising campaigns and better reach interested audiences with our offer. If you choose “Essential only”, these cookies are not activated.</p>
+  <p>After marketing consent, we also use <strong>Meta Pixel</strong> (Facebook/Meta), provided by Meta Platforms Ireland Limited. The pixel measures the effectiveness of our advertising (e.g. a submitted contact form recorded as a “Lead” event) and enables remarketing and better targeting of our offer to interested audiences on Meta services (Facebook, Instagram). Meta Pixel loads and sends data only after you give marketing consent — if you choose “Essential only” it is not activated. More in <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Meta’s privacy policy</a>.</p>
   <p>To remember your choice we use a necessary, functional cookie that does not require consent. Analytics and marketing data is processed by Google, which may transfer it to the USA under standard contractual clauses approved by the European Commission. You can find out more in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>.</p>
 
   <h2>10. Changes to the privacy policy</h2>
@@ -335,6 +337,15 @@
       var d = new Date(); d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
       document.cookie = 'uniforno_consent=' + v + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
     }
+    var fbPixelLoaded = false;
+    function loadMetaPixel() {
+      if (fbPixelLoaded) return; fbPixelLoaded = true;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1559814735829872');
+      fbq('track', 'PageView');
+      if (window.UNIFORNO_FB_LEAD) { fbq('track', 'Lead'); }
+    }
+    if (getConsent() === 'all') { loadMetaPixel(); }
     if (!getConsent()) { banner.classList.add('show'); }
     var accept = document.getElementById('cookie-accept');
     var reject = document.getElementById('cookie-reject');
@@ -343,6 +354,7 @@
       if (typeof gtag === 'function') {
         gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
       }
+      loadMetaPixel();
       banner.classList.remove('show');
     });
     if (reject) reject.addEventListener('click', function() {
@@ -354,5 +366,6 @@
     });
   })();
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1559814735829872&ev=PageView&noscript=1" alt=""/></noscript>
 </body>
 </html>

@@ -303,6 +303,15 @@
       var d = new Date(); d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
       document.cookie = 'uniforno_consent=' + v + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
     }
+    var fbPixelLoaded = false;
+    function loadMetaPixel() {
+      if (fbPixelLoaded) return; fbPixelLoaded = true;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1559814735829872');
+      fbq('track', 'PageView');
+      if (window.UNIFORNO_FB_LEAD) { fbq('track', 'Lead'); }
+    }
+    if (getConsent() === 'all') { loadMetaPixel(); }
     if (!getConsent()) { banner.classList.add('show'); }
     var accept = document.getElementById('cookie-accept');
     var reject = document.getElementById('cookie-reject');
@@ -311,6 +320,7 @@
       if (typeof gtag === 'function') {
         gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
       }
+      loadMetaPixel();
       banner.classList.remove('show');
     });
     if (reject) reject.addEventListener('click', function() {
@@ -322,5 +332,6 @@
     });
   })();
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1559814735829872&ev=PageView&noscript=1" alt=""/></noscript>
 </body>
 </html>

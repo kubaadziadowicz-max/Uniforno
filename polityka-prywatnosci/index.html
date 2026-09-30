@@ -244,12 +244,13 @@
     <li>dostawcom usług poczty elektronicznej i hostingu,</li>
     <li>dostawcom narzędzi do obsługi formularzy kontaktowych (Formspree, Inc.),</li>
     <li>dostawcy narzędzi analitycznych i marketingowych (Google Ireland Limited / Google LLC — usługi Google Analytics i Google Ads),</li>
+    <li>dostawcy narzędzi marketingowych i remarketingowych (Meta Platforms Ireland Limited — Meta Pixel / Facebook),</li>
     <li>podmiotom świadczącym usługi księgowe i prawne — wyłącznie w zakresie niezbędnym.</li>
   </ul>
   <p>Nie sprzedajemy ani nie udostępniamy Twoich danych osobom trzecim w celach marketingowych.</p>
 
   <h2>6. Przekazywanie danych poza EOG</h2>
-  <p>W związku z korzystaniem z usług Formspree oraz usług Google (Google Analytics i Google Ads) — dostawców z siedzibą w USA — Twoje dane mogą być przekazywane do państwa trzeciego. Zarówno Formspree, Inc., jak i Google LLC stosują standardowe klauzule umowne zatwierdzone przez Komisję Europejską, co zapewnia odpowiedni poziom ochrony danych.</p>
+  <p>W związku z korzystaniem z usług Formspree, usług Google (Google Analytics i Google Ads) oraz Meta (Meta Pixel) — dostawców powiązanych z podmiotami z siedzibą w USA — Twoje dane mogą być przekazywane do państwa trzeciego. Zarówno Formspree, Inc., jak i Google LLC stosują standardowe klauzule umowne zatwierdzone przez Komisję Europejską, co zapewnia odpowiedni poziom ochrony danych.</p>
 
   <h2>7. Twoje prawa</h2>
   <p>W związku z przetwarzaniem Twoich danych osobowych przysługują Ci następujące prawa:</p>
@@ -272,6 +273,7 @@
   <p>Google Analytics zbiera zanonimizowane dane statystyczne o odwiedzinach, takie jak liczba i źródła wizyt, przeglądane podstrony, przybliżona lokalizacja (na podstawie adresu IP), rodzaj urządzenia i przeglądarki. Dane te mają charakter statystyczny i nie służą do identyfikacji konkretnych osób.</p>
   <p>Analitykę i działania marketingowe uruchamiamy wyłącznie po wyrażeniu przez Ciebie zgody. Przy pierwszej wizycie wyświetlamy baner zgody na pliki cookies z wyborem: „Akceptuję wszystkie" (zgoda na pliki analityczne i marketingowe) albo „Tylko niezbędne" (pozostają wyłącznie pliki niezbędne do działania strony). Dopóki nie wyrazisz zgody, Google Analytics oraz Google Ads nie zbierają żadnych danych — stosujemy mechanizm Google Consent Mode, w którym domyślnym stanem zgody jest „odmowa". Podstawą prawną przetwarzania danych analitycznych i marketingowych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać, usuwając pliki cookies w przeglądarce lub ponownie wybierając „Tylko niezbędne".</p>
   <p>Po wyrażeniu zgody marketingowej korzystamy z plików cookie <strong>Google Ads</strong>, które służą do pomiaru konwersji (np. wysłania formularza kontaktowego) oraz do działań marketingowych i remarketingowych. Pozwalają nam one ocenić skuteczność kampanii reklamowych i lepiej docierać z ofertą do zainteresowanych odbiorców. Jeśli wybierzesz „Tylko niezbędne", pliki te nie są uruchamiane.</p>
+  <p>Po wyrażeniu zgody marketingowej korzystamy również z narzędzia <strong>Meta Pixel</strong> (Facebook/Meta), dostarczanego przez Meta Platforms Ireland Limited. Pixel mierzy skuteczność działań reklamowych (np. wysłanie formularza kontaktowego rejestrowane jako zdarzenie „Lead") oraz umożliwia remarketing i lepsze docieranie z ofertą do zainteresowanych odbiorców w serwisach Meta (Facebook, Instagram). Meta Pixel ładuje się i wysyła dane wyłącznie po wyrażeniu zgody marketingowej — przy wyborze „Tylko niezbędne" nie jest uruchamiany. Więcej w <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">polityce prywatności Meta</a>.</p>
   <p>Do zapamiętania Twojego wyboru używamy niezbędnego, funkcjonalnego pliku cookie, który nie wymaga zgody. Dane analityczne i marketingowe przetwarza Google, które może przekazywać je do USA na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Więcej informacji znajdziesz w <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">polityce prywatności Google</a>.</p>
 
   <h2>10. Zmiany polityki prywatności</h2>
@@ -335,6 +337,15 @@
       var d = new Date(); d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
       document.cookie = 'uniforno_consent=' + v + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
     }
+    var fbPixelLoaded = false;
+    function loadMetaPixel() {
+      if (fbPixelLoaded) return; fbPixelLoaded = true;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1559814735829872');
+      fbq('track', 'PageView');
+      if (window.UNIFORNO_FB_LEAD) { fbq('track', 'Lead'); }
+    }
+    if (getConsent() === 'all') { loadMetaPixel(); }
     if (!getConsent()) { banner.classList.add('show'); }
     var accept = document.getElementById('cookie-accept');
     var reject = document.getElementById('cookie-reject');
@@ -343,6 +354,7 @@
       if (typeof gtag === 'function') {
         gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted' });
       }
+      loadMetaPixel();
       banner.classList.remove('show');
     });
     if (reject) reject.addEventListener('click', function() {
@@ -354,5 +366,6 @@
     });
   })();
 </script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1559814735829872&ev=PageView&noscript=1" alt=""/></noscript>
 </body>
 </html>
